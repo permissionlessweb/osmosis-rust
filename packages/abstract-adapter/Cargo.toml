@@ -1,5 +1,5 @@
 [package]
-name = "abstract-osmosis-dex-adapter"
+name = "abstract-osmosis-adapter"
 version = "0.15.2"
 authors = ["Abstract Money <contact@abstract.money>"]
 edition = "2021"
@@ -15,6 +15,6 @@ osmosis-std = {path="../osmosis-std/"}
 #Abstract dependencies 
 abstract-core = { version="0.15.1" }
 abstract-sdk = { version="0.15.1" }
-abstract-adapter-utils =  {git="https://github.com/AbstractSDK/adapters", branch="feature/impl-in-origin-repo"}
 abstract-dex-adapter-traits = {git="https://github.com/AbstractSDK/adapters", branch="feature/impl-in-origin-repo"}
 cw-asset = "3.0.0"
+cw-utils = "1.0.1"

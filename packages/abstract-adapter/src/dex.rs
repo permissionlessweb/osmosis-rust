@@ -1,9 +1,6 @@
 use osmosis_std::types::osmosis::poolmanager::v1beta1::{SwapAmountInRoute, PoolRequest, EstimateSwapExactAmountInRequest};
-use abstract_adapter_utils::Identify;
 
-use abstract_dex_adapter_traits::DexError;
-
-use abstract_dex_adapter_traits::{DexCommand, Fee, FeeOnInput, Return, Spread};
+use abstract_dex_adapter_traits::{Identify, DexError, DexCommand, Fee, FeeOnInput, Return, Spread};
 use cosmwasm_std::Addr;
 
 use ::{

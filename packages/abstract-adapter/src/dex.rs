@@ -1,6 +1,10 @@
-use osmosis_std::types::osmosis::poolmanager::v1beta1::{SwapAmountInRoute, PoolRequest, EstimateSwapExactAmountInRequest};
+use osmosis_std::types::osmosis::poolmanager::v1beta1::{
+    EstimateSwapExactAmountInRequest, PoolRequest, SwapAmountInRoute,
+};
 
-use abstract_dex_adapter_traits::{Identify, DexError, DexCommand, Fee, FeeOnInput, Return, Spread};
+use abstract_dex_adapter_traits::{
+    DexCommand, DexError, Fee, FeeOnInput, Identify, Return, Spread,
+};
 use cosmwasm_std::Addr;
 
 use ::{
@@ -10,13 +14,8 @@ use ::{
     },
     cw_asset::{Asset, AssetInfo},
     osmosis_std::{
-        types::osmosis::gamm::v1beta1::{
-            MsgExitPool, MsgJoinPool, MsgSwapExactAmountIn,
-        },
-        types::{
-            cosmos::base::v1beta1::Coin as OsmoCoin,
-            osmosis::gamm::v1beta1::{Pool},
-        },
+        types::osmosis::gamm::v1beta1::{MsgExitPool, MsgJoinPool, MsgSwapExactAmountIn},
+        types::{cosmos::base::v1beta1::Coin as OsmoCoin, osmosis::gamm::v1beta1::Pool},
     },
 };
 
@@ -198,7 +197,7 @@ impl DexCommand for Osmosis {
 
         let token_in = Coin::try_from(offer_asset)?.to_string();
 
-        let swap_exact_amount_in_response = EstimateSwapExactAmountInRequest  {
+        let swap_exact_amount_in_response = EstimateSwapExactAmountInRequest {
             pool_id: pool_id.to_string().parse::<u64>().unwrap(),
             token_in,
             routes,

@@ -1,12 +1,22 @@
-use osmosis_std::types::osmosis::poolmanager::v1beta1::{
-    EstimateSwapExactAmountInRequest, PoolRequest, SwapAmountInRoute,
-};
-
-use abstract_dex_adapter_traits::{
-    DexCommand, DexError, Fee, FeeOnInput, Identify, Return, Spread,
-};
+use abstract_dex_adapter_traits::{Identify};
 use cosmwasm_std::Addr;
+use crate::{OSMOSIS, AVAILABLE_CHAINS};
 
+pub struct Osmosis {
+    pub local_proxy_addr: Option<Addr>,
+}
+
+impl Identify for Osmosis {
+    fn is_available_on(&self, chain_name: &str) -> bool {
+        AVAILABLE_CHAINS.contains(&chain_name)
+    }
+    fn name(&self) -> &'static str {
+        OSMOSIS
+    }
+}
+
+
+#[cfg(feature="full_integration")]
 use ::{
     abstract_core::objects::PoolAddress,
     cosmwasm_std::{
@@ -16,24 +26,17 @@ use ::{
     osmosis_std::{
         types::osmosis::gamm::v1beta1::{MsgExitPool, MsgJoinPool, MsgSwapExactAmountIn},
         types::{cosmos::base::v1beta1::Coin as OsmoCoin, osmosis::gamm::v1beta1::Pool},
+        types::osmosis::poolmanager::v1beta1::{
+            EstimateSwapExactAmountInRequest, PoolRequest, SwapAmountInRoute,
+        }
+    },
+    abstract_dex_adapter_traits::{
+        DexCommand, DexError, Fee, FeeOnInput, Return, Spread,
     },
 };
 
-pub const OSMOSIS: &str = "osmosis";
 
-pub struct Osmosis {
-    pub local_proxy_addr: Option<Addr>,
-}
-
-impl Identify for Osmosis {
-    fn over_ibc(&self) -> bool {
-        true
-    }
-    fn name(&self) -> &'static str {
-        OSMOSIS
-    }
-}
-
+#[cfg(feature="full_integration")]
 /// Osmosis app-chain dex implementation
 impl DexCommand for Osmosis {
     fn swap(
@@ -217,6 +220,7 @@ impl DexCommand for Osmosis {
     }
 }
 
+#[cfg(feature="full_integration")]
 fn query_pool_data(deps: Deps, pool_id: u64) -> StdResult<Pool> {
     let res = PoolRequest { pool_id }.query(&deps.querier).unwrap();
 
@@ -224,6 +228,7 @@ fn query_pool_data(deps: Deps, pool_id: u64) -> StdResult<Pool> {
     Ok(pool)
 }
 
+#[cfg(feature="full_integration")]
 fn compute_osmo_share_out_amount(
     pool_assets: &[OsmoCoin],
     deposits: &[Uint128; 2],
@@ -249,6 +254,7 @@ fn compute_osmo_share_out_amount(
     Ok(share_amount_out)
 }
 
+#[cfg(feature="full_integration")]
 fn assert_slippage_tolerance(
     slippage_tolerance: &Option<Decimal>,
     deposits: &[Uint128; 2],

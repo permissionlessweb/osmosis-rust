@@ -1,8 +1,7 @@
+use crate::AVAILABLE_CHAINS;
+use crate::OSMOSIS;
 use abstract_staking_adapter_traits::Identify;
 use cosmwasm_std::Addr;
-
-
-pub const OSMOSIS: &str = "osmosis";
 
 #[derive(Default)]
 pub struct Osmosis {
@@ -15,25 +14,28 @@ impl Identify for Osmosis {
     fn name(&self) -> &'static str {
         OSMOSIS
     }
-    fn over_ibc(&self) -> bool { false }
+    fn is_available_on(&self, chain_name: &str) -> bool {
+        AVAILABLE_CHAINS.contains(&chain_name)
+    }
 }
 
-//#[cfg(feature = "osmosis")]
+
+#[cfg(feature="full_integration")]
 pub mod fns {
     use abstract_sdk::AccountVerification;
-use abstract_sdk::features::AbstractRegistryAccess;
-use std::cmp::min;
-use abstract_staking_adapter_traits::msg::RewardTokensResponse;
-use abstract_staking_adapter_traits::msg::Claim;
-use abstract_staking_adapter_traits::msg::UnbondingResponse;
-use cw_utils::Expiration;
-use std::str::FromStr;
-use abstract_staking_adapter_traits::msg::StakeResponse;
-use osmosis_std::types::osmosis::lockup::LockupQuerier;
-    
-use osmosis_std::types::osmosis::poolmanager::v1beta1::PoolmanagerQuerier;
-use abstract_core::objects::ans_host::AnsHost;
-use abstract_core::objects::AssetEntry;
+    use abstract_sdk::features::AbstractRegistryAccess;
+    use std::cmp::min;
+    use abstract_staking_adapter_traits::msg::RewardTokensResponse;
+    use abstract_staking_adapter_traits::msg::Claim;
+    use abstract_staking_adapter_traits::msg::UnbondingResponse;
+    use cw_utils::Expiration;
+    use std::str::FromStr;
+    use abstract_staking_adapter_traits::msg::StakeResponse;
+    use osmosis_std::types::osmosis::lockup::LockupQuerier;
+        
+    use osmosis_std::types::osmosis::poolmanager::v1beta1::PoolmanagerQuerier;
+    use abstract_core::objects::ans_host::AnsHost;
+    use abstract_core::objects::AssetEntry;
 
     use cw_asset::AssetInfoBase;
     use abstract_staking_adapter_traits::msg::StakingInfoResponse;

@@ -2,6 +2,7 @@ use abstract_dex_adapter_traits::{Identify};
 use cosmwasm_std::Addr;
 use crate::{OSMOSIS, AVAILABLE_CHAINS};
 
+#[derive(Default)]
 pub struct Osmosis {
     pub local_proxy_addr: Option<Addr>,
 }

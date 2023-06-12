@@ -22,15 +22,12 @@ impl Identify for Osmosis {
 
 #[cfg(feature="full_integration")]
 pub mod fns {
+    use std::str::FromStr;
     use abstract_sdk::AccountVerification;
     use abstract_sdk::features::AbstractRegistryAccess;
-    use std::cmp::min;
-    use abstract_staking_adapter_traits::msg::RewardTokensResponse;
-    use abstract_staking_adapter_traits::msg::Claim;
-    use abstract_staking_adapter_traits::msg::UnbondingResponse;
     use cw_utils::Expiration;
-    use std::str::FromStr;
-    use abstract_staking_adapter_traits::msg::StakeResponse;
+    use std::cmp::min;
+    use abstract_staking_adapter_traits::query_responses::{RewardTokensResponse, Claim, UnbondingResponse, StakeResponse, StakingInfoResponse};
     use osmosis_std::types::osmosis::lockup::LockupQuerier;
         
     use osmosis_std::types::osmosis::poolmanager::v1beta1::PoolmanagerQuerier;
@@ -38,9 +35,7 @@ pub mod fns {
     use abstract_core::objects::AssetEntry;
 
     use cw_asset::AssetInfoBase;
-    use abstract_staking_adapter_traits::msg::StakingInfoResponse;
-    use abstract_staking_adapter_traits::StakingError;
-    use abstract_staking_adapter_traits::StakingCommand;
+    use abstract_staking_adapter_traits::{CwStakingError, CwStakingCommand};
     use cosmwasm_std::{Uint128, Deps, StdError, StdResult, CosmosMsg,QuerierWrapper, Coin};
 
     use super::*;
@@ -86,7 +81,7 @@ pub mod fns {
     }
 
     /// Osmosis app-chain dex implementation
-    impl StakingCommand for Osmosis {
+    impl CwStakingCommand for Osmosis {
         fn fetch_data(
             &mut self,
             deps: cosmwasm_std::Deps,
@@ -116,7 +111,7 @@ pub mod fns {
             _deps: Deps,
             amount: Uint128,
             unbonding_period: Option<cw_utils::Duration>,
-        ) -> Result<Vec<cosmwasm_std::CosmosMsg>, StakingError> {
+        ) -> Result<Vec<cosmwasm_std::CosmosMsg>, CwStakingError> {
 
             let lock_tokens_msg = MsgLockTokens{ 
                 owner: self.local_proxy_addr.as_ref().unwrap().to_string(), 
@@ -137,7 +132,7 @@ pub mod fns {
             deps: Deps,
             amount: Uint128,
             _unbonding_period: Option<cw_utils::Duration>,
-        ) -> Result<Vec<CosmosMsg>, StakingError> {
+        ) -> Result<Vec<CosmosMsg>, CwStakingError> {
 
             let lockup_request = LockupQuerier::new(&deps.querier);
             let locked_up = lockup_request.account_locked_past_time_not_unlocking_only(
@@ -171,7 +166,7 @@ pub mod fns {
             Ok(msgs)
         }
 
-        fn claim(&self, deps: Deps) -> Result<Vec<CosmosMsg>, StakingError> {
+        fn claim(&self, deps: Deps) -> Result<Vec<CosmosMsg>, CwStakingError> {
             
             let lockup_request = LockupQuerier::new(&deps.querier);
             let locked_up = lockup_request.account_unlocked_before_time(
@@ -194,7 +189,7 @@ pub mod fns {
         }
 
         // TODO, not sure this is needed in that case
-        fn claim_rewards(&self, _deps: Deps) -> Result<Vec<cosmwasm_std::CosmosMsg>, StakingError> {
+        fn claim_rewards(&self, _deps: Deps) -> Result<Vec<cosmwasm_std::CosmosMsg>, CwStakingError> {
             Ok(vec![])
         }
 
@@ -203,7 +198,7 @@ pub mod fns {
         fn query_info(
             &self,
             _querier: &cosmwasm_std::QuerierWrapper,
-        ) -> Result<abstract_staking_adapter_traits::msg::StakingInfoResponse, StakingError> {
+        ) -> Result<StakingInfoResponse, CwStakingError> {
             
             let res = StakingInfoResponse {
                 staking_token: AssetInfoBase::Native(self.lp_token.clone().unwrap()),
@@ -220,7 +215,7 @@ pub mod fns {
             querier: &QuerierWrapper,
             staker: Addr,
             _unbonding_period: Option<cw_utils::Duration>,
-        ) -> Result<StakeResponse, StakingError> {
+        ) -> Result<StakeResponse, CwStakingError> {
             // We query all the locked tokens that correspond to the token in question
             let lockup_request = LockupQuerier::new(querier);
             let locked_up = lockup_request.account_locked_coins(
@@ -240,7 +235,7 @@ pub mod fns {
             &self,
             querier: &QuerierWrapper,
             staker: Addr,
-        ) -> Result<UnbondingResponse, StakingError> {
+        ) -> Result<UnbondingResponse, CwStakingError> {
             let lockup_request = LockupQuerier::new(querier);
             let unlocking = lockup_request.account_unlocking_coins(
                 staker.to_string(),
@@ -261,7 +256,7 @@ pub mod fns {
         fn query_rewards(
             &self,
             _querier: &QuerierWrapper,
-        ) -> Result<RewardTokensResponse, StakingError> {
+        ) -> Result<RewardTokensResponse, CwStakingError> {
             Ok(RewardTokensResponse{
                 tokens: vec![]
             })

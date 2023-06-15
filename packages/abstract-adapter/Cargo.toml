@@ -12,7 +12,7 @@ full_integration=["dep:cw20", "dep:abstract-sdk", "dep:cw-asset", "dep:cw-utils"
 
 [dependencies]
 cosmwasm-std = {version = "1.1.2", features = ["stargate"]}
-abstract-core = { version="0.15.1" }
+abstract-core = { version="0.16.1" }
 abstract-dex-adapter-traits = {git="https://github.com/AbstractSDK/adapters", branch = "feature/adapter-tests"}
 abstract-staking-adapter-traits = {git="https://github.com/AbstractSDK/adapters", branch = "feature/adapter-tests"}
 

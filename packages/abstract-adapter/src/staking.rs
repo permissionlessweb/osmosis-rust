@@ -27,7 +27,7 @@ pub mod fns {
     use abstract_sdk::features::AbstractRegistryAccess;
     use cw_utils::Expiration;
     use std::cmp::min;
-    use abstract_staking_adapter_traits::query_responses::{RewardTokensResponse, Claim, UnbondingResponse, StakeResponse, StakingInfoResponse};
+    use abstract_staking_adapter_traits::msg::{RewardTokensResponse, Claim, UnbondingResponse, StakeResponse, StakingInfoResponse};
     use osmosis_std::types::osmosis::lockup::LockupQuerier;
         
     use osmosis_std::types::osmosis::poolmanager::v1beta1::PoolmanagerQuerier;

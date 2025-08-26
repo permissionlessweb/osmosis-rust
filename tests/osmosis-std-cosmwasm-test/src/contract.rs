@@ -3,8 +3,7 @@ use std::fmt::Debug;
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::entry_point;
 use cosmwasm_std::{
-    to_binary, to_vec, Binary, ContractResult, Deps, DepsMut, Empty, Env, MessageInfo, Reply,
-    Response, StdError, StdResult, SystemResult,
+    to_json_binary, to_json_vec, Binary, ContractResult, Deps, DepsMut, Empty, Env, MessageInfo, Reply, Response, StdError, StdResult, SystemResult
 };
 use cw2::set_contract_version;
 use osmosis_std::types::osmosis::epochs::v1beta1::{
@@ -104,7 +103,7 @@ pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
         QueryMsg::QueryGeometricTwapToNow(geometric_twap_request) => {
             query_and_debug::<GeometricTwapToNowResponse>(&deps, geometric_twap_request)
         }
-        QueryMsg::QueryMap { key } => to_binary(&QueryMapResponse {
+        QueryMsg::QueryMap { key } => to_json_binary(&QueryMapResponse {
             value: MAP.load(deps.storage, key)?,
         }),
     }
@@ -117,19 +116,20 @@ fn query_and_debug<T>(
 where
     T: Serialize + DeserializeOwned + Debug,
 {
-    to_binary(&{
+    to_json_binary(&{
         let request: cosmwasm_std::QueryRequest<Empty> = q.into();
-        let raw = to_vec(&request).map_err(|serialize_err| {
-            StdError::generic_err(format!("Serializing QueryRequest: {}", serialize_err))
+        let raw = to_json_vec(&request).map_err(|serialize_err| {
+            StdError::msg(format!("Serializing QueryRequest: {}", serialize_err))
         })?;
         let res: T = match deps.querier.raw_query(&raw) {
-            SystemResult::Err(system_err) => Err(StdError::generic_err(format!(
+            SystemResult::Err(system_err) => Err(StdError::msg(format!(
                 "Querier system error: {}",
                 system_err
             ))),
-            SystemResult::Ok(ContractResult::Err(contract_err)) => Err(StdError::generic_err(
-                format!("Querier contract error: {}", contract_err),
-            )),
+            SystemResult::Ok(ContractResult::Err(contract_err)) => Err(StdError::msg(format!(
+                "Querier contract error: {}",
+                contract_err
+            ))),
             SystemResult::Ok(ContractResult::Ok(value)) => {
                 if DEBUG.load(deps.storage)? {
                     let json_str = std::str::from_utf8(value.as_slice()).unwrap();
@@ -152,7 +152,7 @@ where
                     deps.api.debug("```");
                     deps.api.debug("========================");
                 }
-                cosmwasm_std::from_binary(&value)
+                cosmwasm_std::from_json(&value)
             }
         }?;
         res

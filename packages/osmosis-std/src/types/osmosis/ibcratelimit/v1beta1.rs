@@ -2,14 +2,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// Params defines the parameters for the ibc-rate-limit module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.ibcratelimit.v1beta1.Params")]
 pub struct Params {
@@ -19,14 +12,7 @@ pub struct Params {
 /// GenesisState defines the ibc-rate-limit module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.ibcratelimit.v1beta1.GenesisState")]
 pub struct GenesisState {
@@ -37,14 +23,7 @@ pub struct GenesisState {
 /// ParamsRequest is the request type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.ibcratelimit.v1beta1.ParamsRequest")]
 #[proto_query(
@@ -55,14 +34,7 @@ pub struct ParamsRequest {}
 /// aramsResponse is the response type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.ibcratelimit.v1beta1.ParamsResponse")]
 pub struct ParamsResponse {

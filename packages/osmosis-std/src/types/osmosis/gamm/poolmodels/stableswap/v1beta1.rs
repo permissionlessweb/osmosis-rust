@@ -5,14 +5,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// The pool's token holders are specified in future_pool_governor.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.gamm.poolmodels.stableswap.v1beta1.PoolParams")]
 pub struct PoolParams {
@@ -27,14 +20,7 @@ pub struct PoolParams {
 /// Pool is the stableswap Pool struct
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.gamm.poolmodels.stableswap.v1beta1.Pool")]
 pub struct Pool {
@@ -67,8 +53,12 @@ pub struct Pool {
     #[prost(message, repeated, tag = "6")]
     pub pool_liquidity:
         ::prost::alloc::vec::Vec<super::super::super::super::super::cosmos::base::v1beta1::Coin>,
-    /// for calculation amognst assets with different precisions
+    /// for calculation amongst assets with different precisions
     #[prost(uint64, repeated, packed = "false", tag = "7")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub scaling_factors: ::prost::alloc::vec::Vec<u64>,
     /// scaling_factor_controller is the address can adjust pool scaling factors
     #[prost(string, tag = "8")]
@@ -77,14 +67,7 @@ pub struct Pool {
 /// ===================== MsgCreatePool
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPool")]
 pub struct MsgCreateStableswapPool {
@@ -96,6 +79,10 @@ pub struct MsgCreateStableswapPool {
     pub initial_pool_liquidity:
         ::prost::alloc::vec::Vec<super::super::super::super::super::cosmos::base::v1beta1::Coin>,
     #[prost(uint64, repeated, packed = "false", tag = "4")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub scaling_factors: ::prost::alloc::vec::Vec<u64>,
     #[prost(string, tag = "5")]
     pub future_pool_governor: ::prost::alloc::string::String,
@@ -105,14 +92,7 @@ pub struct MsgCreateStableswapPool {
 /// Returns a poolID with custom poolName.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgCreateStableswapPoolResponse"
@@ -130,14 +110,7 @@ pub struct MsgCreateStableswapPoolResponse {
 /// succeed. Adjusts stableswap scaling factors.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors"
@@ -153,18 +126,15 @@ pub struct MsgStableSwapAdjustScalingFactors {
     )]
     pub pool_id: u64,
     #[prost(uint64, repeated, packed = "false", tag = "3")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub scaling_factors: ::prost::alloc::vec::Vec<u64>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactorsResponse"

@@ -1,5 +1,5 @@
 use ::serde::{ser, Deserialize, Deserializer, Serialize, Serializer};
-use chrono::{DateTime, NaiveDateTime, Utc};
+use chrono::{DateTime, Utc};
 use cosmwasm_std::StdResult;
 use serde::de;
 use serde::de::Visitor;
@@ -34,8 +34,9 @@ impl Serialize for Timestamp {
             nanos: self.nanos,
         };
         ts.normalize();
-        let dt = NaiveDateTime::from_timestamp_opt(ts.seconds, ts.nanos as u32)
-            .expect("invalid or out-of-range datetime");
+        let dt = DateTime::from_timestamp(ts.seconds, ts.nanos as u32)
+            .expect("invalid or out-of-range datetime")
+            .naive_utc();
         let dt: DateTime<Utc> = DateTime::from_naive_utc_and_offset(dt, Utc);
         serializer.serialize_str(format!("{:?}", dt).as_str())
     }
@@ -294,6 +295,15 @@ expand_as_any!(
     // balancer pool param has more fields
     crate::types::osmosis::gamm::v1beta1::PoolParams,
     crate::types::osmosis::gamm::poolmodels::stableswap::v1beta1::PoolParams,
+    // accounts have distincted structure
+    crate::types::cosmos::auth::v1beta1::BaseAccount,
+    crate::types::cosmos::auth::v1beta1::ModuleAccount,
+    // pubkey required for base account
+    // it can't be distinced by structure
+    // so deserialing it back might not work properly
+    crate::types::cosmos::crypto::secp256k1::PubKey,
+    crate::types::cosmos::crypto::secp256r1::PubKey,
+    crate::types::cosmos::crypto::ed25519::PubKey,
 );
 
 macro_rules! impl_prost_types_exact_conversion {
@@ -362,7 +372,7 @@ pub fn cosmwasm_to_proto_coins(
 
 #[cfg(test)]
 mod tests {
-    use cosmwasm_std::Uint128;
+    use cosmwasm_std::Uint256;
 
     use super::*;
 
@@ -371,11 +381,11 @@ mod tests {
         let coins = vec![
             cosmwasm_std::Coin {
                 denom: "uatom".to_string(),
-                amount: Uint128::new(100),
+                amount: Uint256::new(100),
             },
             cosmwasm_std::Coin {
                 denom: "uosmo".to_string(),
-                amount: Uint128::new(200),
+                amount: Uint256::new(200),
             },
         ];
 

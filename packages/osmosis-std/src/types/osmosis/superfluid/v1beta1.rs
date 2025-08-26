@@ -3,14 +3,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// assets
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.superfluid.v1beta1.SetSuperfluidAssetsProposal")]
 pub struct SetSuperfluidAssetsProposal {
@@ -25,14 +18,7 @@ pub struct SetSuperfluidAssetsProposal {
 /// assets by denom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.superfluid.v1beta1.RemoveSuperfluidAssetsProposal")]
 pub struct RemoveSuperfluidAssetsProposal {
@@ -47,14 +33,7 @@ pub struct RemoveSuperfluidAssetsProposal {
 /// allowed list of pool ids.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.superfluid.v1beta1.UpdateUnpoolWhiteListProposal")]
 pub struct UpdateUnpoolWhiteListProposal {
@@ -63,6 +42,10 @@ pub struct UpdateUnpoolWhiteListProposal {
     #[prost(string, tag = "2")]
     pub description: ::prost::alloc::string::String,
     #[prost(uint64, repeated, tag = "3")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub ids: ::prost::alloc::vec::Vec<u64>,
     #[prost(bool, tag = "4")]
     pub is_overwrite: bool,

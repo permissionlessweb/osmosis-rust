@@ -210,9 +210,9 @@ pub fn query(
 
 fn query_token_creation_fee(deps: Deps<OsmosisQuery>) -> StdResult<QueryTokenCreationFeeResponse> {
     let res = TokenfactoryQuerier::new(&deps.querier).params()?;
-    let params = res.params.ok_or(StdError::NotFound {
-        kind: "osmosis_std::types::osmosis::tokenfactory::v1beta1::Params".to_string(),
-    })?;
+    let params = res.params.ok_or(StdError::msg(
+        "Not found: osmosis_std::types::osmosis::tokenfactory::v1beta1::Params",
+    ))?;
 
     let fee = params
         .denom_creation_fee

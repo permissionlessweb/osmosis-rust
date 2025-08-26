@@ -2,14 +2,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// Deprecated: please use alternate in x/poolmanager
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.gamm.v2.QuerySpotPriceRequest")]
 #[proto_query(
@@ -29,18 +22,15 @@ pub struct QuerySpotPriceRequest {
     pub base_asset_denom: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub quote_asset_denom: ::prost::alloc::string::String,
+    /// DEPRECATED
+    #[deprecated]
+    #[prost(bool, tag = "4")]
+    pub with_swap_fee: bool,
 }
-/// Depreacted: please use alternate in x/poolmanager
+/// Deprecated: please use alternate in x/poolmanager
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.gamm.v2.QuerySpotPriceResponse")]
 #[deprecated]
@@ -62,11 +52,13 @@ impl<'a, Q: cosmwasm_std::CustomQuery> GammQuerier<'a, Q> {
         pool_id: u64,
         base_asset_denom: ::prost::alloc::string::String,
         quote_asset_denom: ::prost::alloc::string::String,
+        with_swap_fee: bool,
     ) -> Result<QuerySpotPriceResponse, cosmwasm_std::StdError> {
         QuerySpotPriceRequest {
             pool_id,
             base_asset_denom,
             quote_asset_denom,
+            with_swap_fee,
         }
         .query(self.querier)
     }

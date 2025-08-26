@@ -5,7 +5,7 @@ set -euxo pipefail
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 OSMOSIS_REV=${1:-main}
 
-LATEST_OSMOSIS_VERSION="v16"
+LATEST_OSMOSIS_VERSION="v24"
 
 # if "$OSMOIS_REV" is /v\d+/ then extract it as var
 if [[ "$OSMOSIS_REV" =~ ^v[0-9]+ ]]; then
@@ -33,6 +33,11 @@ cd "$SCRIPT_DIR/../packages/proto-build/" && cargo run -- --update-deps
 ## Update git revision if there is    ##
 ## any change                         ##
 ########################################
+
+if [[ -n "${SKIP_GIT_UPDATE:-}" ]]; then
+  echo '[SKIP] SKIP_GIT_UPDATE is set, skipping git update'
+  exit 0
+fi
 
 # if dirty or untracked file exists
 if [[ $(git diff --stat) != '' ||  $(git ls-files  --exclude-standard  --others) ]]; then

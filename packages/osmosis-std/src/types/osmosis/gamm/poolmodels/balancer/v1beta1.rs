@@ -2,14 +2,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// ===================== MsgCreatePool
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPool")]
 pub struct MsgCreateBalancerPool {
@@ -25,14 +18,7 @@ pub struct MsgCreateBalancerPool {
 /// Returns the poolID
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.gamm.poolmodels.balancer.v1beta1.MsgCreateBalancerPoolResponse"

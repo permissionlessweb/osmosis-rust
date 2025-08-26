@@ -3,14 +3,7 @@ pub mod v1beta1;
 use osmosis_std_derive::CosmwasmExt;
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.Params")]
 pub struct Params {
@@ -19,6 +12,10 @@ pub struct Params {
     /// example, an authorized_tick_spacing of [1, 10, 30] allows for pools
     /// to be created with tick spacing of 1, 10, or 30.
     #[prost(uint64, repeated, packed = "false", tag = "1")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub authorized_tick_spacing: ::prost::alloc::vec::Vec<u64>,
     #[prost(string, repeated, tag = "2")]
     pub authorized_spread_factors: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -30,13 +27,15 @@ pub struct Params {
     /// incentives stay at cl pool.
     #[prost(string, tag = "3")]
     pub balancer_shares_reward_discount: ::prost::alloc::string::String,
-    /// authorized_quote_denoms is a list of quote denoms that can be used as
-    /// token1 when creating a pool. We limit the quote assets to a small set for
-    /// the purposes of having convinient price increments stemming from tick to
-    /// price conversion. These increments are in a human readable magnitude only
-    /// for token1 as a quote. For limit orders in the future, this will be a
-    /// desirable property in terms of UX as to allow users to set limit orders at
-    /// prices in terms of token1 (quote asset) that are easy to reason about.
+    /// DEPRECATED: authorized_quote_denoms is a list of quote denoms that can be
+    /// used as token1 when creating a pool. We limit the quote assets to a small
+    /// set for the purposes of having convenient price increments stemming from
+    /// tick to price conversion. These increments are in a human readable
+    /// magnitude only for token1 as a quote. For limit orders in the future, this
+    /// will be a desirable property in terms of UX as to allow users to set limit
+    /// orders at prices in terms of token1 (quote asset) that are easy to reason
+    /// about.
+    #[deprecated]
     #[prost(string, repeated, tag = "4")]
     pub authorized_quote_denoms: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     #[prost(message, repeated, tag = "5")]
@@ -48,4 +47,17 @@ pub struct Params {
     /// with a governance proposal.
     #[prost(bool, tag = "6")]
     pub is_permissionless_pool_creation_enabled: bool,
+    /// unrestricted_pool_creator_whitelist is a list of addresses that are
+    /// allowed to bypass restrictions on permissionless supercharged pool
+    /// creation, like pool_creation_enabled, restricted quote assets, no
+    /// double creation of pools, etc.
+    #[prost(string, repeated, tag = "7")]
+    pub unrestricted_pool_creator_whitelist:
+        ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(uint64, tag = "8")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub hook_gas_limit: u64,
 }

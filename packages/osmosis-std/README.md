@@ -85,9 +85,9 @@ fn query_pool(
 ) -> StdResult<osmosis_std::types::osmosis::gamm::v1beta1::Pool> {
     let res = GammQuerier::new(&deps.querier).pool(pool_id)?;
     res.pool
-        .ok_or_else(|| StdError::not_found("pool"))?
+        .ok_or_else(|| StdError::msg("Not found: pool"))?
         .try_into() // convert `Any` to `osmosis_std::types::osmosis::gamm::v1beta1::Pool`
-        .map_err(|e: DecodeError| StdError::parse_err(
+        .map_err(|e: DecodeError| StdError::msg(
             "osmosis_std::types::osmosis::gamm::v1beta1::Pool",
             e
         ))
@@ -117,7 +117,7 @@ impl TryFrom<osmosis_std::shim::Any> for Pool {
             return Ok(Pool::StableSwap(pool));
         }
 
-        Err(StdError::parse_err(
+        Err(StdError::msg(
             "Pool",
             "Unmatched pool: must be either `Balancer` or `StableSwap`."
         ))
@@ -130,7 +130,7 @@ fn query_pool(
 ) -> StdResult<Pool> {
     let res = GammQuerier::new(&deps.querier).pool(pool_id)?;
     res.pool
-        .ok_or_else(|| StdError::not_found("pool"))?
+        .ok_or_else(|| StdError::msg("Not found: pool"))?
         .try_into() // convert `Any` to `Pool`
 }
 ```

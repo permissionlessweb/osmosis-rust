@@ -3,14 +3,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// join time, and liquidity.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.Position")]
 pub struct Position {
@@ -56,14 +49,7 @@ pub struct Position {
 /// now
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.FullPositionBreakdown")]
 pub struct FullPositionBreakdown {
@@ -85,14 +71,7 @@ pub struct FullPositionBreakdown {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PositionWithPeriodLock")]
 pub struct PositionWithPeriodLock {
@@ -103,14 +82,7 @@ pub struct PositionWithPeriodLock {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.TickInfo")]
 pub struct TickInfo {
@@ -145,14 +117,7 @@ pub struct TickInfo {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.UptimeTrackers")]
 pub struct UptimeTrackers {
@@ -161,14 +126,7 @@ pub struct UptimeTrackers {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.UptimeTracker")]
 pub struct UptimeTracker {
@@ -182,14 +140,7 @@ pub struct UptimeTracker {
 /// distinction between IncentiveRecord and IncentiveRecordBody.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.IncentiveRecord")]
 pub struct IncentiveRecord {
@@ -221,14 +172,7 @@ pub struct IncentiveRecord {
 /// record.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.IncentiveRecordBody")]
 pub struct IncentiveRecordBody {
@@ -246,14 +190,7 @@ pub struct IncentiveRecordBody {
 /// information.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.FullTick")]
 pub struct FullTick {
@@ -280,14 +217,7 @@ pub struct FullTick {
 /// for genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolData")]
 pub struct PoolData {
@@ -307,14 +237,7 @@ pub struct PoolData {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PositionData")]
 pub struct PositionData {
@@ -335,21 +258,14 @@ pub struct PositionData {
 /// GenesisState defines the concentrated liquidity module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// params are all the parameters of the module
     #[prost(message, optional, tag = "1")]
     pub params: ::core::option::Option<super::Params>,
-    /// pool data containining serialized pool struct and ticks.
+    /// pool data containing serialized pool struct and ticks.
     #[prost(message, repeated, tag = "2")]
     pub pool_data: ::prost::alloc::vec::Vec<PoolData>,
     #[prost(message, repeated, tag = "3")]
@@ -368,20 +284,27 @@ pub struct GenesisState {
         deserialize_with = "crate::serde::as_str::deserialize"
     )]
     pub next_incentive_record_id: u64,
+    #[prost(uint64, tag = "6")]
+    #[serde(alias = "incentives_accumulator_poolID_migration_threshold")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub incentives_accumulator_pool_id_migration_threshold: u64,
+    #[prost(uint64, tag = "7")]
+    #[serde(alias = "spread_factor_poolID_migration_threshold")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub spread_factor_pool_id_migration_threshold: u64,
 }
 /// In original struct of Accum object, store.KVStore is stored together.
 /// For handling genesis, we do not need to include store.KVStore since we use
 /// CL module's KVStore.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.AccumObject")]
 pub struct AccumObject {
@@ -396,14 +319,7 @@ pub struct AccumObject {
 /// passes, the pools are created via pool manager module account.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.CreateConcentratedLiquidityPoolsProposal"
@@ -422,14 +338,7 @@ pub struct CreateConcentratedLiquidityPoolsProposal {
 /// spacing.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.TickSpacingDecreaseProposal")]
 pub struct TickSpacingDecreaseProposal {
@@ -445,14 +354,7 @@ pub struct TickSpacingDecreaseProposal {
 /// spacing pair.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolIdToTickSpacingRecord")]
 pub struct PoolIdToTickSpacingRecord {
@@ -472,14 +374,7 @@ pub struct PoolIdToTickSpacingRecord {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolRecord")]
 pub struct PoolRecord {
@@ -498,14 +393,7 @@ pub struct PoolRecord {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.Pool")]
 pub struct Pool {
@@ -565,14 +453,7 @@ pub struct Pool {
 /// =============================== UserPositions
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.UserPositionsRequest")]
 #[proto_query(
@@ -595,14 +476,7 @@ pub struct UserPositionsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.UserPositionsResponse")]
 pub struct UserPositionsResponse {
@@ -615,14 +489,7 @@ pub struct UserPositionsResponse {
 /// =============================== PositionById
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PositionByIdRequest")]
 #[proto_query(
@@ -640,31 +507,44 @@ pub struct PositionByIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PositionByIdResponse")]
 pub struct PositionByIdResponse {
     #[prost(message, optional, tag = "1")]
     pub position: ::core::option::Option<FullPositionBreakdown>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.NumPoolPositionsRequest")]
+pub struct NumPoolPositionsRequest {
+    #[prost(uint64, tag = "1")]
+    #[serde(alias = "poolID")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub pool_id: u64,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.NumPoolPositionsResponse")]
+pub struct NumPoolPositionsResponse {
+    #[prost(uint64, tag = "1")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub position_count: u64,
+}
 /// =============================== Pools
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolsRequest")]
 #[proto_query(
@@ -679,14 +559,7 @@ pub struct PoolsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolsResponse")]
 pub struct PoolsResponse {
@@ -700,14 +573,7 @@ pub struct PoolsResponse {
 /// =============================== ModuleParams
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.ParamsRequest")]
 #[proto_query(
@@ -717,14 +583,7 @@ pub struct PoolsResponse {
 pub struct ParamsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.ParamsResponse")]
 pub struct ParamsResponse {
@@ -733,14 +592,7 @@ pub struct ParamsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.TickLiquidityNet")]
 pub struct TickLiquidityNet {
@@ -755,14 +607,7 @@ pub struct TickLiquidityNet {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.LiquidityDepthWithRange")]
 pub struct LiquidityDepthWithRange {
@@ -784,14 +629,7 @@ pub struct LiquidityDepthWithRange {
 /// =============================== LiquidityNetInDirection
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.LiquidityNetInDirectionRequest")]
 #[proto_query(
@@ -827,14 +665,7 @@ pub struct LiquidityNetInDirectionRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.LiquidityNetInDirectionResponse"
@@ -850,18 +681,13 @@ pub struct LiquidityNetInDirectionResponse {
     pub current_tick: i64,
     #[prost(string, tag = "3")]
     pub current_liquidity: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub current_sqrt_price: ::prost::alloc::string::String,
 }
 /// =============================== LiquidityPerTickRange
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.LiquidityPerTickRangeRequest")]
 #[proto_query(
@@ -879,31 +705,23 @@ pub struct LiquidityPerTickRangeRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.LiquidityPerTickRangeResponse")]
 pub struct LiquidityPerTickRangeResponse {
     #[prost(message, repeated, tag = "1")]
     pub liquidity: ::prost::alloc::vec::Vec<LiquidityDepthWithRange>,
+    #[prost(int64, tag = "2")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub bucket_index: i64,
 }
 /// ===================== QueryClaimableSpreadRewards
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.ClaimableSpreadRewardsRequest")]
 #[proto_query(
@@ -921,14 +739,7 @@ pub struct ClaimableSpreadRewardsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.ClaimableSpreadRewardsResponse")]
 pub struct ClaimableSpreadRewardsResponse {
@@ -939,14 +750,7 @@ pub struct ClaimableSpreadRewardsResponse {
 /// ===================== QueryClaimableIncentives
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.ClaimableIncentivesRequest")]
 #[proto_query(
@@ -964,14 +768,7 @@ pub struct ClaimableIncentivesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.ClaimableIncentivesResponse")]
 pub struct ClaimableIncentivesResponse {
@@ -985,14 +782,7 @@ pub struct ClaimableIncentivesResponse {
 /// ===================== QueryPoolAccumulatorRewards
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolAccumulatorRewardsRequest")]
 #[proto_query(
@@ -1010,14 +800,7 @@ pub struct PoolAccumulatorRewardsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.PoolAccumulatorRewardsResponse")]
 pub struct PoolAccumulatorRewardsResponse {
@@ -1030,14 +813,7 @@ pub struct PoolAccumulatorRewardsResponse {
 /// ===================== QueryTickAccumulatorTrackers
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.TickAccumulatorTrackersRequest")]
 #[proto_query(
@@ -1061,14 +837,7 @@ pub struct TickAccumulatorTrackersRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.TickAccumulatorTrackersResponse"
@@ -1083,14 +852,7 @@ pub struct TickAccumulatorTrackersResponse {
 /// ===================== QueryIncentiveRecords
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.IncentiveRecordsRequest")]
 #[proto_query(
@@ -1111,14 +873,7 @@ pub struct IncentiveRecordsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.IncentiveRecordsResponse")]
 pub struct IncentiveRecordsResponse {
@@ -1132,14 +887,7 @@ pub struct IncentiveRecordsResponse {
 /// =============================== CFMMPoolIdLinkFromConcentratedPoolId
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.CFMMPoolIdLinkFromConcentratedPoolIdRequest"
@@ -1159,14 +907,7 @@ pub struct CfmmPoolIdLinkFromConcentratedPoolIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.CFMMPoolIdLinkFromConcentratedPoolIdResponse"
@@ -1183,14 +924,7 @@ pub struct CfmmPoolIdLinkFromConcentratedPoolIdResponse {
 /// =============================== UserUnbondingPositions
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.UserUnbondingPositionsRequest")]
 #[proto_query(
@@ -1203,14 +937,7 @@ pub struct UserUnbondingPositionsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.UserUnbondingPositionsResponse")]
 pub struct UserUnbondingPositionsResponse {
@@ -1220,14 +947,7 @@ pub struct UserUnbondingPositionsResponse {
 /// =============================== GetTotalLiquidity
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.GetTotalLiquidityRequest")]
 #[proto_query(
@@ -1237,31 +957,63 @@ pub struct UserUnbondingPositionsResponse {
 pub struct GetTotalLiquidityRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.GetTotalLiquidityResponse")]
 pub struct GetTotalLiquidityResponse {
     #[prost(message, repeated, tag = "1")]
     pub total_liquidity: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
 }
+/// =============================== NumNextInitializedTicks
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.NumNextInitializedTicksRequest")]
+#[proto_query(
+    path = "/osmosis.concentratedliquidity.v1beta1.Query/NumNextInitializedTicks",
+    response_type = NumNextInitializedTicksResponse
+)]
+pub struct NumNextInitializedTicksRequest {
+    #[prost(uint64, tag = "1")]
+    #[serde(alias = "poolID")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub pool_id: u64,
+    #[prost(string, tag = "2")]
+    pub token_in_denom: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "3")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub num_next_initialized_ticks: u64,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(
+    type_url = "/osmosis.concentratedliquidity.v1beta1.NumNextInitializedTicksResponse"
+)]
+pub struct NumNextInitializedTicksResponse {
+    #[prost(message, repeated, tag = "1")]
+    pub liquidity_depths: ::prost::alloc::vec::Vec<TickLiquidityNet>,
+    #[prost(int64, tag = "2")]
+    #[serde(
+        serialize_with = "crate::serde::as_str::serialize",
+        deserialize_with = "crate::serde::as_str::deserialize"
+    )]
+    pub current_tick: i64,
+    #[prost(string, tag = "3")]
+    pub current_liquidity: ::prost::alloc::string::String,
+}
 /// ===================== MsgCreatePosition
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgCreatePosition")]
 pub struct MsgCreatePosition {
@@ -1299,14 +1051,7 @@ pub struct MsgCreatePosition {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgCreatePositionResponse")]
 pub struct MsgCreatePositionResponse {
@@ -1343,14 +1088,7 @@ pub struct MsgCreatePositionResponse {
 /// ===================== MsgAddToPosition
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgAddToPosition")]
 pub struct MsgAddToPosition {
@@ -1384,14 +1122,7 @@ pub struct MsgAddToPosition {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgAddToPositionResponse")]
 pub struct MsgAddToPositionResponse {
@@ -1410,14 +1141,7 @@ pub struct MsgAddToPositionResponse {
 /// ===================== MsgWithdrawPosition
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgWithdrawPosition")]
 pub struct MsgWithdrawPosition {
@@ -1435,14 +1159,7 @@ pub struct MsgWithdrawPosition {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgWithdrawPositionResponse")]
 pub struct MsgWithdrawPositionResponse {
@@ -1454,33 +1171,23 @@ pub struct MsgWithdrawPositionResponse {
 /// ===================== MsgCollectSpreadRewards
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewards")]
 pub struct MsgCollectSpreadRewards {
     #[prost(uint64, repeated, packed = "false", tag = "1")]
     #[serde(alias = "positionIDs")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub position_ids: ::prost::alloc::vec::Vec<u64>,
     #[prost(string, tag = "2")]
     pub sender: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewardsResponse"
@@ -1493,33 +1200,23 @@ pub struct MsgCollectSpreadRewardsResponse {
 /// ===================== MsgCollectIncentives
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgCollectIncentives")]
 pub struct MsgCollectIncentives {
     #[prost(uint64, repeated, packed = "false", tag = "1")]
     #[serde(alias = "positionIDs")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub position_ids: ::prost::alloc::vec::Vec<u64>,
     #[prost(string, tag = "2")]
     pub sender: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgCollectIncentivesResponse")]
 pub struct MsgCollectIncentivesResponse {
@@ -1533,33 +1230,23 @@ pub struct MsgCollectIncentivesResponse {
 /// ===================== MsgFungifyChargedPositions
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgFungifyChargedPositions")]
 pub struct MsgFungifyChargedPositions {
     #[prost(uint64, repeated, packed = "false", tag = "1")]
     #[serde(alias = "positionIDs")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
     pub position_ids: ::prost::alloc::vec::Vec<u64>,
     #[prost(string, tag = "2")]
     pub sender: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(
     type_url = "/osmosis.concentratedliquidity.v1beta1.MsgFungifyChargedPositionsResponse"
@@ -1573,6 +1260,31 @@ pub struct MsgFungifyChargedPositionsResponse {
     )]
     pub new_position_id: u64,
 }
+/// ===================== MsgTransferPositions
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgTransferPositions")]
+pub struct MsgTransferPositions {
+    #[prost(uint64, repeated, packed = "false", tag = "1")]
+    #[serde(alias = "positionIDs")]
+    #[serde(
+        serialize_with = "crate::serde::as_str_vec::serialize",
+        deserialize_with = "crate::serde::as_str_vec::deserialize"
+    )]
+    pub position_ids: ::prost::alloc::vec::Vec<u64>,
+    #[prost(string, tag = "2")]
+    pub sender: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub new_owner: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(type_url = "/osmosis.concentratedliquidity.v1beta1.MsgTransferPositionsResponse")]
+pub struct MsgTransferPositionsResponse {}
 pub struct ConcentratedliquidityQuerier<'a, Q: cosmwasm_std::CustomQuery> {
     querier: &'a cosmwasm_std::QuerierWrapper<'a, Q>,
 }
@@ -1696,5 +1408,18 @@ impl<'a, Q: cosmwasm_std::CustomQuery> ConcentratedliquidityQuerier<'a, Q> {
     }
     pub fn get_total_liquidity(&self) -> Result<GetTotalLiquidityResponse, cosmwasm_std::StdError> {
         GetTotalLiquidityRequest {}.query(self.querier)
+    }
+    pub fn num_next_initialized_ticks(
+        &self,
+        pool_id: u64,
+        token_in_denom: ::prost::alloc::string::String,
+        num_next_initialized_ticks: u64,
+    ) -> Result<NumNextInitializedTicksResponse, cosmwasm_std::StdError> {
+        NumNextInitializedTicksRequest {
+            pool_id,
+            token_in_denom,
+            num_next_initialized_ticks,
+        }
+        .query(self.querier)
     }
 }

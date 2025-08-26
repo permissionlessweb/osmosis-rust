@@ -84,7 +84,7 @@ pub fn derive_cosmwasm_ext(input: TokenStream) -> TokenStream {
 
         impl From<#ident> for cosmwasm_std::Binary {
             fn from(msg: #ident) -> Self {
-                cosmwasm_std::Binary(msg.to_proto_bytes())
+                cosmwasm_std::Binary::new(msg.to_proto_bytes())
             }
         }
 
@@ -100,17 +100,17 @@ pub fn derive_cosmwasm_ext(input: TokenStream) -> TokenStream {
         impl TryFrom<cosmwasm_std::Binary> for #ident {
             type Error = cosmwasm_std::StdError;
 
-            fn try_from(binary: cosmwasm_std::Binary) -> Result<Self, Self::Error> {
+            fn try_from(binary: cosmwasm_std::Binary) -> ::std::result::Result<Self, Self::Error> {
                 use ::prost::Message;
                 Self::decode(&binary[..]).map_err(|e| {
-                    cosmwasm_std::StdError::parse_err(
-                        stringify!(#ident),
-                        format!(
-                            "Unable to decode binary: \n  - base64: {}\n  - bytes array: {:?}\n\n{:?}",
-                            binary,
-                            binary.to_vec(),
-                            e
-                        )
+                    cosmwasm_std::StdError::msg(
+                     format!(
+                    "Unable to decode {}: \n - base64: {}\n - bytes array: {:?}\n\n{:?}",
+                    stringify!(#ident),
+                    binary,
+                    binary.to_vec(),
+                    e
+                )
                     )
                 })
             }
@@ -119,12 +119,12 @@ pub fn derive_cosmwasm_ext(input: TokenStream) -> TokenStream {
         impl TryFrom<cosmwasm_std::SubMsgResult> for #ident {
             type Error = cosmwasm_std::StdError;
 
-            fn try_from(result: cosmwasm_std::SubMsgResult) -> Result<Self, Self::Error> {
+            fn try_from(result: cosmwasm_std::SubMsgResult) -> ::std::result::Result<Self, Self::Error> {
                 result
                     .into_result()
-                    .map_err(|e| cosmwasm_std::StdError::generic_err(e))?
+                    .map_err(|e| cosmwasm_std::StdError::msg(e))?
                     .data
-                    .ok_or_else(|| cosmwasm_std::StdError::not_found("cosmwasm_std::SubMsgResult::<T>"))?
+                    .ok_or_else(|| cosmwasm_std::StdError::msg("Not found: cosmwasm_std::SubMsgResult::<T>"))?
                     .try_into()
             }
         }
@@ -159,12 +159,7 @@ where
     F: FnMut(&Vec<TokenTree>) -> Option<proc_macro2::TokenStream>,
 {
     let proto_query = get_attr("proto_query", attrs);
-
     if let Some(attr) = proto_query {
-        if attr.tokens.clone().into_iter().count() != 1 {
-            return proto_query_attr_error(proto_query);
-        }
-
         if let Some(TokenTree::Group(group)) = attr.tokens.clone().into_iter().next() {
             let kv_groups = group.stream().into_iter().group_by(|t| {
                 if let TokenTree::Punct(punct) = t {
@@ -174,19 +169,19 @@ where
                 }
             });
             let mut key_values: Vec<Vec<TokenTree>> = vec![];
-
             for (non_sep, g) in &kv_groups {
                 if non_sep {
                     key_values.push(g.collect());
                 }
             }
-
+            if key_values.len() != 2 {
+                return proto_query_attr_error(proto_query);
+            }
             return key_values
                 .iter()
                 .find_map(f)
                 .unwrap_or_else(|| proto_query_attr_error(proto_query));
         }
-
         proto_query_attr_error(proto_query)
     } else {
         proto_query_attr_error(proto_query)

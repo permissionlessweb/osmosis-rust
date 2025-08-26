@@ -4,14 +4,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// permission, but is planned to be extended to the future.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.DenomAuthorityMetadata")]
 pub struct DenomAuthorityMetadata {
@@ -22,14 +15,7 @@ pub struct DenomAuthorityMetadata {
 /// Params defines the parameters for the tokenfactory module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.Params")]
 pub struct Params {
@@ -53,18 +39,11 @@ pub struct Params {
 /// GenesisState defines the tokenfactory module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.GenesisState")]
 pub struct GenesisState {
-    /// params defines the paramaters of the module.
+    /// params defines the parameters of the module.
     #[prost(message, optional, tag = "1")]
     pub params: ::core::option::Option<Params>,
     #[prost(message, repeated, tag = "2")]
@@ -75,14 +54,7 @@ pub struct GenesisState {
 /// denom's admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.GenesisDenom")]
 pub struct GenesisDenom {
@@ -94,14 +66,7 @@ pub struct GenesisDenom {
 /// QueryParamsRequest is the request type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryParamsRequest")]
 #[proto_query(
@@ -112,14 +77,7 @@ pub struct QueryParamsRequest {}
 /// QueryParamsResponse is the response type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryParamsResponse")]
 pub struct QueryParamsResponse {
@@ -131,14 +89,7 @@ pub struct QueryParamsResponse {
 /// DenomAuthorityMetadata gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataRequest")]
 #[proto_query(
@@ -153,14 +104,7 @@ pub struct QueryDenomAuthorityMetadataRequest {
 /// DenomAuthorityMetadata gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataResponse")]
 pub struct QueryDenomAuthorityMetadataResponse {
@@ -171,14 +115,7 @@ pub struct QueryDenomAuthorityMetadataResponse {
 /// DenomsFromCreator gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorRequest")]
 #[proto_query(
@@ -193,14 +130,7 @@ pub struct QueryDenomsFromCreatorRequest {
 /// DenomsFromCreator gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorResponse")]
 pub struct QueryDenomsFromCreatorResponse {
@@ -209,14 +139,7 @@ pub struct QueryDenomsFromCreatorResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryBeforeSendHookAddressRequest")]
 #[proto_query(
@@ -231,24 +154,42 @@ pub struct QueryBeforeSendHookAddressRequest {
 /// DenomBeforeSendHook gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryBeforeSendHookAddressResponse")]
 pub struct QueryBeforeSendHookAddressResponse {
     #[prost(string, tag = "1")]
     pub cosmwasm_address: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryAllBeforeSendHooksAddressesRequest")]
+#[proto_query(
+    path = "/osmosis.tokenfactory.v1beta1.Query/AllBeforeSendHooksAddresses",
+    response_type = QueryAllBeforeSendHooksAddressesResponse
+)]
+pub struct QueryAllBeforeSendHooksAddressesRequest {}
+/// QueryAllBeforeSendHooksAddressesResponse defines the response structure for
+/// the AllBeforeSendHooksAddresses gRPC query.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+)]
+#[proto_message(
+    type_url = "/osmosis.tokenfactory.v1beta1.QueryAllBeforeSendHooksAddressesResponse"
+)]
+pub struct QueryAllBeforeSendHooksAddressesResponse {
+    #[prost(string, repeated, tag = "1")]
+    pub denoms: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(string, repeated, tag = "2")]
+    pub before_send_hook_addresses: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+}
 /// MsgCreateDenom defines the message structure for the CreateDenom gRPC service
 /// method. It allows an account to create a new denom. It requires a sender
 /// address and a sub denomination. The (sender_address, sub_denomination) tuple
-/// must be unique and cannot be re-used.
+/// must be unique and cannot be reused.
 ///
 /// The resulting denom created is defined as
 /// <factory/{creatorAddress}/{subdenom}>. The resulting denom's admin is
@@ -256,14 +197,7 @@ pub struct QueryBeforeSendHookAddressResponse {
 /// denom does not indicate the current admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgCreateDenom")]
 pub struct MsgCreateDenom {
@@ -277,14 +211,7 @@ pub struct MsgCreateDenom {
 /// It returns the full string of the newly created denom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgCreateDenomResponse")]
 pub struct MsgCreateDenomResponse {
@@ -297,14 +224,7 @@ pub struct MsgCreateDenomResponse {
 /// the denom does not have any admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgMint")]
 pub struct MsgMint {
@@ -317,14 +237,7 @@ pub struct MsgMint {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgMintResponse")]
 pub struct MsgMintResponse {}
@@ -334,14 +247,7 @@ pub struct MsgMintResponse {}
 /// the denom does not have any admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgBurn")]
 pub struct MsgBurn {
@@ -354,14 +260,7 @@ pub struct MsgBurn {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgBurnResponse")]
 pub struct MsgBurnResponse {}
@@ -369,14 +268,7 @@ pub struct MsgBurnResponse {}
 /// adminship of a denom to a new account
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgChangeAdmin")]
 pub struct MsgChangeAdmin {
@@ -391,14 +283,7 @@ pub struct MsgChangeAdmin {
 /// MsgChangeAdmin message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgChangeAdminResponse")]
 pub struct MsgChangeAdminResponse {}
@@ -406,14 +291,7 @@ pub struct MsgChangeAdminResponse {}
 /// assign a CosmWasm contract to call with a BeforeSend hook
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetBeforeSendHook")]
 pub struct MsgSetBeforeSendHook {
@@ -428,14 +306,7 @@ pub struct MsgSetBeforeSendHook {
 /// MsgSetBeforeSendHook message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetBeforeSendHookResponse")]
 pub struct MsgSetBeforeSendHookResponse {}
@@ -443,14 +314,7 @@ pub struct MsgSetBeforeSendHookResponse {}
 /// the denom's bank metadata
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata")]
 pub struct MsgSetDenomMetadata {
@@ -463,27 +327,13 @@ pub struct MsgSetDenomMetadata {
 /// MsgSetDenomMetadata message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse")]
 pub struct MsgSetDenomMetadataResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgForceTransfer")]
 pub struct MsgForceTransfer {
@@ -498,14 +348,7 @@ pub struct MsgForceTransfer {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgForceTransferResponse")]
 pub struct MsgForceTransferResponse {}
@@ -536,5 +379,10 @@ impl<'a, Q: cosmwasm_std::CustomQuery> TokenfactoryQuerier<'a, Q> {
         denom: ::prost::alloc::string::String,
     ) -> Result<QueryBeforeSendHookAddressResponse, cosmwasm_std::StdError> {
         QueryBeforeSendHookAddressRequest { denom }.query(self.querier)
+    }
+    pub fn all_before_send_hooks_addresses(
+        &self,
+    ) -> Result<QueryAllBeforeSendHooksAddressesResponse, cosmwasm_std::StdError> {
+        QueryAllBeforeSendHooksAddressesRequest {}.query(self.querier)
     }
 }

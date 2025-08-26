@@ -15,8 +15,6 @@ use syn::{parse_quote, Attribute, Fields, Ident, Item, ItemStruct, Type};
 
 /// Regex substitutions to apply to the prost-generated output
 pub const REPLACEMENTS: &[(&str, &str)] = &[
-    // Use `tendermint-proto` proto definitions
-    ("(super::)+tendermint", "tendermint_proto"),
     // Feature-gate gRPC client modules
     (
         "/// Generated client implementations.",
@@ -115,7 +113,7 @@ pub fn append_attrs_struct(
     let deprecated = get_deprecation(src, &s.ident, descriptor);
 
     s.attrs.append(&mut vec![
-        syn::parse_quote! { #[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, CosmwasmExt)] },
+        syn::parse_quote! { #[derive(::serde::Serialize, ::serde::Deserialize,  CosmwasmExt)] },
         syn::parse_quote! { #[proto_message(type_url = #type_url)] },
     ]);
 
@@ -191,6 +189,79 @@ pub fn allow_serde_int_as_str(s: ItemStruct) -> ItemStruct {
     syn::ItemStruct { fields, ..s }
 }
 
+pub fn allow_serde_vec_int_as_vec_str(s: ItemStruct) -> ItemStruct {
+    let fields_vec = s
+        .fields
+        .clone()
+        .into_iter()
+        .map(|mut field| {
+            let vec_int_types = vec![
+                parse_quote!(::prost::alloc::vec::Vec<i8>),
+                parse_quote!(::prost::alloc::vec::Vec<i16>),
+                parse_quote!(::prost::alloc::vec::Vec<i32>),
+                parse_quote!(::prost::alloc::vec::Vec<i64>),
+                parse_quote!(::prost::alloc::vec::Vec<i128>),
+                parse_quote!(::prost::alloc::vec::Vec<isize>),
+                // parse_quote!(::prost::alloc::vec::Vec<u8>), -- this is not included because it is used for bytes and has it's own rule
+                parse_quote!(::prost::alloc::vec::Vec<u16>),
+                parse_quote!(::prost::alloc::vec::Vec<u32>),
+                parse_quote!(::prost::alloc::vec::Vec<u64>),
+                parse_quote!(::prost::alloc::vec::Vec<u128>),
+                parse_quote!(::prost::alloc::vec::Vec<usize>),
+            ];
+
+            if vec_int_types.contains(&field.ty) {
+                let from_str: syn::Attribute = parse_quote! {
+                    #[serde(
+                        serialize_with = "crate::serde::as_str_vec::serialize",
+                        deserialize_with = "crate::serde::as_str_vec::deserialize"
+                    )]
+                };
+                field.attrs.append(&mut vec![from_str]);
+                field
+            } else {
+                field
+            }
+        })
+        .collect::<Vec<syn::Field>>();
+
+    let fields_named: syn::FieldsNamed = parse_quote! {
+        { #(#fields_vec,)* }
+    };
+    let fields = syn::Fields::Named(fields_named);
+
+    syn::ItemStruct { fields, ..s }
+}
+
+pub fn allow_serde_vec_u8_as_base64_encoded_string(s: ItemStruct) -> ItemStruct {
+    let fields_vec = s
+        .fields
+        .clone()
+        .into_iter()
+        .map(|mut field| {
+            if field.ty == parse_quote!(::prost::alloc::vec::Vec<u8>) {
+                let from_str: syn::Attribute = parse_quote! {
+                    #[serde(
+                        serialize_with = "crate::serde::as_base64_encoded_string::serialize",
+                        deserialize_with = "crate::serde::as_base64_encoded_string::deserialize"
+                    )]
+                };
+                field.attrs.append(&mut vec![from_str]);
+                field
+            } else {
+                field
+            }
+        })
+        .collect::<Vec<syn::Field>>();
+
+    let fields_named: syn::FieldsNamed = parse_quote! {
+        { #(#fields_vec,)* }
+    };
+    let fields = syn::Fields::Named(fields_named);
+
+    syn::ItemStruct { fields, ..s }
+}
+
 /// some of proto's fields in osmosis' modules are named `ID` but prost generates `id` field
 /// this function adds `#[serde(alias = "ID")]` to the `id` field
 /// so that serde can deserialize `ID` field to `id` field.
@@ -232,6 +303,73 @@ pub fn serde_alias_id_with_uppercased(s: ItemStruct) -> ItemStruct {
 
     syn::ItemStruct { fields, ..s }
 }
+
+pub fn make_next_key_optional(mut s: ItemStruct) -> ItemStruct {
+    if s.ident == "PageResponse" {
+        if let Fields::Named(ref mut fields_named) = s.fields {
+            for field in fields_named.named.iter_mut() {
+                if let Some(ident) = &field.ident {
+                    if ident == "next_key" {
+                        field.ty =
+                            parse_quote!(::core::option::Option<::prost::alloc::vec::Vec<u8>>);
+                        for attr in field.attrs.iter_mut() {
+                            if attr.path.is_ident("prost") {
+                                *attr = parse_quote! {
+                                    #[prost(bytes = "vec", optional, tag = "1")]
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    s
+}
+
+pub fn allow_serde_option_vec_u8_as_base64_encoded_string(s: syn::ItemStruct) -> syn::ItemStruct {
+    let fields_vec = s.fields
+        .clone()
+        .into_iter()
+        .map(|mut field| {
+            if let syn::Type::Path(type_path) = &field.ty {
+                if let Some(segment) = type_path.path.segments.last() {
+                    if segment.ident == "Option" {
+                        if let syn::PathArguments::AngleBracketed(args) = &segment.arguments {
+                            if let Some(arg) = args.args.first() {
+                                if let syn::GenericArgument::Type(inner_ty) = arg {
+                                    if let syn::Type::Path(inner_path) = inner_ty {
+                                        if let Some(inner_segment) = inner_path.path.segments.last() {
+                                            if inner_segment.ident == "Vec" {
+                                                let from_str: syn::Attribute = parse_quote! {
+                                                    #[serde(
+                                                        serialize_with = "crate::serde::as_option_base64_encoded_string::serialize",
+                                                        deserialize_with = "crate::serde::as_option_base64_encoded_string::deserialize"
+                                                    )]
+                                                };
+                                                field.attrs.push(from_str);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            field
+        })
+        .collect::<Vec<syn::Field>>();
+
+    let fields_named: syn::FieldsNamed = parse_quote! {
+        { #(#fields_vec,)* }
+    };
+    let fields = syn::Fields::Named(fields_named);
+
+    syn::ItemStruct { fields, ..s }
+}
+
 // ====== helpers ======
 
 fn get_query_attr(
@@ -650,6 +788,52 @@ mod tests {
                 pub denom: ::prost::alloc::string::String,
                 #[serde(alias = "poolID")]
                 pub pool_id: u64,
+            }
+        };
+
+        assert_ast_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_make_next_key_optional() {
+        let input: ItemStruct = parse_quote! {
+            pub struct PageResponse {
+                #[prost(bytes = "vec", tag = "1")]
+                pub next_key: ::prost::alloc::vec::Vec<u8>,
+            }
+        };
+
+        let result = make_next_key_optional(input);
+
+        let expected: ItemStruct = parse_quote! {
+            pub struct PageResponse {
+                #[prost(bytes = "vec", optional, tag = "1")]
+                pub next_key: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+            }
+        };
+
+        assert_ast_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_allow_serde_option_vec_u8_as_base64_encoded_string() {
+        let input: ItemStruct = parse_quote! {
+            pub struct PageResponse {
+                #[prost(bytes = "vec", optional, tag = "1")]
+                pub next_key: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+            }
+        };
+
+        let result = allow_serde_option_vec_u8_as_base64_encoded_string(input);
+
+        let expected: ItemStruct = parse_quote! {
+            pub struct PageResponse {
+                #[prost(bytes = "vec", optional, tag = "1")]
+                #[serde(
+                    serialize_with = "crate::serde::as_option_base64_encoded_string::serialize",
+                    deserialize_with = "crate::serde::as_option_base64_encoded_string::deserialize"
+                )]
+                pub next_key: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
             }
         };
 

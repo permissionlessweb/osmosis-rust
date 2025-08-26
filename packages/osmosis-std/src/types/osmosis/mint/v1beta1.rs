@@ -2,14 +2,7 @@ use osmosis_std_derive::CosmwasmExt;
 /// Minter represents the minting state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.Minter")]
 pub struct Minter {
@@ -22,14 +15,7 @@ pub struct Minter {
 /// tokens to be minted to the address.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.WeightedAddress")]
 pub struct WeightedAddress {
@@ -43,14 +29,7 @@ pub struct WeightedAddress {
 /// denoms and how much.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.DistributionProportions")]
 pub struct DistributionProportions {
@@ -74,14 +53,7 @@ pub struct DistributionProportions {
 /// Params holds parameters for the x/mint module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.Params")]
 pub struct Params {
@@ -130,21 +102,14 @@ pub struct Params {
 /// GenesisState defines the mint module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// minter is an abstraction for holding current rewards information.
     #[prost(message, optional, tag = "1")]
     pub minter: ::core::option::Option<Minter>,
-    /// params defines all the paramaters of the mint module.
+    /// params defines all the parameters of the mint module.
     #[prost(message, optional, tag = "2")]
     pub params: ::core::option::Option<Params>,
     /// reduction_started_epoch is the first epoch in which the reduction of mint
@@ -159,14 +124,7 @@ pub struct GenesisState {
 /// QueryParamsRequest is the request type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.QueryParamsRequest")]
 #[proto_query(
@@ -177,14 +135,7 @@ pub struct QueryParamsRequest {}
 /// QueryParamsResponse is the response type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.QueryParamsResponse")]
 pub struct QueryParamsResponse {
@@ -196,14 +147,7 @@ pub struct QueryParamsResponse {
 /// Query/EpochProvisions RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.QueryEpochProvisionsRequest")]
 #[proto_query(
@@ -215,19 +159,16 @@ pub struct QueryEpochProvisionsRequest {}
 /// Query/EpochProvisions RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone,
-    PartialEq,
-    Eq,
-    ::prost::Message,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::schemars::JsonSchema,
-    CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.mint.v1beta1.QueryEpochProvisionsResponse")]
 pub struct QueryEpochProvisionsResponse {
     /// epoch_provisions is the current minting per epoch provisions value.
     #[prost(bytes = "vec", tag = "1")]
+    #[serde(
+        serialize_with = "crate::serde::as_base64_encoded_string::serialize",
+        deserialize_with = "crate::serde::as_base64_encoded_string::deserialize"
+    )]
     pub epoch_provisions: ::prost::alloc::vec::Vec<u8>,
 }
 pub struct MintQuerier<'a, Q: cosmwasm_std::CustomQuery> {

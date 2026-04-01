@@ -12,11 +12,12 @@ version = "0.26.0"
 
 [dependencies]
 chrono = {version = "0.4.27", default-features = false}
-cosmwasm-std = {version = "3.0.1", features = ["stargate"]}
+cosmwasm-std = {version = "3", features = ["stargate"]}
 osmosis-std-derive = {version = "0.20.1", path = "../osmosis-std-derive"}
 prost = {version = "0.14.1", default-features = false, features = ["derive"]}
 prost-types = {version = "0.14.1", default-features = false}
-schemars = "1.0.4"
+cw-schema = { version = "3.0", default-features = false }
+schemars = "0.8"
 
 # for query
 serde = {version = "1.0", default-features = false, features = ["derive"]}

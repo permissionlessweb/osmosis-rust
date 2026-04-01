@@ -44,7 +44,7 @@ cw2 = "3.0.0"
 osmo-bindings = "0.5.1"
 osmosis-std = { path = "../../../../packages/osmosis-std" }
 prost = "0.14.1"
-schemars = { version = "1.0.4", optional = true }
+schemars = { version = "0.8.22", optional = true }
 serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 thiserror = { version = "1.0.31" }
 

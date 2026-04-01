@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// InterchainAccountPacketData is comprised of a raw transaction, type of transaction and optional memo field.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.v1.InterchainAccountPacketData")]
 pub struct InterchainAccountPacketData {
     #[prost(enumeration = "Type", tag = "1")]
@@ -24,8 +25,9 @@ pub struct InterchainAccountPacketData {
 /// CosmosTx contains a list of sdk.Msg's. It should be used when sending transactions to an SDK host chain.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.v1.CosmosTx")]
 pub struct CosmosTx {
     #[prost(message, repeated, tag = "1")]
@@ -35,7 +37,8 @@ pub struct CosmosTx {
 /// host
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum Type {
     /// Default zero value enumeration
     Unspecified = 0,
@@ -65,8 +68,9 @@ impl Type {
 /// An InterchainAccount is defined as a BaseAccount & the address of the account owner on the controller chain
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.v1.InterchainAccount")]
 pub struct InterchainAccount {
     #[prost(message, optional, tag = "1")]
@@ -79,8 +83,9 @@ pub struct InterchainAccount {
 /// See ICS004: <https://github.com/cosmos/ibc/tree/master/spec/core/ics-004-channel-and-packet-semantics#Versioning>
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.v1.Metadata")]
 pub struct Metadata {
     /// version defines the ICS27 protocol version

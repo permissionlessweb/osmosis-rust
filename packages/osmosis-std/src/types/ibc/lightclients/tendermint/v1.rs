@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// and a possible frozen height.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.tendermint.v1.ClientState")]
 pub struct ClientState {
     #[prost(string, tag = "1")]
@@ -53,8 +54,9 @@ pub struct ClientState {
 /// ConsensusState defines the consensus state from Tendermint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.tendermint.v1.ConsensusState")]
 pub struct ConsensusState {
     /// timestamp that corresponds to the block height in which the ConsensusState
@@ -75,8 +77,9 @@ pub struct ConsensusState {
 /// that implements Misbehaviour interface expected by ICS-02
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.tendermint.v1.Misbehaviour")]
 pub struct Misbehaviour {
     /// ClientID is deprecated
@@ -103,8 +106,9 @@ pub struct Misbehaviour {
 /// trusted validator set at the TrustedHeight.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.tendermint.v1.Header")]
 pub struct Header {
     #[prost(message, optional, tag = "1")]
@@ -123,8 +127,9 @@ pub struct Header {
 /// supports positive values.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.tendermint.v1.Fraction")]
 pub struct Fraction {
     #[prost(uint64, tag = "1")]

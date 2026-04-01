@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Plan specifies information about a planned upgrade and when it should occur.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.Plan")]
 pub struct Plan {
     /// Sets the name for the upgrade. This name will be used by the upgraded
@@ -45,8 +46,9 @@ pub struct Plan {
 /// proposals, see MsgSoftwareUpgrade.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal")]
 #[deprecated]
 pub struct SoftwareUpgradeProposal {
@@ -66,8 +68,9 @@ pub struct SoftwareUpgradeProposal {
 /// proposals, see MsgCancelUpgrade.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.CancelSoftwareUpgradeProposal")]
 #[deprecated]
 pub struct CancelSoftwareUpgradeProposal {
@@ -83,8 +86,9 @@ pub struct CancelSoftwareUpgradeProposal {
 /// Since: cosmos-sdk 0.43
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.ModuleVersion")]
 pub struct ModuleVersion {
     /// name of the app module
@@ -102,8 +106,9 @@ pub struct ModuleVersion {
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryCurrentPlanRequest")]
 #[proto_query(
     path = "/cosmos.upgrade.v1beta1.Query/CurrentPlan",
@@ -114,8 +119,9 @@ pub struct QueryCurrentPlanRequest {}
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryCurrentPlanResponse")]
 pub struct QueryCurrentPlanResponse {
     /// plan is the current upgrade plan.
@@ -126,8 +132,9 @@ pub struct QueryCurrentPlanResponse {
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryAppliedPlanRequest")]
 #[proto_query(
     path = "/cosmos.upgrade.v1beta1.Query/AppliedPlan",
@@ -142,8 +149,9 @@ pub struct QueryAppliedPlanRequest {
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryAppliedPlanResponse")]
 pub struct QueryAppliedPlanResponse {
     /// height is the block height at which the plan was applied.
@@ -158,8 +166,9 @@ pub struct QueryAppliedPlanResponse {
 /// RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryUpgradedConsensusStateRequest")]
 #[proto_query(
     path = "/cosmos.upgrade.v1beta1.Query/UpgradedConsensusState",
@@ -180,8 +189,9 @@ pub struct QueryUpgradedConsensusStateRequest {
 /// RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryUpgradedConsensusStateResponse")]
 #[deprecated]
 pub struct QueryUpgradedConsensusStateResponse {
@@ -199,8 +209,9 @@ pub struct QueryUpgradedConsensusStateResponse {
 /// Since: cosmos-sdk 0.43
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryModuleVersionsRequest")]
 #[proto_query(
     path = "/cosmos.upgrade.v1beta1.Query/ModuleVersions",
@@ -219,8 +230,9 @@ pub struct QueryModuleVersionsRequest {
 /// Since: cosmos-sdk 0.43
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryModuleVersionsResponse")]
 pub struct QueryModuleVersionsResponse {
     /// module_versions is a list of module names with their consensus versions.
@@ -232,8 +244,9 @@ pub struct QueryModuleVersionsResponse {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryAuthorityRequest")]
 #[proto_query(
     path = "/cosmos.upgrade.v1beta1.Query/Authority",
@@ -245,8 +258,9 @@ pub struct QueryAuthorityRequest {}
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.QueryAuthorityResponse")]
 pub struct QueryAuthorityResponse {
     #[prost(string, tag = "1")]
@@ -257,8 +271,9 @@ pub struct QueryAuthorityResponse {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.MsgSoftwareUpgrade")]
 pub struct MsgSoftwareUpgrade {
     /// authority is the address that controls the module (defaults to x/gov unless overwritten).
@@ -273,8 +288,9 @@ pub struct MsgSoftwareUpgrade {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.MsgSoftwareUpgradeResponse")]
 pub struct MsgSoftwareUpgradeResponse {}
 /// MsgCancelUpgrade is the Msg/CancelUpgrade request type.
@@ -282,8 +298,9 @@ pub struct MsgSoftwareUpgradeResponse {}
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.MsgCancelUpgrade")]
 pub struct MsgCancelUpgrade {
     /// authority is the address that controls the module (defaults to x/gov unless overwritten).
@@ -295,8 +312,9 @@ pub struct MsgCancelUpgrade {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.upgrade.v1beta1.MsgCancelUpgradeResponse")]
 pub struct MsgCancelUpgradeResponse {}
 pub struct UpgradeQuerier<'a, Q: cosmwasm_std::CustomQuery> {

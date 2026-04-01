@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// TableDescriptor describes an ORM table.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.v1.TableDescriptor")]
 pub struct TableDescriptor {
     /// primary_key defines the primary key for the table.
@@ -26,8 +27,9 @@ pub struct TableDescriptor {
 /// PrimaryKeyDescriptor describes a table primary key.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.v1.PrimaryKeyDescriptor")]
 pub struct PrimaryKeyDescriptor {
     /// fields is a comma-separated list of fields in the primary key. Spaces are
@@ -74,8 +76,9 @@ pub struct PrimaryKeyDescriptor {
 /// PrimaryKeyDescriptor describes a table secondary index.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.v1.SecondaryIndexDescriptor")]
 pub struct SecondaryIndexDescriptor {
     /// fields is a comma-separated list of fields in the index. The supported
@@ -106,8 +109,9 @@ pub struct SecondaryIndexDescriptor {
 /// TableDescriptor describes an ORM singleton table which has at most one instance.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.v1.SingletonDescriptor")]
 pub struct SingletonDescriptor {
     /// id is a non-zero integer ID that must be unique within the

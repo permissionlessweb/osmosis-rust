@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// SignatureDescriptors wraps multiple SignatureDescriptor's.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.tx.signing.v1beta1.SignatureDescriptors")]
 pub struct SignatureDescriptors {
     /// signatures are the signature descriptors
@@ -16,8 +17,9 @@ pub struct SignatureDescriptors {
 /// clients.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.tx.signing.v1beta1.SignatureDescriptor")]
 pub struct SignatureDescriptor {
     /// public_key is the public key of the signer
@@ -47,8 +49,9 @@ pub mod signature_descriptor {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.tx.signing.v1beta1.SignatureDescriptor.Data")]
     pub struct Data {
         /// sum is the oneof that specifies whether this represents single or multi-signature data
@@ -67,8 +70,9 @@ pub mod signature_descriptor {
             ::prost::Message,
             ::serde::Serialize,
             ::serde::Deserialize,
-            CosmwasmExt,
+            CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
         )]
+#[schemaifier(mute_warnings)]
         #[proto_message(type_url = "/cosmos.tx.signing.v1beta1.SignatureDescriptor.Data.Single")]
         pub struct Single {
             /// mode is the signing mode of the single signer
@@ -95,8 +99,9 @@ pub mod signature_descriptor {
             ::prost::Message,
             ::serde::Serialize,
             ::serde::Deserialize,
-            CosmwasmExt,
+            CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
         )]
+#[schemaifier(mute_warnings)]
         #[proto_message(type_url = "/cosmos.tx.signing.v1beta1.SignatureDescriptor.Data.Multi")]
         pub struct Multi {
             /// bitarray specifies which keys within the multisig are signing
@@ -117,8 +122,9 @@ pub mod signature_descriptor {
             ::prost::Oneof,
             ::serde::Serialize,
             ::serde::Deserialize,
-            ::schemars::JsonSchema,
+            ::schemars::JsonSchema, ::cw_schema::Schemaifier,
         )]
+#[schemaifier(mute_warnings)]
         pub enum Sum {
             /// single represents a single signer
             #[prost(message, tag = "1")]
@@ -139,7 +145,8 @@ pub mod signature_descriptor {
 /// apps have a consistent version of this enum.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum SignMode {
     /// SIGN_MODE_UNSPECIFIED specifies an unknown signing mode and will be
     /// rejected.

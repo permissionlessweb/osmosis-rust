@@ -113,7 +113,8 @@ pub fn append_attrs_struct(
     let deprecated = get_deprecation(src, &s.ident, descriptor);
 
     s.attrs.append(&mut vec![
-        syn::parse_quote! { #[derive(::serde::Serialize, ::serde::Deserialize,  CosmwasmExt)] },
+        syn::parse_quote! { #[derive(::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier)] },
+        syn::parse_quote! { #[schemaifier(mute_warnings)] },
         syn::parse_quote! { #[proto_message(type_url = #type_url)] },
     ]);
 
@@ -134,7 +135,8 @@ pub fn append_attrs_enum(src: &Path, e: &ItemEnum, descriptor: &FileDescriptorSe
     let deprecated = get_deprecation(src, &e.ident, descriptor);
 
     e.attrs.append(&mut vec![
-        syn::parse_quote! { #[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)] },
+        syn::parse_quote! { #[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)] },
+        syn::parse_quote! { #[schemaifier(mute_warnings)] },
     ]);
 
     if deprecated {

@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Params defines the parameters for the module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.Params")]
 pub struct Params {
     /// MaximumUnauthenticatedGas defines the maximum amount of gas that can be
@@ -30,8 +31,9 @@ pub struct Params {
 /// validate transactions based on the encapsulated data.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.AccountAuthenticator")]
 pub struct AccountAuthenticator {
     /// ID uniquely identifies the authenticator instance.
@@ -63,8 +65,9 @@ pub struct AccountAuthenticator {
 /// the authenticators field.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.AuthenticatorData")]
 pub struct AuthenticatorData {
     /// address is an account address, one address can have many authenticators
@@ -78,8 +81,9 @@ pub struct AuthenticatorData {
 /// GenesisState defines the authenticator module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// params define the parameters for the authenticator module.
@@ -101,8 +105,9 @@ pub struct GenesisState {
 /// QueryParamsRequest is request type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.QueryParamsRequest")]
 #[proto_query(
     path = "/osmosis.smartaccount.v1beta1.Query/Params",
@@ -112,8 +117,9 @@ pub struct QueryParamsRequest {}
 /// QueryParamsResponse is response type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.QueryParamsResponse")]
 pub struct QueryParamsResponse {
     /// params holds all the parameters of this module.
@@ -123,8 +129,9 @@ pub struct QueryParamsResponse {
 /// MsgGetAuthenticatorsRequest defines the Msg/GetAuthenticators request type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.GetAuthenticatorsRequest")]
 #[proto_query(
     path = "/osmosis.smartaccount.v1beta1.Query/GetAuthenticators",
@@ -137,8 +144,9 @@ pub struct GetAuthenticatorsRequest {
 /// MsgGetAuthenticatorsResponse defines the Msg/GetAuthenticators response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.GetAuthenticatorsResponse")]
 pub struct GetAuthenticatorsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -147,8 +155,9 @@ pub struct GetAuthenticatorsResponse {
 /// MsgGetAuthenticatorRequest defines the Msg/GetAuthenticator request type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.GetAuthenticatorRequest")]
 #[proto_query(
     path = "/osmosis.smartaccount.v1beta1.Query/GetAuthenticator",
@@ -168,8 +177,9 @@ pub struct GetAuthenticatorRequest {
 /// MsgGetAuthenticatorResponse defines the Msg/GetAuthenticator response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.GetAuthenticatorResponse")]
 pub struct GetAuthenticatorResponse {
     #[prost(message, optional, tag = "1")]
@@ -178,8 +188,9 @@ pub struct GetAuthenticatorResponse {
 /// MsgAddAuthenticatorRequest defines the Msg/AddAuthenticator request type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.MsgAddAuthenticator")]
 pub struct MsgAddAuthenticator {
     #[prost(string, tag = "1")]
@@ -196,8 +207,9 @@ pub struct MsgAddAuthenticator {
 /// MsgAddAuthenticatorResponse defines the Msg/AddAuthenticator response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.MsgAddAuthenticatorResponse")]
 pub struct MsgAddAuthenticatorResponse {
     #[prost(bool, tag = "1")]
@@ -207,8 +219,9 @@ pub struct MsgAddAuthenticatorResponse {
 /// type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.MsgRemoveAuthenticator")]
 pub struct MsgRemoveAuthenticator {
     #[prost(string, tag = "1")]
@@ -225,8 +238,9 @@ pub struct MsgRemoveAuthenticator {
 /// type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.MsgRemoveAuthenticatorResponse")]
 pub struct MsgRemoveAuthenticatorResponse {
     #[prost(bool, tag = "1")]
@@ -234,8 +248,9 @@ pub struct MsgRemoveAuthenticatorResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.MsgSetActiveState")]
 pub struct MsgSetActiveState {
     #[prost(string, tag = "1")]
@@ -245,16 +260,18 @@ pub struct MsgSetActiveState {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.MsgSetActiveStateResponse")]
 pub struct MsgSetActiveStateResponse {}
 /// TxExtension allows for additional authenticator-specific data in
 /// transactions.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.smartaccount.v1beta1.TxExtension")]
 pub struct TxExtension {
     /// selected_authenticators holds the authenticator_id for the chosen

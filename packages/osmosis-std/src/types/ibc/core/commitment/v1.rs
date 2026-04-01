@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// In the Cosmos SDK, the AppHash of a block header becomes the root.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.commitment.v1.MerkleRoot")]
 pub struct MerkleRoot {
     #[prost(bytes = "vec", tag = "1")]
@@ -19,8 +20,9 @@ pub struct MerkleRoot {
 /// append(Path.KeyPrefix, key...))
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.commitment.v1.MerklePrefix")]
 pub struct MerklePrefix {
     #[prost(bytes = "vec", tag = "1")]
@@ -35,8 +37,9 @@ pub struct MerklePrefix {
 /// MerklePath is represented from root-to-leaf
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.commitment.v1.MerklePath")]
 pub struct MerklePath {
     #[prost(string, repeated, tag = "1")]
@@ -49,8 +52,9 @@ pub struct MerklePath {
 /// MerkleProofs are ordered from leaf-to-root
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.commitment.v1.MerkleProof")]
 pub struct MerkleProof {
     #[prost(message, repeated, tag = "1")]

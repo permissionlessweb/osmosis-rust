@@ -21,7 +21,7 @@ prost-build = "0.14.1"
 prost-types = "0.14.1"
 quote = "1.0.26"
 regex = "1"
-schemars = "1.0.4"
+schemars = "0.8"
 syn = { version = "1.0.98", features = ["full", "parsing", "extra-traits"] }
 tonic = "0.14.1"
 tonic-build = "0.14.1"

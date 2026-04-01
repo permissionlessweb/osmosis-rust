@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// ListenEndBlockRequest is the request type for the ListenEndBlock RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.streaming.abci.ListenFinalizeBlockRequest")]
 pub struct ListenFinalizeBlockRequest {
     #[prost(message, optional, tag = "1")]
@@ -16,15 +17,17 @@ pub struct ListenFinalizeBlockRequest {
 /// ListenEndBlockResponse is the response type for the ListenEndBlock RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.streaming.abci.ListenFinalizeBlockResponse")]
 pub struct ListenFinalizeBlockResponse {}
 /// ListenCommitRequest is the request type for the ListenCommit RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.streaming.abci.ListenCommitRequest")]
 pub struct ListenCommitRequest {
     /// explicitly pass in block height as ResponseCommit does not contain this info
@@ -42,7 +45,8 @@ pub struct ListenCommitRequest {
 /// ListenCommitResponse is the response type for the ListenCommit RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.streaming.abci.ListenCommitResponse")]
 pub struct ListenCommitResponse {}

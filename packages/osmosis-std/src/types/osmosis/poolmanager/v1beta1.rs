@@ -1,8 +1,9 @@
 use osmosis_std_derive::CosmwasmExt;
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.SwapAmountInRoute")]
 pub struct SwapAmountInRoute {
     #[prost(uint64, tag = "1")]
@@ -17,8 +18,9 @@ pub struct SwapAmountInRoute {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.SwapAmountOutRoute")]
 pub struct SwapAmountOutRoute {
     #[prost(uint64, tag = "1")]
@@ -33,8 +35,9 @@ pub struct SwapAmountOutRoute {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.SwapAmountInSplitRoute")]
 pub struct SwapAmountInSplitRoute {
     #[prost(message, repeated, tag = "1")]
@@ -44,8 +47,9 @@ pub struct SwapAmountInSplitRoute {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.SwapAmountOutSplitRoute")]
 pub struct SwapAmountOutSplitRoute {
     #[prost(message, repeated, tag = "1")]
@@ -59,8 +63,9 @@ pub struct SwapAmountOutSplitRoute {
 /// pool id.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.ModuleRoute")]
 pub struct ModuleRoute {
     /// pool_type specifies the type of the pool
@@ -81,7 +86,8 @@ pub struct ModuleRoute {
 /// PoolType is an enumeration of all supported pool types.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum PoolType {
     /// Balancer is the standard xy=k curve. Its pool model is defined in x/gamm.
     Balancer = 0,
@@ -122,8 +128,9 @@ impl PoolType {
 /// ===================== MsgSwapExactAmountIn
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountIn")]
 pub struct MsgSwapExactAmountIn {
     #[prost(string, tag = "1")]
@@ -137,8 +144,9 @@ pub struct MsgSwapExactAmountIn {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountInResponse")]
 pub struct MsgSwapExactAmountInResponse {
     #[prost(string, tag = "1")]
@@ -147,8 +155,9 @@ pub struct MsgSwapExactAmountInResponse {
 /// ===================== MsgSplitRouteSwapExactAmountIn
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountIn")]
 pub struct MsgSplitRouteSwapExactAmountIn {
     #[prost(string, tag = "1")]
@@ -162,8 +171,9 @@ pub struct MsgSplitRouteSwapExactAmountIn {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountInResponse")]
 pub struct MsgSplitRouteSwapExactAmountInResponse {
     #[prost(string, tag = "1")]
@@ -172,8 +182,9 @@ pub struct MsgSplitRouteSwapExactAmountInResponse {
 /// ===================== MsgSwapExactAmountOut
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountOut")]
 pub struct MsgSwapExactAmountOut {
     #[prost(string, tag = "1")]
@@ -187,8 +198,9 @@ pub struct MsgSwapExactAmountOut {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountOutResponse")]
 pub struct MsgSwapExactAmountOutResponse {
     #[prost(string, tag = "1")]
@@ -197,8 +209,9 @@ pub struct MsgSwapExactAmountOutResponse {
 /// ===================== MsgSplitRouteSwapExactAmountOut
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountOut")]
 pub struct MsgSplitRouteSwapExactAmountOut {
     #[prost(string, tag = "1")]
@@ -212,8 +225,9 @@ pub struct MsgSplitRouteSwapExactAmountOut {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountOutResponse")]
 pub struct MsgSplitRouteSwapExactAmountOutResponse {
     #[prost(string, tag = "1")]
@@ -222,8 +236,9 @@ pub struct MsgSplitRouteSwapExactAmountOutResponse {
 /// ===================== MsgSetDenomPairTakerFee
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSetDenomPairTakerFee")]
 pub struct MsgSetDenomPairTakerFee {
     #[prost(string, tag = "1")]
@@ -233,8 +248,9 @@ pub struct MsgSetDenomPairTakerFee {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSetDenomPairTakerFeeResponse")]
 pub struct MsgSetDenomPairTakerFeeResponse {
     #[prost(bool, tag = "1")]
@@ -243,8 +259,9 @@ pub struct MsgSetDenomPairTakerFeeResponse {
 /// ===================== MsgSetTakerFeeShareAgreementForDenom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSetTakerFeeShareAgreementForDenom")]
 pub struct MsgSetTakerFeeShareAgreementForDenom {
     #[prost(string, tag = "1")]
@@ -267,8 +284,9 @@ pub struct MsgSetTakerFeeShareAgreementForDenom {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.poolmanager.v1beta1.MsgSetTakerFeeShareAgreementForDenomResponse"
 )]
@@ -276,8 +294,9 @@ pub struct MsgSetTakerFeeShareAgreementForDenomResponse {}
 /// ===================== MsgSetRegisteredAlloyedPool
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSetRegisteredAlloyedPool")]
 pub struct MsgSetRegisteredAlloyedPool {
     #[prost(string, tag = "1")]
@@ -295,14 +314,16 @@ pub struct MsgSetRegisteredAlloyedPool {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.MsgSetRegisteredAlloyedPoolResponse")]
 pub struct MsgSetRegisteredAlloyedPoolResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.DenomPairTakerFee")]
 pub struct DenomPairTakerFee {
     /// DEPRECATED: Now that we are using uni-directional trading pairs, we are
@@ -324,8 +345,9 @@ pub struct DenomPairTakerFee {
 /// Params holds parameters for the poolmanager module
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.Params")]
 pub struct Params {
     #[prost(message, repeated, tag = "1")]
@@ -352,8 +374,9 @@ pub struct Params {
 /// GenesisState defines the poolmanager module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// the next_pool_id
@@ -381,8 +404,9 @@ pub struct GenesisState {
 /// TakerFeeParams consolidates the taker fee parameters for the poolmanager.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeParams")]
 pub struct TakerFeeParams {
     /// default_taker_fee is the fee used when creating a new pool that doesn't
@@ -438,8 +462,9 @@ pub struct TakerFeeParams {
 /// gets distributed to the available categories.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeDistributionPercentage")]
 pub struct TakerFeeDistributionPercentage {
     #[prost(string, tag = "1")]
@@ -449,8 +474,9 @@ pub struct TakerFeeDistributionPercentage {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeesTracker")]
 pub struct TakerFeesTracker {
     #[prost(message, repeated, tag = "1")]
@@ -470,8 +496,9 @@ pub struct TakerFeesTracker {
 /// is used in export/import genesis.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.PoolVolume")]
 pub struct PoolVolume {
     /// pool_id is the id of the pool.
@@ -490,8 +517,9 @@ pub struct PoolVolume {
 /// for one or more denom pairs.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.DenomPairTakerFeeProposal")]
 pub struct DenomPairTakerFeeProposal {
     #[prost(string, tag = "1")]
@@ -511,8 +539,9 @@ pub struct DenomPairTakerFeeProposal {
 /// and 30%, the total skim percent for the route will be 60%.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeShareAgreement")]
 pub struct TakerFeeShareAgreement {
     /// denom is the denom that has the taker fee share agreement.
@@ -531,8 +560,9 @@ pub struct TakerFeeShareAgreement {
 /// denom that has a taker fee share agreement.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeSkimAccumulator")]
 pub struct TakerFeeSkimAccumulator {
     /// denom is the denom that has the taker fee share agreement.
@@ -552,8 +582,9 @@ pub struct TakerFeeSkimAccumulator {
 /// be 5%.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AlloyContractTakerFeeShareState")]
 pub struct AlloyContractTakerFeeShareState {
     /// contract_address is the address of the alloyed asset pool contract.
@@ -568,8 +599,9 @@ pub struct AlloyContractTakerFeeShareState {
 /// =============================== Params
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.ParamsRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/Params",
@@ -578,8 +610,9 @@ pub struct AlloyContractTakerFeeShareState {
 pub struct ParamsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.ParamsResponse")]
 pub struct ParamsResponse {
     #[prost(message, optional, tag = "1")]
@@ -588,8 +621,9 @@ pub struct ParamsResponse {
 /// =============================== EstimateSwapExactAmountIn
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.EstimateSwapExactAmountInRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/EstimateSwapExactAmountIn",
@@ -615,8 +649,9 @@ pub struct EstimateSwapExactAmountInRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.poolmanager.v1beta1.EstimateSwapExactAmountInWithPrimitiveTypesRequest"
 )]
@@ -647,8 +682,9 @@ pub struct EstimateSwapExactAmountInWithPrimitiveTypesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.poolmanager.v1beta1.EstimateSinglePoolSwapExactAmountInRequest"
 )]
@@ -671,8 +707,9 @@ pub struct EstimateSinglePoolSwapExactAmountInRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.EstimateSwapExactAmountInResponse")]
 pub struct EstimateSwapExactAmountInResponse {
     #[prost(string, tag = "1")]
@@ -681,8 +718,9 @@ pub struct EstimateSwapExactAmountInResponse {
 /// =============================== EstimateSwapExactAmountOut
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.EstimateSwapExactAmountOutRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/EstimateSwapExactAmountOut",
@@ -708,8 +746,9 @@ pub struct EstimateSwapExactAmountOutRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.poolmanager.v1beta1.EstimateSwapExactAmountOutWithPrimitiveTypesRequest"
 )]
@@ -740,8 +779,9 @@ pub struct EstimateSwapExactAmountOutWithPrimitiveTypesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.poolmanager.v1beta1.EstimateSinglePoolSwapExactAmountOutRequest"
 )]
@@ -764,8 +804,9 @@ pub struct EstimateSinglePoolSwapExactAmountOutRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.EstimateSwapExactAmountOutResponse")]
 pub struct EstimateSwapExactAmountOutResponse {
     #[prost(string, tag = "1")]
@@ -774,8 +815,9 @@ pub struct EstimateSwapExactAmountOutResponse {
 /// =============================== NumPools
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.NumPoolsRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/NumPools",
@@ -784,8 +826,9 @@ pub struct EstimateSwapExactAmountOutResponse {
 pub struct NumPoolsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.NumPoolsResponse")]
 pub struct NumPoolsResponse {
     #[prost(uint64, tag = "1")]
@@ -798,8 +841,9 @@ pub struct NumPoolsResponse {
 /// =============================== Pool
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.PoolRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/Pool",
@@ -816,8 +860,9 @@ pub struct PoolRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.PoolResponse")]
 pub struct PoolResponse {
     #[prost(message, optional, tag = "1")]
@@ -826,8 +871,9 @@ pub struct PoolResponse {
 /// =============================== AllPools
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllPoolsRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/AllPools",
@@ -836,8 +882,9 @@ pub struct PoolResponse {
 pub struct AllPoolsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllPoolsResponse")]
 pub struct AllPoolsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -847,8 +894,9 @@ pub struct AllPoolsResponse {
 /// ListPoolsByDenomRequest
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.ListPoolsByDenomRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/ListPoolsByDenom",
@@ -860,8 +908,9 @@ pub struct ListPoolsByDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.ListPoolsByDenomResponse")]
 pub struct ListPoolsByDenomResponse {
     #[prost(message, repeated, tag = "1")]
@@ -872,8 +921,9 @@ pub struct ListPoolsByDenomResponse {
 /// query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.SpotPriceRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/SpotPrice",
@@ -896,8 +946,9 @@ pub struct SpotPriceRequest {
 /// query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.SpotPriceResponse")]
 pub struct SpotPriceResponse {
     /// String of the Dec. Ex) 10.203uatom
@@ -907,8 +958,9 @@ pub struct SpotPriceResponse {
 /// =============================== TotalPoolLiquidity
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TotalPoolLiquidityRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/TotalPoolLiquidity",
@@ -925,8 +977,9 @@ pub struct TotalPoolLiquidityRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TotalPoolLiquidityResponse")]
 pub struct TotalPoolLiquidityResponse {
     #[prost(message, repeated, tag = "1")]
@@ -935,8 +988,9 @@ pub struct TotalPoolLiquidityResponse {
 /// =============================== TotalLiquidity
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TotalLiquidityRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/TotalLiquidity",
@@ -945,8 +999,9 @@ pub struct TotalPoolLiquidityResponse {
 pub struct TotalLiquidityRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TotalLiquidityResponse")]
 pub struct TotalLiquidityResponse {
     #[prost(message, repeated, tag = "1")]
@@ -955,8 +1010,9 @@ pub struct TotalLiquidityResponse {
 /// =============================== TotalVolumeForPool
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TotalVolumeForPoolRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/TotalVolumeForPool",
@@ -973,8 +1029,9 @@ pub struct TotalVolumeForPoolRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TotalVolumeForPoolResponse")]
 pub struct TotalVolumeForPoolResponse {
     #[prost(message, repeated, tag = "1")]
@@ -983,8 +1040,9 @@ pub struct TotalVolumeForPoolResponse {
 /// =============================== TradingPairTakerFee
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TradingPairTakerFeeRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/TradingPairTakerFee",
@@ -998,8 +1056,9 @@ pub struct TradingPairTakerFeeRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TradingPairTakerFeeResponse")]
 pub struct TradingPairTakerFeeResponse {
     #[prost(string, tag = "1")]
@@ -1010,8 +1069,9 @@ pub struct TradingPairTakerFeeResponse {
 /// given parameters.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.EstimateTradeBasedOnPriceImpactRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/EstimateTradeBasedOnPriceImpact",
@@ -1050,8 +1110,9 @@ pub struct EstimateTradeBasedOnPriceImpactRequest {
 /// not error.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.EstimateTradeBasedOnPriceImpactResponse")]
 pub struct EstimateTradeBasedOnPriceImpactResponse {
     /// input_coin is the actual input amount that would be tradeable
@@ -1065,8 +1126,9 @@ pub struct EstimateTradeBasedOnPriceImpactResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllTakerFeeShareAgreementsRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/AllTakerFeeShareAgreements",
@@ -1075,8 +1137,9 @@ pub struct EstimateTradeBasedOnPriceImpactResponse {
 pub struct AllTakerFeeShareAgreementsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllTakerFeeShareAgreementsResponse")]
 pub struct AllTakerFeeShareAgreementsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -1084,8 +1147,9 @@ pub struct AllTakerFeeShareAgreementsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeShareAgreementFromDenomRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/TakerFeeShareAgreementFromDenom",
@@ -1097,8 +1161,9 @@ pub struct TakerFeeShareAgreementFromDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeShareAgreementFromDenomResponse")]
 pub struct TakerFeeShareAgreementFromDenomResponse {
     #[prost(message, optional, tag = "1")]
@@ -1106,8 +1171,9 @@ pub struct TakerFeeShareAgreementFromDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TakerFeeShareDenomsToAccruedValueRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/TakerFeeShareDenomsToAccruedValue",
@@ -1121,8 +1187,9 @@ pub struct TakerFeeShareDenomsToAccruedValueRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.poolmanager.v1beta1.TakerFeeShareDenomsToAccruedValueResponse"
 )]
@@ -1132,8 +1199,9 @@ pub struct TakerFeeShareDenomsToAccruedValueResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllTakerFeeShareAccumulatorsRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/AllTakerFeeShareAccumulators",
@@ -1142,8 +1210,9 @@ pub struct TakerFeeShareDenomsToAccruedValueResponse {
 pub struct AllTakerFeeShareAccumulatorsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllTakerFeeShareAccumulatorsResponse")]
 pub struct AllTakerFeeShareAccumulatorsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -1151,8 +1220,9 @@ pub struct AllTakerFeeShareAccumulatorsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.RegisteredAlloyedPoolFromDenomRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/RegisteredAlloyedPoolFromDenom",
@@ -1164,8 +1234,9 @@ pub struct RegisteredAlloyedPoolFromDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.RegisteredAlloyedPoolFromDenomResponse")]
 pub struct RegisteredAlloyedPoolFromDenomResponse {
     #[prost(message, optional, tag = "1")]
@@ -1173,8 +1244,9 @@ pub struct RegisteredAlloyedPoolFromDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.RegisteredAlloyedPoolFromPoolIdRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/RegisteredAlloyedPoolFromPoolId",
@@ -1191,8 +1263,9 @@ pub struct RegisteredAlloyedPoolFromPoolIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.RegisteredAlloyedPoolFromPoolIdResponse")]
 pub struct RegisteredAlloyedPoolFromPoolIdResponse {
     #[prost(message, optional, tag = "1")]
@@ -1200,8 +1273,9 @@ pub struct RegisteredAlloyedPoolFromPoolIdResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllRegisteredAlloyedPoolsRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v1beta1.Query/AllRegisteredAlloyedPools",
@@ -1210,8 +1284,9 @@ pub struct RegisteredAlloyedPoolFromPoolIdResponse {
 pub struct AllRegisteredAlloyedPoolsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.AllRegisteredAlloyedPoolsResponse")]
 pub struct AllRegisteredAlloyedPoolsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -1219,8 +1294,9 @@ pub struct AllRegisteredAlloyedPoolsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v1beta1.TrackedVolume")]
 pub struct TrackedVolume {
     #[prost(message, repeated, tag = "1")]

@@ -38,9 +38,9 @@ optimize = """docker run --rm -v "$(pwd)":/code \
 """
 
 [dependencies]
-cosmwasm-schema = "3.0.0"
-cosmwasm-std = "3.0.1"
-cw-storage-plus = "3.0.0"
+cosmwasm-schema = "3.0.4"
+cosmwasm-std = "3.0.4"
+cw-storage-plus = "3.0.1"
 cw2 = { path = "../../../cw-minus/packages/cw2" }
 jsonformat = "2.0.0"
 osmosis-std = { path = "../../packages/osmosis-std" }

@@ -38,8 +38,8 @@ optimize = """docker run --rm -v "$(pwd)":/code \
 """
 
 [dependencies]
-cosmwasm-std = { version = "3.0.0", features = ["stargate"] }
-cw-storage-plus = "3.0.0"
+cosmwasm-std = { version = "3.0.4", features = ["stargate"] }
+cw-storage-plus = "3.0.1"
 cw2 = { path = "../../../../../cw-minus/packages/cw2" }
 osmo-bindings = "0.5.1"
 osmosis-std = { path = "../../../../packages/osmosis-std" }
@@ -49,5 +49,5 @@ serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 thiserror = { version = "1.0.31" }
 
 [dev-dependencies]
-cosmwasm-schema = "3.0.0"
+cosmwasm-schema = "3.0.4"
 cw-multi-test = "3.0.0"

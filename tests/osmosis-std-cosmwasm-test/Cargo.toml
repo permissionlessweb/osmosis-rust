@@ -43,7 +43,7 @@ cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch =
 cw-storage-plus = { git = "https://github.com/permissionlessweb/cw-storage-plus", branch = "mvp" }
 cw2 = { git = "https://github.com/permissionlessweb/cw-minus", branch = "main" }
 jsonformat = "2.0.0"
-osmosis-std = { git = "https://github.com/permissionlessweb/osmosis-rust", branch = "main" }
+osmosis-std = { git = "https://github.com/permissionlessweb/osmosis-rust", branch = "cw3" }
 schemars = "0.8"
 serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 thiserror = { version = "1.0.31" }
@@ -52,4 +52,4 @@ thiserror = { version = "1.0.31" }
 cw-multi-test = { git = "https://github.com/permissionlessweb/cw-multi-test", branch = "mvp" }
 prost = "0.14.1"
 serde_json = "1.0.85"
-osmosis-test-tube = { git = "https://github.com/permissionlessweb/osmosis-test-tube", branch = "main" }
+osmosis-test-tube = { git = "https://github.com/permissionlessweb/osmosis-test-tube", branch = "cw3" }

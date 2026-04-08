@@ -38,18 +38,18 @@ optimize = """docker run --rm -v "$(pwd)":/code \
 """
 
 [dependencies]
-cosmwasm-schema = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "mvp" }
-cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "mvp" }
-cw-storage-plus = { git = "https://github.com/permissionlessweb/cw-storage-plus", branch = "mvp" }
-cw2 = { git = "https://github.com/permissionlessweb/cw-minus", branch = "main" }
+cosmwasm-schema = { path = "../../../ZK/cw/zk-cosmwasm/packages/schema" }
+cosmwasm-std = { path = "../../../ZK/cw/zk-cosmwasm/packages/std" }
+cw-storage-plus = { path = "../../../ZK/cw/zk-storage-plus" }
+cw2 = { path = "../../../ZK/cw/zk-cw-minus/packages/cw2" }
 jsonformat = "2.0.0"
-osmosis-std = { git = "https://github.com/permissionlessweb/osmosis-rust", branch = "cw3" }
+osmosis-std = { path = "../../packages/osmosis-std" }
 schemars = "0.8"
 serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 thiserror = { version = "1.0.31" }
 
 [dev-dependencies]
-cw-multi-test = { git = "https://github.com/permissionlessweb/cw-multi-test", branch = "mvp" }
+cw-multi-test = { path = "../../../cw-multi-test-fork" }
 prost = "0.14.1"
 serde_json = "1.0.85"
-osmosis-test-tube = { git = "https://github.com/permissionlessweb/osmosis-test-tube", branch = "cw3" }
+osmosis-test-tube = { path = "../../../osmosis-test-tube/packages/osmosis-test-tube" }

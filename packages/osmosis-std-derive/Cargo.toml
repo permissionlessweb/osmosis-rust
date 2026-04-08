@@ -20,7 +20,7 @@ quote = "1.0.20"
 syn = "1.0.98"
 
 [dev-dependencies]
-cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "mvp", features = ["stargate"] }
+cosmwasm-std = { path = "../../../ZK/cw/zk-cosmwasm/packages/std", features = ["stargate"] }
 prost = "0.14.1"
 serde = "1.0.142"
 trybuild = { version = "1.0.63", features = ["diff"] }

@@ -50,4 +50,4 @@ thiserror = { version = "1.0.31" }
 
 [dev-dependencies]
 cosmwasm-schema = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp" }
-cw-multi-test = { path = "../../../../../cw-multi-test-fork" }
+cw-multi-test = { package = "abstract-cw-multi-test", path = "../../../../../cw-multi-test-fork" }

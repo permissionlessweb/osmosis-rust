@@ -2,3 +2,6 @@
 resolver = "2"
 members = ["packages/*", "tests/*"]
 exclude = ["packages/proto-build"]
+
+[patch.'https://github.com/permissionlessweb/osmosis-rust']
+osmosis-std = { path = "packages/osmosis-std" }

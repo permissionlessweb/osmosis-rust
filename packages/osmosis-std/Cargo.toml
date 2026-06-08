@@ -12,9 +12,9 @@ version = "0.26.0"
 
 [dependencies]
 chrono = { version = "0.4.27", default-features = false }
-cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp", features = ["stargate"] }
-cw-schema = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp", default-features = false }
-osmosis-std-derive = { git = "https://github.com/permissionlessweb/osmosis-rust", branch = "zk-mvp" }
+cosmwasm-std = { path = "../../../cosmwasm/packages/std", features = ["stargate"] }
+cw-schema = { path = "../../../cosmwasm/packages/cw-schema", default-features = false }
+osmosis-std-derive = { path = "../osmosis-std-derive" }
 prost = { version = "0.14.1", default-features = false, features = ["derive"] }
 prost-types = { version = "0.14.1", default-features = false }
 schemars = "0.8"

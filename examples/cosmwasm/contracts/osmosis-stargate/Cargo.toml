@@ -27,19 +27,19 @@ crate-type = ["cdylib", "rlib"]
 library = []
 
 [dependencies]
-cosmwasm-std = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp", features = ["stargate"] }
-cw-storage-plus = { git = "https://github.com/permissionlessweb/cw-storage-plus", branch = "zk-mvp" }
-cw2 = { git = "https://github.com/permissionlessweb/cw-minus", branch = "zk-mvp" }
+cosmwasm-std = { path = "../../../../../cosmwasm/packages/std", features = ["stargate"] }
+cw-storage-plus = { path = "../../../../../cw-storage-plus" }
+cw2 = { path = "../../../../../cw-minus/packages/cw2" }
 osmo-bindings = "0.5.1"
-osmosis-std = { git = "https://github.com/permissionlessweb/osmosis-rust", branch = "zk-mvp" }
+osmosis-std = { path = "../../../../packages/osmosis-std" }
 prost = "0.14.1"
 schemars = { version = "0.8.22", optional = true }
 serde = { version = "1.0.137", default-features = false, features = ["derive"] }
 thiserror = { version = "1.0.31" }
 
 [dev-dependencies]
-cosmwasm-schema = { git = "https://github.com/permissionlessweb/cosmwasm", branch = "zk-mvp" }
-cw-multi-test = { package = "abstract-cw-multi-test", git = "https://github.com/permissionlessweb/cw-multi-test-fork", branch = "zk-mvp" }
+cosmwasm-schema = { path = "../../../../../cosmwasm/packages/schema" }
+cw-multi-test = { package = "abstract-cw-multi-test", path = "../../../../../cw-multi-test-fork" }
 
 [profile.release]
 codegen-units = 1

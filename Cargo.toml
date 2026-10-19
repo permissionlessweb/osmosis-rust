@@ -5,3 +5,9 @@ exclude = ["packages/proto-build"]
 
 [patch.'https://github.com/permissionlessweb/osmosis-rust']
 osmosis-std = { path = "packages/osmosis-std" }
+osmosis-std-derive = { path = "packages/osmosis-std-derive" }
+
+[patch.'https://github.com/permissionlessweb/cosmwasm']
+cosmwasm-std = { path = "../cosmwasm/packages/std" }
+cosmwasm-schema = { path = "../cosmwasm/packages/schema" }
+cw-schema = { path = "../cosmwasm/packages/cw-schema" }

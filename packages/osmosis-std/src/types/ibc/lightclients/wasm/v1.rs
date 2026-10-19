@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// GenesisState defines 08-wasm's keeper genesis state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.GenesisState")]
 pub struct GenesisState {
     /// uploaded light client wasm contracts
@@ -13,8 +14,9 @@ pub struct GenesisState {
 /// Contract stores contract code
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.Contract")]
 pub struct Contract {
     /// contract byte code
@@ -28,8 +30,9 @@ pub struct Contract {
 /// QueryChecksumsRequest is the request type for the Query/Checksums RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.QueryChecksumsRequest")]
 #[proto_query(
     path = "/ibc.lightclients.wasm.v1.Query/Checksums",
@@ -45,8 +48,9 @@ pub struct QueryChecksumsRequest {
 /// QueryChecksumsResponse is the response type for the Query/Checksums RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.QueryChecksumsResponse")]
 pub struct QueryChecksumsResponse {
     /// checksums is a list of the hex encoded checksums of all wasm codes stored.
@@ -61,8 +65,9 @@ pub struct QueryChecksumsResponse {
 /// QueryCodeRequest is the request type for the Query/Code RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.QueryCodeRequest")]
 #[proto_query(
     path = "/ibc.lightclients.wasm.v1.Query/Code",
@@ -76,8 +81,9 @@ pub struct QueryCodeRequest {
 /// QueryCodeResponse is the response type for the Query/Code RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.QueryCodeResponse")]
 pub struct QueryCodeResponse {
     #[prost(bytes = "vec", tag = "1")]
@@ -90,8 +96,9 @@ pub struct QueryCodeResponse {
 /// MsgStoreCode defines the request type for the StoreCode rpc.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.MsgStoreCode")]
 pub struct MsgStoreCode {
     /// signer address
@@ -108,8 +115,9 @@ pub struct MsgStoreCode {
 /// MsgStoreCodeResponse defines the response type for the StoreCode rpc
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.MsgStoreCodeResponse")]
 pub struct MsgStoreCodeResponse {
     /// checksum is the sha256 hash of the stored code
@@ -123,8 +131,9 @@ pub struct MsgStoreCodeResponse {
 /// MsgRemoveChecksum defines the request type for the MsgRemoveChecksum rpc.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.MsgRemoveChecksum")]
 pub struct MsgRemoveChecksum {
     /// signer address
@@ -141,15 +150,17 @@ pub struct MsgRemoveChecksum {
 /// MsgStoreChecksumResponse defines the response type for the StoreCode rpc
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.MsgRemoveChecksumResponse")]
 pub struct MsgRemoveChecksumResponse {}
 /// MsgMigrateContract defines the request type for the MigrateContract rpc.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.MsgMigrateContract")]
 pub struct MsgMigrateContract {
     /// signer address
@@ -177,15 +188,17 @@ pub struct MsgMigrateContract {
 /// MsgMigrateContractResponse defines the response type for the MigrateContract rpc
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.MsgMigrateContractResponse")]
 pub struct MsgMigrateContractResponse {}
 /// Wasm light client's Client state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.ClientState")]
 pub struct ClientState {
     /// bytes encoding the client state of the underlying light client
@@ -208,8 +221,9 @@ pub struct ClientState {
 /// Wasm light client's ConsensusState
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.ConsensusState")]
 pub struct ConsensusState {
     /// bytes encoding the consensus state of the underlying light client
@@ -224,8 +238,9 @@ pub struct ConsensusState {
 /// Wasm light client message (either header(s) or misbehaviour)
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.ClientMessage")]
 pub struct ClientMessage {
     #[prost(bytes = "vec", tag = "1")]
@@ -241,8 +256,9 @@ pub struct ClientMessage {
 /// using a Collections.KeySet.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.wasm.v1.Checksums")]
 #[deprecated]
 pub struct Checksums {

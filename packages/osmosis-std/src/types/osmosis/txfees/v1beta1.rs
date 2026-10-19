@@ -5,8 +5,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// The pool ID must have osmo as one of its assets.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.FeeToken")]
 pub struct FeeToken {
     #[prost(string, tag = "1")]
@@ -22,8 +23,9 @@ pub struct FeeToken {
 /// Params holds parameters for the txfees module
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.Params")]
 pub struct Params {
     #[prost(string, repeated, tag = "1")]
@@ -32,8 +34,9 @@ pub struct Params {
 /// GenesisState defines the txfees module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.GenesisState")]
 pub struct GenesisState {
     #[prost(string, tag = "1")]
@@ -50,8 +53,9 @@ pub struct GenesisState {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.TxFeesTracker")]
 pub struct TxFeesTracker {
     #[prost(message, repeated, tag = "1")]
@@ -70,8 +74,9 @@ pub struct TxFeesTracker {
 /// set to 0, it will remove the denom from the whitelisted set.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.UpdateFeeTokenProposal")]
 pub struct UpdateFeeTokenProposal {
     #[prost(string, tag = "1")]
@@ -83,8 +88,9 @@ pub struct UpdateFeeTokenProposal {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryFeeTokensRequest")]
 #[proto_query(
     path = "/osmosis.txfees.v1beta1.Query/FeeTokens",
@@ -93,8 +99,9 @@ pub struct UpdateFeeTokenProposal {
 pub struct QueryFeeTokensRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryFeeTokensResponse")]
 pub struct QueryFeeTokensResponse {
     #[prost(message, repeated, tag = "1")]
@@ -104,8 +111,9 @@ pub struct QueryFeeTokensResponse {
 /// price for the specified tx fee denom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryDenomSpotPriceRequest")]
 #[proto_query(
     path = "/osmosis.txfees.v1beta1.Query/DenomSpotPrice",
@@ -119,8 +127,9 @@ pub struct QueryDenomSpotPriceRequest {
 /// price for the specified tx fee denom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryDenomSpotPriceResponse")]
 pub struct QueryDenomSpotPriceResponse {
     #[prost(uint64, tag = "1")]
@@ -135,8 +144,9 @@ pub struct QueryDenomSpotPriceResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryDenomPoolIdRequest")]
 #[proto_query(
     path = "/osmosis.txfees.v1beta1.Query/DenomPoolId",
@@ -148,8 +158,9 @@ pub struct QueryDenomPoolIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryDenomPoolIdResponse")]
 pub struct QueryDenomPoolIdResponse {
     #[prost(uint64, tag = "1")]
@@ -162,8 +173,9 @@ pub struct QueryDenomPoolIdResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryBaseDenomRequest")]
 #[proto_query(
     path = "/osmosis.txfees.v1beta1.Query/BaseDenom",
@@ -172,8 +184,9 @@ pub struct QueryDenomPoolIdResponse {
 pub struct QueryBaseDenomRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryBaseDenomResponse")]
 pub struct QueryBaseDenomResponse {
     #[prost(string, tag = "1")]
@@ -181,8 +194,9 @@ pub struct QueryBaseDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryEipBaseFeeRequest")]
 #[proto_query(
     path = "/osmosis.txfees.v1beta1.Query/GetEipBaseFee",
@@ -191,8 +205,9 @@ pub struct QueryBaseDenomResponse {
 pub struct QueryEipBaseFeeRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.QueryEipBaseFeeResponse")]
 pub struct QueryEipBaseFeeResponse {
     #[prost(string, tag = "1")]
@@ -201,8 +216,9 @@ pub struct QueryEipBaseFeeResponse {
 /// ===================== MsgSetFeeTokens
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.MsgSetFeeTokens")]
 pub struct MsgSetFeeTokens {
     #[prost(message, repeated, tag = "1")]
@@ -212,8 +228,9 @@ pub struct MsgSetFeeTokens {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.txfees.v1beta1.MsgSetFeeTokensResponse")]
 pub struct MsgSetFeeTokensResponse {}
 pub struct TxfeesQuerier<'a, Q: cosmwasm_std::CustomQuery> {

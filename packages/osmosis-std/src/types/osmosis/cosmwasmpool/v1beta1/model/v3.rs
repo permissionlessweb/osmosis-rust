@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// ===================== ShareDenomResponse
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.cosmwasmpool.v1beta1.model.v3.ShareDenomResponse")]
 pub struct ShareDenomResponse {
     /// share_denom is the share denomination.
@@ -13,8 +14,9 @@ pub struct ShareDenomResponse {
 /// ===================== TotalPoolLiquidityResponse
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.cosmwasmpool.v1beta1.model.v3.TotalPoolLiquidityResponse")]
 pub struct TotalPoolLiquidityResponse {
     /// total_pool_liquidity is the total liquidity in the pool denominated in
@@ -26,8 +28,9 @@ pub struct TotalPoolLiquidityResponse {
 /// ===================== AssetConfig
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.cosmwasmpool.v1beta1.model.v3.AssetConfig")]
 pub struct AssetConfig {
     /// denom is the asset denomination.
@@ -40,8 +43,9 @@ pub struct AssetConfig {
 /// ===================== ListAssetConfigsResponse
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.cosmwasmpool.v1beta1.model.v3.ListAssetConfigsResponse")]
 pub struct ListAssetConfigsResponse {
     /// asset_configs is the list of asset configurations.

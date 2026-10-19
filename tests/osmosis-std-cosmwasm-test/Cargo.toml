@@ -5,15 +5,43 @@ name = "osmosis-std-cosmwasm-test"
 version = "0.2.0"
 
 exclude = [
-  # Those files are rust-optimizer artifacts. You might want to commit them for convenience but they should not be part of the source code publication.
-  "contract.wasm",
-  "hash.txt",
+    # Those files are rust-optimizer artifacts. You might want to commit them for convenience but they should not be part of the source code publication.
+    "contract.wasm",
+    "hash.txt",
 ]
+
+[package.metadata.scripts]
+optimize = """docker run --rm -v "$(pwd)":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/rust-optimizer:0.17.0
+"""
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
 crate-type = ["cdylib", "rlib"]
+
+[features]
+# use library feature to disable all instantiate/execute/query exports
+library = []
+
+[dependencies]
+cosmwasm-schema = { version = "=4.0.0-zk" }
+cosmwasm-std = { version = "=4.0.0-zk" }
+cw-storage-plus = { version = "3.0.1" }
+cw2 = { version = "3.0.0" }
+jsonformat = "2.0.0"
+osmosis-std = { path = "../../packages/osmosis-std" }
+schemars = "0.8"
+serde = { version = "1.0.137", default-features = false, features = ["derive"] }
+thiserror = { version = "1.0.31" }
+
+[dev-dependencies]
+cw-multi-test = { package = "abstract-cw-multi-test", version = "=3.0.0-rc" }
+osmosis-test-tube = { version = "25.0.0" }
+prost = "0.14.1"
+serde_json = "1.0.85"
 
 [profile.release]
 codegen-units = 1
@@ -25,31 +53,3 @@ opt-level = 3
 overflow-checks = true
 panic = 'abort'
 rpath = false
-
-[features]
-# use library feature to disable all instantiate/execute/query exports
-library = []
-
-[package.metadata.scripts]
-optimize = """docker run --rm -v "$(pwd)":/code \
-  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
-  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer:0.16.1
-"""
-
-[dependencies]
-cosmwasm-schema = "3.0.0"
-cosmwasm-std = "3.0.1"
-cw-storage-plus = "3.0.0"
-cw2 = "3.0.0" 
-jsonformat = "2.0.0"
-osmosis-std = { path = "../../packages/osmosis-std" }
-schemars = "0.8.4"
-serde = { version = "1.0.137", default-features = false, features = ["derive"] }
-thiserror = { version = "1.0.31" }
-
-[dev-dependencies]
-cw-multi-test = "3.0.1"
-prost = "0.14.1"
-serde_json = "1.0.85"
-osmosis-test-tube = {version =  "20.1.1", workspace = "../../../osmosis-test-tube"}

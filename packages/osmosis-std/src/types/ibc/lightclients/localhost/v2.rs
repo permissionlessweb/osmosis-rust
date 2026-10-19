@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// ClientState defines the 09-localhost client state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.localhost.v2.ClientState")]
 pub struct ClientState {
     /// the latest block height

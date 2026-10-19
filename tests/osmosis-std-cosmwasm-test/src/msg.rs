@@ -1,10 +1,8 @@
 use cosmwasm_schema::{cw_serde, QueryResponses};
+use cosmwasm_std::QueryResponse;
 pub use osmosis_std::types::osmosis::epochs::v1beta1::QueryEpochsInfoResponse;
-pub use osmosis_std::types::osmosis::gamm::v1beta1::{QueryPoolParamsResponse, QueryPoolResponse};
-pub use osmosis_std::types::osmosis::twap::v1beta1::{
-    ArithmeticTwapToNowRequest, ArithmeticTwapToNowResponse, GeometricTwapToNowRequest,
-    GeometricTwapToNowResponse,
-};
+pub use osmosis_std::types::osmosis::gamm::v1beta1::*;
+pub use osmosis_std::types::osmosis::twap::v1beta1::*;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
@@ -26,20 +24,21 @@ pub enum MigrateMsg {}
 
 /// Message type for `query` entry_point
 #[cw_serde]
+#[derive(QueryResponses)]
 pub enum QueryMsg {
-    // #[returns(QueryNumPoolsResponse)]
+    #[returns(QueryNumPoolsResponse)]
     QueryNumPools {},
-    // #[returns(QueryEpochsInfoResponse)]
+    #[returns(QueryEpochsInfoResponse)]
     QueryEpochsInfo {},
-    // #[returns(QueryPoolResponse)]
+    #[returns(QueryPoolResponse)]
     QueryPool { pool_id: u64 },
-    // #[returns(QueryPoolParamsResponse)]
+    #[returns(QueryPoolParamsResponse)]
     QueryPoolParams { pool_id: u64 },
-    // #[returns(ArithmeticTwapToNowResponse)]
+    #[returns(ArithmeticTwapToNowResponse)]
     QueryArithmeticTwapToNow(ArithmeticTwapToNowRequest),
-    // #[returns(GeometricTwapToNowResponse)]
+    #[returns(GeometricTwapToNowResponse)]
     QueryGeometricTwapToNow(GeometricTwapToNowRequest),
-    // #[returns(QueryMapResponse)]
+    #[returns(QueryMapResponse)]
     QueryMap { key: String },
 }
 

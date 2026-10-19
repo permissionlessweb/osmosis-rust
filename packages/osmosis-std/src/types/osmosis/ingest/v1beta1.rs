@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// PoolData represents a structure encapsulating an Osmosis liquidity pool.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.ingest.v1beta1.PoolData")]
 pub struct PoolData {
     /// ChainModel is the chain representation model of the pool.
@@ -34,8 +35,9 @@ pub struct PoolData {
 /// Sends taker fees, block height and pools.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.ingest.v1beta1.ProcessBlockRequest")]
 pub struct ProcessBlockRequest {
     /// block height is the height of the block being processed.
@@ -59,7 +61,8 @@ pub struct ProcessBlockRequest {
 /// The response after completing the block processing.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.ingest.v1beta1.ProcessBlockReply")]
 pub struct ProcessBlockReply {}

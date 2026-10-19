@@ -11,13 +11,14 @@ version = "0.26.0"
 [features]
 
 [dependencies]
-chrono = {version = "0.4.27", default-features = false}
-cosmwasm-std = {version = "3.0.1", features = ["stargate"]}
-osmosis-std-derive = {version = "0.20.1", path = "../osmosis-std-derive"}
-prost = {version = "0.14.1", default-features = false, features = ["derive"]}
-prost-types = {version = "0.14.1", default-features = false}
-schemars = "1.0.4"
+chrono = { version = "0.4.27", default-features = false }
+cosmwasm-std = { version = "=4.0.0-zk", features = ["stargate"] }
+cw-schema = { version = "=4.0.0-zk", default-features = false }
+osmosis-std-derive = { path = "../osmosis-std-derive" }
+prost = { version = "0.14.1", default-features = false, features = ["derive"] }
+prost-types = { version = "0.14.1", default-features = false }
+schemars = "0.8"
 
 # for query
-serde = {version = "1.0", default-features = false, features = ["derive"]}
+serde = { version = "1.0", default-features = false, features = ["derive"] }
 serde-cw-value = "0.7.0"

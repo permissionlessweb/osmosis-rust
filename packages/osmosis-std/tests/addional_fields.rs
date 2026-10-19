@@ -9,7 +9,6 @@ use prost::Message;
     ::prost::Message,
     ::serde::Serialize,
     ::serde::Deserialize,
-    schemars::JsonSchema,
     CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.lockup.MsgBeginUnlockingResponse")]
@@ -25,7 +24,6 @@ pub struct MsgBeginUnlockingResponse {
     ::prost::Message,
     ::serde::Serialize,
     ::serde::Deserialize,
-    schemars::JsonSchema,
     CosmwasmExt,
 )]
 #[proto_message(type_url = "/osmosis.lockup.MsgBeginUnlockingResponse")]

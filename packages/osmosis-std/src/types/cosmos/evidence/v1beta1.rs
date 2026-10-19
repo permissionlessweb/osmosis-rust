@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// signing misbehavior.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.Equivocation")]
 pub struct Equivocation {
     /// height is the equivocation height.
@@ -31,8 +32,9 @@ pub struct Equivocation {
 /// GenesisState defines the evidence module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// evidence defines all the evidence at genesis.
@@ -42,8 +44,9 @@ pub struct GenesisState {
 /// QueryEvidenceRequest is the request type for the Query/Evidence RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.QueryEvidenceRequest")]
 #[proto_query(
     path = "/cosmos.evidence.v1beta1.Query/Evidence",
@@ -68,8 +71,9 @@ pub struct QueryEvidenceRequest {
 /// QueryEvidenceResponse is the response type for the Query/Evidence RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.QueryEvidenceResponse")]
 pub struct QueryEvidenceResponse {
     /// evidence returns the requested evidence.
@@ -80,8 +84,9 @@ pub struct QueryEvidenceResponse {
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.QueryAllEvidenceRequest")]
 #[proto_query(
     path = "/cosmos.evidence.v1beta1.Query/AllEvidence",
@@ -96,8 +101,9 @@ pub struct QueryAllEvidenceRequest {
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.QueryAllEvidenceResponse")]
 pub struct QueryAllEvidenceResponse {
     /// evidence returns all evidences.
@@ -111,8 +117,9 @@ pub struct QueryAllEvidenceResponse {
 /// Evidence of misbehavior such as equivocation or counterfactual signing.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.MsgSubmitEvidence")]
 pub struct MsgSubmitEvidence {
     /// submitter is the signer account address of evidence.
@@ -125,8 +132,9 @@ pub struct MsgSubmitEvidence {
 /// MsgSubmitEvidenceResponse defines the Msg/SubmitEvidence response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.evidence.v1beta1.MsgSubmitEvidenceResponse")]
 pub struct MsgSubmitEvidenceResponse {
     /// hash defines the hash of the evidence.

@@ -2,12 +2,22 @@
 resolver = "2"
 members = ["packages/*", "tests/*"]
 exclude = ["packages/proto-build"]
+[patch.crates-io]
 
-[patch.'https://github.com/permissionlessweb/osmosis-rust']
-osmosis-std = { path = "packages/osmosis-std" }
-osmosis-std-derive = { path = "packages/osmosis-std-derive" }
-
-[patch.'https://github.com/permissionlessweb/cosmwasm']
-cosmwasm-std = { path = "../cosmwasm/packages/std" }
+abstract-cw-multi-test = { path = "../cw-multi-test-fork" }
 cosmwasm-schema = { path = "../cosmwasm/packages/schema" }
+cosmwasm-std = { path = "../cosmwasm/packages/std" }
 cw-schema = { path = "../cosmwasm/packages/cw-schema" }
+cw-storage-plus = { path = "../cw-storage-plus" }
+cw2 = { path = "../cw-minus/packages/cw2" }
+osmosis-test-tube = { path = "../osmosis-test-tube/packages/osmosis-test-tube" }
+
+cosmrs = { path = "../cosmos-rust/cosmrs" }
+tendermint = { path = "../tendermint-rs/tendermint" }
+tendermint-rpc = { path = "../tendermint-rs/rpc" }
+tendermint-proto = { path = "../tendermint-rs/proto" }
+cw-utils = { path = "../cw-minus/packages/cw-utils" }
+cw20-ics20 = { path = "../cw-plus/contracts/cw20-ics20" }
+cw-controllers = { path = "../cw-minus/packages/controllers" }
+
+osmosis-std = { path = "packages/osmosis-std" }

@@ -12,8 +12,8 @@ version = "0.26.0"
 
 [dependencies]
 chrono = { version = "0.4.27", default-features = false }
-cosmwasm-std = { version = "=4.0.0-zk", features = ["stargate"] }
-cw-schema = { version = "=4.0.0-zk", default-features = false }
+cosmwasm-std = { version = "=4.1.0", features = ["stargate"] }
+cw-schema = { version = "=4.1.0", default-features = false }
 osmosis-std-derive = { path = "../osmosis-std-derive" }
 prost = { version = "0.14.1", default-features = false, features = ["derive"] }
 prost-types = { version = "0.14.1", default-features = false }

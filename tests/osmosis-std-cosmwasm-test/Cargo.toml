@@ -27,8 +27,8 @@ crate-type = ["cdylib", "rlib"]
 library = []
 
 [dependencies]
-cosmwasm-schema = { version = "=4.0.0-zk" }
-cosmwasm-std = { version = "=4.0.0-zk" }
+cosmwasm-schema = { version = "=4.1.0" }
+cosmwasm-std = { version = "=4.1.0" }
 cw-storage-plus = { version = "3.0.1" }
 cw2 = { version = "3.0.0" }
 jsonformat = "2.0.0"

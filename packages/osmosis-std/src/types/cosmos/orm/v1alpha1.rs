@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// ModuleSchemaDescriptor describe's a module's ORM schema.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.v1alpha1.ModuleSchemaDescriptor")]
 pub struct ModuleSchemaDescriptor {
     #[prost(message, repeated, tag = "1")]
@@ -29,8 +30,9 @@ pub mod module_schema_descriptor {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.orm.v1alpha1.ModuleSchemaDescriptor.FileEntry")]
     pub struct FileEntry {
         /// id is a prefix that will be varint encoded and prepended to all the
@@ -61,7 +63,8 @@ pub mod module_schema_descriptor {
 /// StorageType
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum StorageType {
     /// STORAGE_TYPE_DEFAULT_UNSPECIFIED indicates the persistent storage where all
     /// data is stored in the regular Merkle-tree backed KV-store.

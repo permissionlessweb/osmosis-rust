@@ -4,8 +4,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// updated in ResponseEndBlock.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.version.App")]
 pub struct App {
     #[prost(uint64, tag = "1")]
@@ -22,8 +23,9 @@ pub struct App {
 /// state transition machine.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.version.Consensus")]
 pub struct Consensus {
     #[prost(uint64, tag = "1")]

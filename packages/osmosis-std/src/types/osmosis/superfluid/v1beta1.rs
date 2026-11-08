@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// assets
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.v1beta1.SetSuperfluidAssetsProposal")]
 pub struct SetSuperfluidAssetsProposal {
     #[prost(string, tag = "1")]
@@ -18,8 +19,9 @@ pub struct SetSuperfluidAssetsProposal {
 /// assets by denom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.v1beta1.RemoveSuperfluidAssetsProposal")]
 pub struct RemoveSuperfluidAssetsProposal {
     #[prost(string, tag = "1")]
@@ -33,8 +35,9 @@ pub struct RemoveSuperfluidAssetsProposal {
 /// allowed list of pool ids.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.v1beta1.UpdateUnpoolWhiteListProposal")]
 pub struct UpdateUnpoolWhiteListProposal {
     #[prost(string, tag = "1")]

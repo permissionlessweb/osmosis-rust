@@ -21,8 +21,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// length-prefix the data before hashing it.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.ExistenceProof")]
 pub struct ExistenceProof {
     #[prost(bytes = "vec", tag = "1")]
@@ -48,8 +49,9 @@ pub struct ExistenceProof {
 /// then there is no valid proof for the given key.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.NonExistenceProof")]
 pub struct NonExistenceProof {
     /// TODO: remove this as unnecessary??? we prove a range
@@ -68,8 +70,9 @@ pub struct NonExistenceProof {
 /// CommitmentProof is either an ExistenceProof or a NonExistenceProof, or a Batch of such messages
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.CommitmentProof")]
 pub struct CommitmentProof {
     #[prost(oneof = "commitment_proof::Proof", tags = "1, 2, 3, 4")]
@@ -86,8 +89,9 @@ pub mod commitment_proof {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Proof {
         #[prost(message, tag = "1")]
         Exist(super::ExistenceProof),
@@ -116,8 +120,9 @@ pub mod commitment_proof {
 /// output = hash(prefix || length(hkey) || hkey || length(hvalue) || hvalue)
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.LeafOp")]
 pub struct LeafOp {
     #[prost(enumeration = "HashOp", tag = "1")]
@@ -171,8 +176,9 @@ pub struct LeafOp {
 /// If either of prefix or suffix is empty, we just treat it as an empty string
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.InnerOp")]
 pub struct InnerOp {
     #[prost(enumeration = "HashOp", tag = "1")]
@@ -207,8 +213,9 @@ pub struct InnerOp {
 /// tree format server uses. But not in code, rather a configuration object.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.ProofSpec")]
 pub struct ProofSpec {
     /// any field in the ExistenceProof must be the same as in this spec.
@@ -248,8 +255,9 @@ pub struct ProofSpec {
 /// isLeftNeighbor(spec: InnerSpec, left: InnerOp, right: InnerOp)
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.InnerSpec")]
 pub struct InnerSpec {
     /// Child order is the ordering of the children node, must count from 0
@@ -298,8 +306,9 @@ pub struct InnerSpec {
 /// BatchProof is a group of multiple proof types than can be compressed
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.BatchProof")]
 pub struct BatchProof {
     #[prost(message, repeated, tag = "1")]
@@ -308,8 +317,9 @@ pub struct BatchProof {
 /// Use BatchEntry not CommitmentProof, to avoid recursion
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.BatchEntry")]
 pub struct BatchEntry {
     #[prost(oneof = "batch_entry::Proof", tags = "1, 2")]
@@ -326,8 +336,9 @@ pub mod batch_entry {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Proof {
         #[prost(message, tag = "1")]
         Exist(super::ExistenceProof),
@@ -337,8 +348,9 @@ pub mod batch_entry {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.CompressedBatchProof")]
 pub struct CompressedBatchProof {
     #[prost(message, repeated, tag = "1")]
@@ -349,8 +361,9 @@ pub struct CompressedBatchProof {
 /// Use BatchEntry not CommitmentProof, to avoid recursion
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.CompressedBatchEntry")]
 pub struct CompressedBatchEntry {
     #[prost(oneof = "compressed_batch_entry::Proof", tags = "1, 2")]
@@ -367,8 +380,9 @@ pub mod compressed_batch_entry {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Proof {
         #[prost(message, tag = "1")]
         Exist(super::CompressedExistenceProof),
@@ -378,8 +392,9 @@ pub mod compressed_batch_entry {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.CompressedExistenceProof")]
 pub struct CompressedExistenceProof {
     #[prost(bytes = "vec", tag = "1")]
@@ -406,8 +421,9 @@ pub struct CompressedExistenceProof {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.ics23.v1.CompressedNonExistenceProof")]
 pub struct CompressedNonExistenceProof {
     /// TODO: remove this as unnecessary??? we prove a range
@@ -424,7 +440,8 @@ pub struct CompressedNonExistenceProof {
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum HashOp {
     /// NO_HASH is the default if no data passed. Note this is an illegal argument some places.
     NoHash = 0,
@@ -473,7 +490,8 @@ impl HashOp {
 /// (Each one with it's own encoded length)
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum LengthOp {
     /// NO_PREFIX don't include any length info
     NoPrefix = 0,

@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// liveness activity.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.ValidatorSigningInfo")]
 pub struct ValidatorSigningInfo {
     #[prost(string, tag = "1")]
@@ -46,8 +47,9 @@ pub struct ValidatorSigningInfo {
 /// Params represents the parameters used for by the slashing module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.Params")]
 pub struct Params {
     #[prost(int64, tag = "1")]
@@ -80,8 +82,9 @@ pub struct Params {
 /// GenesisState defines the slashing module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// params defines all the parameters of the module.
@@ -99,8 +102,9 @@ pub struct GenesisState {
 /// SigningInfo stores validator signing info of corresponding address.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.SigningInfo")]
 pub struct SigningInfo {
     /// address is the validator address.
@@ -114,8 +118,9 @@ pub struct SigningInfo {
 /// address.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.ValidatorMissedBlocks")]
 pub struct ValidatorMissedBlocks {
     /// address is the validator address.
@@ -128,8 +133,9 @@ pub struct ValidatorMissedBlocks {
 /// MissedBlock contains height and missed status as boolean.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.MissedBlock")]
 pub struct MissedBlock {
     /// index is the height at which the block was missed.
@@ -146,8 +152,9 @@ pub struct MissedBlock {
 /// QueryParamsRequest is the request type for the Query/Params RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.QueryParamsRequest")]
 #[proto_query(
     path = "/cosmos.slashing.v1beta1.Query/Params",
@@ -157,8 +164,9 @@ pub struct QueryParamsRequest {}
 /// QueryParamsResponse is the response type for the Query/Params RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.QueryParamsResponse")]
 pub struct QueryParamsResponse {
     #[prost(message, optional, tag = "1")]
@@ -168,8 +176,9 @@ pub struct QueryParamsResponse {
 /// method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.QuerySigningInfoRequest")]
 #[proto_query(
     path = "/cosmos.slashing.v1beta1.Query/SigningInfo",
@@ -184,8 +193,9 @@ pub struct QuerySigningInfoRequest {
 /// method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.QuerySigningInfoResponse")]
 pub struct QuerySigningInfoResponse {
     /// val_signing_info is the signing info of requested val cons address
@@ -196,8 +206,9 @@ pub struct QuerySigningInfoResponse {
 /// method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.QuerySigningInfosRequest")]
 #[proto_query(
     path = "/cosmos.slashing.v1beta1.Query/SigningInfos",
@@ -211,8 +222,9 @@ pub struct QuerySigningInfosRequest {
 /// method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.QuerySigningInfosResponse")]
 pub struct QuerySigningInfosResponse {
     /// info is the signing info of all validators
@@ -224,8 +236,9 @@ pub struct QuerySigningInfosResponse {
 /// MsgUnjail defines the Msg/Unjail request type
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.MsgUnjail")]
 pub struct MsgUnjail {
     #[prost(string, tag = "1")]
@@ -234,8 +247,9 @@ pub struct MsgUnjail {
 /// MsgUnjailResponse defines the Msg/Unjail response type
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.MsgUnjailResponse")]
 pub struct MsgUnjailResponse {}
 /// MsgUpdateParams is the Msg/UpdateParams request type.
@@ -243,8 +257,9 @@ pub struct MsgUnjailResponse {}
 /// Since: cosmos-sdk 0.47
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.MsgUpdateParams")]
 pub struct MsgUpdateParams {
     /// authority is the address that controls the module (defaults to x/gov unless overwritten).
@@ -262,8 +277,9 @@ pub struct MsgUpdateParams {
 /// Since: cosmos-sdk 0.47
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.slashing.v1beta1.MsgUpdateParamsResponse")]
 pub struct MsgUpdateParamsResponse {}
 pub struct SlashingQuerier<'a, Q: cosmwasm_std::CustomQuery> {

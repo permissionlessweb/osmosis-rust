@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// tags are stringified and the log is JSON decoded.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.TxResponse")]
 pub struct TxResponse {
     /// The block height
@@ -74,8 +75,9 @@ pub struct TxResponse {
 /// ABCIMessageLog defines a structure containing an indexed tx ABCI message log.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.ABCIMessageLog")]
 pub struct AbciMessageLog {
     #[prost(uint32, tag = "1")]
@@ -95,8 +97,9 @@ pub struct AbciMessageLog {
 /// contain key/value pairs that are strings instead of raw bytes.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.StringEvent")]
 pub struct StringEvent {
     #[prost(string, tag = "1")]
@@ -108,8 +111,9 @@ pub struct StringEvent {
 /// strings instead of raw bytes.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.Attribute")]
 pub struct Attribute {
     #[prost(string, tag = "1")]
@@ -120,8 +124,9 @@ pub struct Attribute {
 /// GasInfo defines tx execution gas context.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.GasInfo")]
 pub struct GasInfo {
     /// GasWanted is the maximum units of work we allow this tx to perform.
@@ -142,8 +147,9 @@ pub struct GasInfo {
 /// Result is the union of ResponseFormat and ResponseCheckTx.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.Result")]
 pub struct Result {
     /// Data is any data returned from message or handler execution. It MUST be
@@ -174,8 +180,9 @@ pub struct Result {
 /// successfully simulated.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.SimulationResponse")]
 pub struct SimulationResponse {
     #[prost(message, optional, tag = "1")]
@@ -187,8 +194,9 @@ pub struct SimulationResponse {
 /// execution.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.MsgData")]
 #[deprecated]
 pub struct MsgData {
@@ -205,8 +213,9 @@ pub struct MsgData {
 /// for each message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.TxMsgData")]
 pub struct TxMsgData {
     /// data field is deprecated and not populated.
@@ -222,8 +231,9 @@ pub struct TxMsgData {
 /// SearchTxsResult defines a structure for querying txs pageable
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.SearchTxsResult")]
 pub struct SearchTxsResult {
     /// Count of all txs
@@ -268,8 +278,9 @@ pub struct SearchTxsResult {
 /// SearchBlocksResult defines a structure for querying blocks pageable
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.abci.v1beta1.SearchBlocksResult")]
 pub struct SearchBlocksResult {
     /// Count of all blocks

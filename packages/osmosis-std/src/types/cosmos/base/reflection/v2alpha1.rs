@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// AppDescriptor describes a cosmos-sdk based application
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.AppDescriptor")]
 pub struct AppDescriptor {
     /// AuthnDescriptor provides information on how to authenticate transactions on the application
@@ -29,8 +30,9 @@ pub struct AppDescriptor {
 /// TxDescriptor describes the accepted transaction type
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.TxDescriptor")]
 pub struct TxDescriptor {
     /// fullname is the protobuf fullname of the raw transaction type (for instance the tx.Tx type)
@@ -46,8 +48,9 @@ pub struct TxDescriptor {
 /// on the online RPCs GetTxMetadata and CombineUnsignedTxAndSignatures
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.AuthnDescriptor")]
 pub struct AuthnDescriptor {
     /// sign_modes defines the supported signature algorithm
@@ -60,8 +63,9 @@ pub struct AuthnDescriptor {
 /// this another time
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.SigningModeDescriptor")]
 pub struct SigningModeDescriptor {
     /// name defines the unique name of the signing mode
@@ -82,8 +86,9 @@ pub struct SigningModeDescriptor {
 /// ChainDescriptor describes chain information of the application
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.ChainDescriptor")]
 pub struct ChainDescriptor {
     /// id is the chain id
@@ -94,8 +99,9 @@ pub struct ChainDescriptor {
 /// CodecDescriptor describes the registered interfaces and provides metadata information on the types
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.CodecDescriptor")]
 pub struct CodecDescriptor {
     /// interfaces is a list of the registerted interfaces descriptors
@@ -105,8 +111,9 @@ pub struct CodecDescriptor {
 /// InterfaceDescriptor describes the implementation of an interface
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.InterfaceDescriptor")]
 pub struct InterfaceDescriptor {
     /// fullname is the name of the interface
@@ -123,8 +130,9 @@ pub struct InterfaceDescriptor {
 /// InterfaceImplementerDescriptor describes an interface implementer
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.InterfaceImplementerDescriptor")]
 pub struct InterfaceImplementerDescriptor {
     /// fullname is the protobuf queryable name of the interface implementer
@@ -141,8 +149,9 @@ pub struct InterfaceImplementerDescriptor {
 /// an interface represented as a google.protobuf.Any
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.InterfaceAcceptingMessageDescriptor")]
 pub struct InterfaceAcceptingMessageDescriptor {
     /// fullname is the protobuf fullname of the type containing the interface
@@ -157,8 +166,9 @@ pub struct InterfaceAcceptingMessageDescriptor {
 /// ConfigurationDescriptor contains metadata information on the sdk.Config
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.ConfigurationDescriptor")]
 pub struct ConfigurationDescriptor {
     /// bech32_account_address_prefix is the account address prefix
@@ -168,8 +178,9 @@ pub struct ConfigurationDescriptor {
 /// MsgDescriptor describes a cosmos-sdk message that can be delivered with a transaction
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.MsgDescriptor")]
 pub struct MsgDescriptor {
     /// msg_type_url contains the TypeURL of a sdk.Msg.
@@ -179,15 +190,17 @@ pub struct MsgDescriptor {
 /// GetAuthnDescriptorRequest is the request used for the GetAuthnDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetAuthnDescriptorRequest")]
 pub struct GetAuthnDescriptorRequest {}
 /// GetAuthnDescriptorResponse is the response returned by the GetAuthnDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetAuthnDescriptorResponse")]
 pub struct GetAuthnDescriptorResponse {
     /// authn describes how to authenticate to the application when sending transactions
@@ -197,15 +210,17 @@ pub struct GetAuthnDescriptorResponse {
 /// GetChainDescriptorRequest is the request used for the GetChainDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetChainDescriptorRequest")]
 pub struct GetChainDescriptorRequest {}
 /// GetChainDescriptorResponse is the response returned by the GetChainDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetChainDescriptorResponse")]
 pub struct GetChainDescriptorResponse {
     /// chain describes application chain information
@@ -215,15 +230,17 @@ pub struct GetChainDescriptorResponse {
 /// GetCodecDescriptorRequest is the request used for the GetCodecDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetCodecDescriptorRequest")]
 pub struct GetCodecDescriptorRequest {}
 /// GetCodecDescriptorResponse is the response returned by the GetCodecDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetCodecDescriptorResponse")]
 pub struct GetCodecDescriptorResponse {
     /// codec describes the application codec such as registered interfaces and implementations
@@ -233,15 +250,17 @@ pub struct GetCodecDescriptorResponse {
 /// GetConfigurationDescriptorRequest is the request used for the GetConfigurationDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetConfigurationDescriptorRequest")]
 pub struct GetConfigurationDescriptorRequest {}
 /// GetConfigurationDescriptorResponse is the response returned by the GetConfigurationDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetConfigurationDescriptorResponse")]
 pub struct GetConfigurationDescriptorResponse {
     /// config describes the application's sdk.Config
@@ -251,15 +270,17 @@ pub struct GetConfigurationDescriptorResponse {
 /// GetQueryServicesDescriptorRequest is the request used for the GetQueryServicesDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetQueryServicesDescriptorRequest")]
 pub struct GetQueryServicesDescriptorRequest {}
 /// GetQueryServicesDescriptorResponse is the response returned by the GetQueryServicesDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetQueryServicesDescriptorResponse")]
 pub struct GetQueryServicesDescriptorResponse {
     /// queries provides information on the available queryable services
@@ -269,15 +290,17 @@ pub struct GetQueryServicesDescriptorResponse {
 /// GetTxDescriptorRequest is the request used for the GetTxDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetTxDescriptorRequest")]
 pub struct GetTxDescriptorRequest {}
 /// GetTxDescriptorResponse is the response returned by the GetTxDescriptor RPC
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.GetTxDescriptorResponse")]
 pub struct GetTxDescriptorResponse {
     /// tx provides information on msgs that can be forwarded to the application
@@ -288,8 +311,9 @@ pub struct GetTxDescriptorResponse {
 /// QueryServicesDescriptor contains the list of cosmos-sdk queriable services
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.QueryServicesDescriptor")]
 pub struct QueryServicesDescriptor {
     /// query_services is a list of cosmos-sdk QueryServiceDescriptor
@@ -299,8 +323,9 @@ pub struct QueryServicesDescriptor {
 /// QueryServiceDescriptor describes a cosmos-sdk queryable service
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.QueryServiceDescriptor")]
 pub struct QueryServiceDescriptor {
     /// fullname is the protobuf fullname of the service descriptor
@@ -318,8 +343,9 @@ pub struct QueryServiceDescriptor {
 /// because it would be redundant with the grpc reflection service
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.reflection.v2alpha1.QueryMethodDescriptor")]
 pub struct QueryMethodDescriptor {
     /// name is the protobuf name (not fullname) of the method

@@ -4,8 +4,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// duration for which a given denom is locked.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.Gauge")]
 pub struct Gauge {
     /// id is the unique ID of a Gauge
@@ -56,8 +57,9 @@ pub struct Gauge {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.LockableDurationsInfo")]
 pub struct LockableDurationsInfo {
     /// List of incentivised durations that gauges will pay out to
@@ -67,8 +69,9 @@ pub struct LockableDurationsInfo {
 /// Params holds parameters for the incentives module
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.Params")]
 pub struct Params {
     /// distr_epoch_identifier is what epoch type distribution will be triggered by
@@ -116,8 +119,9 @@ pub struct Params {
 /// us sidestep a refactor to avoid an import cycle.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.InternalGaugeInfo")]
 pub struct InternalGaugeInfo {
     #[prost(string, tag = "1")]
@@ -127,8 +131,9 @@ pub struct InternalGaugeInfo {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.InternalGaugeRecord")]
 pub struct InternalGaugeRecord {
     #[prost(uint64, tag = "1")]
@@ -155,8 +160,9 @@ pub struct InternalGaugeRecord {
 /// the specified splitting policy.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.Group")]
 pub struct Group {
     #[prost(uint64, tag = "1")]
@@ -179,8 +185,9 @@ pub struct Group {
 /// It takes an array of pool IDs to split the incentives across.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.CreateGroup")]
 pub struct CreateGroup {
     #[prost(uint64, repeated, tag = "1")]
@@ -195,8 +202,9 @@ pub struct CreateGroup {
 /// associated gauge.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GroupsWithGauge")]
 pub struct GroupsWithGauge {
     #[prost(message, optional, tag = "1")]
@@ -207,7 +215,8 @@ pub struct GroupsWithGauge {
 /// SplittingPolicy determines the way we want to split incentives in groupGauges
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum SplittingPolicy {
     ByVolume = 0,
 }
@@ -233,8 +242,9 @@ impl SplittingPolicy {
 /// initialized
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GenesisState")]
 pub struct GenesisState {
     /// params are all the parameters of the module
@@ -269,8 +279,9 @@ pub struct GenesisState {
 /// creation fees.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.CreateGroupsProposal")]
 pub struct CreateGroupsProposal {
     #[prost(string, tag = "1")]
@@ -282,8 +293,9 @@ pub struct CreateGroupsProposal {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ModuleToDistributeCoinsRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/ModuleToDistributeCoins",
@@ -292,8 +304,9 @@ pub struct CreateGroupsProposal {
 pub struct ModuleToDistributeCoinsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ModuleToDistributeCoinsResponse")]
 pub struct ModuleToDistributeCoinsResponse {
     /// Coins that have yet to be distributed
@@ -302,8 +315,9 @@ pub struct ModuleToDistributeCoinsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GaugeByIDRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/GaugeByID",
@@ -321,8 +335,9 @@ pub struct GaugeByIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GaugeByIDResponse")]
 pub struct GaugeByIdResponse {
     /// Gauge that corresponds to provided gauge ID
@@ -331,8 +346,9 @@ pub struct GaugeByIdResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GaugesRequest")]
 #[proto_query(path = "/osmosis.incentives.Query/Gauges", response_type = GaugesResponse)]
 pub struct GaugesRequest {
@@ -342,8 +358,9 @@ pub struct GaugesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GaugesResponse")]
 pub struct GaugesResponse {
     /// Upcoming and active gauges
@@ -356,8 +373,9 @@ pub struct GaugesResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ActiveGaugesRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/ActiveGauges",
@@ -370,8 +388,9 @@ pub struct ActiveGaugesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ActiveGaugesResponse")]
 pub struct ActiveGaugesResponse {
     /// Active gauges only
@@ -384,8 +403,9 @@ pub struct ActiveGaugesResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ActiveGaugesPerDenomRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/ActiveGaugesPerDenom",
@@ -401,8 +421,9 @@ pub struct ActiveGaugesPerDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ActiveGaugesPerDenomResponse")]
 pub struct ActiveGaugesPerDenomResponse {
     /// Active gauges that match denom in query
@@ -415,8 +436,9 @@ pub struct ActiveGaugesPerDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.UpcomingGaugesRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/UpcomingGauges",
@@ -429,8 +451,9 @@ pub struct UpcomingGaugesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.UpcomingGaugesResponse")]
 pub struct UpcomingGaugesResponse {
     /// Gauges whose distribution is upcoming
@@ -443,8 +466,9 @@ pub struct UpcomingGaugesResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.UpcomingGaugesPerDenomRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/UpcomingGaugesPerDenom",
@@ -460,8 +484,9 @@ pub struct UpcomingGaugesPerDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.UpcomingGaugesPerDenomResponse")]
 pub struct UpcomingGaugesPerDenomResponse {
     /// Upcoming gauges that match denom in query
@@ -474,8 +499,9 @@ pub struct UpcomingGaugesPerDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.RewardsEstRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/RewardsEst",
@@ -504,8 +530,9 @@ pub struct RewardsEstRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.RewardsEstResponse")]
 pub struct RewardsEstResponse {
     /// Estimated coin rewards that will be received at provided address
@@ -515,8 +542,9 @@ pub struct RewardsEstResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryLockableDurationsRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/LockableDurations",
@@ -525,8 +553,9 @@ pub struct RewardsEstResponse {
 pub struct QueryLockableDurationsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryLockableDurationsResponse")]
 pub struct QueryLockableDurationsResponse {
     /// Time durations that users can lock coins for in order to receive rewards
@@ -535,8 +564,9 @@ pub struct QueryLockableDurationsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryAllGroupsRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/AllGroups",
@@ -545,8 +575,9 @@ pub struct QueryLockableDurationsResponse {
 pub struct QueryAllGroupsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryAllGroupsResponse")]
 pub struct QueryAllGroupsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -554,8 +585,9 @@ pub struct QueryAllGroupsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryAllGroupsGaugesRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/AllGroupsGauges",
@@ -564,8 +596,9 @@ pub struct QueryAllGroupsResponse {
 pub struct QueryAllGroupsGaugesRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryAllGroupsGaugesResponse")]
 pub struct QueryAllGroupsGaugesResponse {
     #[prost(message, repeated, tag = "1")]
@@ -573,8 +606,9 @@ pub struct QueryAllGroupsGaugesResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryAllGroupsWithGaugeRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/AllGroupsWithGauge",
@@ -583,8 +617,9 @@ pub struct QueryAllGroupsGaugesResponse {
 pub struct QueryAllGroupsWithGaugeRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryAllGroupsWithGaugeResponse")]
 pub struct QueryAllGroupsWithGaugeResponse {
     #[prost(message, repeated, tag = "1")]
@@ -592,8 +627,9 @@ pub struct QueryAllGroupsWithGaugeResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryGroupByGroupGaugeIDRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/GroupByGroupGaugeID",
@@ -610,8 +646,9 @@ pub struct QueryGroupByGroupGaugeIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryGroupByGroupGaugeIDResponse")]
 pub struct QueryGroupByGroupGaugeIdResponse {
     #[prost(message, optional, tag = "1")]
@@ -619,8 +656,9 @@ pub struct QueryGroupByGroupGaugeIdResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryCurrentWeightByGroupGaugeIDRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/CurrentWeightByGroupGaugeID",
@@ -637,8 +675,9 @@ pub struct QueryCurrentWeightByGroupGaugeIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryCurrentWeightByGroupGaugeIDResponse")]
 pub struct QueryCurrentWeightByGroupGaugeIdResponse {
     #[prost(message, repeated, tag = "1")]
@@ -646,8 +685,9 @@ pub struct QueryCurrentWeightByGroupGaugeIdResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.GaugeWeight")]
 pub struct GaugeWeight {
     #[prost(uint64, tag = "1")]
@@ -662,8 +702,9 @@ pub struct GaugeWeight {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryInternalGaugesRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/InternalGauges",
@@ -676,8 +717,9 @@ pub struct QueryInternalGaugesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryInternalGaugesResponse")]
 pub struct QueryInternalGaugesResponse {
     #[prost(message, repeated, tag = "1")]
@@ -689,8 +731,9 @@ pub struct QueryInternalGaugesResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryExternalGaugesRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/ExternalGauges",
@@ -703,8 +746,9 @@ pub struct QueryExternalGaugesRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryExternalGaugesResponse")]
 pub struct QueryExternalGaugesResponse {
     #[prost(message, repeated, tag = "1")]
@@ -716,8 +760,9 @@ pub struct QueryExternalGaugesResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryGaugesByPoolIDRequest")]
 #[proto_query(
     path = "/osmosis.incentives.Query/GaugesByPoolID",
@@ -737,8 +782,9 @@ pub struct QueryGaugesByPoolIdRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.QueryGaugesByPoolIDResponse")]
 pub struct QueryGaugesByPoolIdResponse {
     #[prost(message, repeated, tag = "1")]
@@ -750,15 +796,17 @@ pub struct QueryGaugesByPoolIdResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ParamsRequest")]
 #[proto_query(path = "/osmosis.incentives.Query/Params", response_type = ParamsResponse)]
 pub struct ParamsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.ParamsResponse")]
 pub struct ParamsResponse {
     #[prost(message, optional, tag = "1")]
@@ -767,8 +815,9 @@ pub struct ParamsResponse {
 /// MsgCreateGauge creates a gauge to distribute rewards to users
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.MsgCreateGauge")]
 pub struct MsgCreateGauge {
     /// is_perpetual shows if it's a perpetual or non-perpetual gauge
@@ -816,15 +865,17 @@ pub struct MsgCreateGauge {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.MsgCreateGaugeResponse")]
 pub struct MsgCreateGaugeResponse {}
 /// MsgAddToGauge adds coins to a previously created gauge
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.MsgAddToGauge")]
 pub struct MsgAddToGauge {
     /// owner is the gauge owner's address
@@ -844,15 +895,17 @@ pub struct MsgAddToGauge {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.MsgAddToGaugeResponse")]
 pub struct MsgAddToGaugeResponse {}
 /// MsgCreateGroup creates a group to distribute rewards to a group of pools
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.MsgCreateGroup")]
 pub struct MsgCreateGroup {
     /// coins are the provided coins that the group will distribute
@@ -880,8 +933,9 @@ pub struct MsgCreateGroup {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.incentives.MsgCreateGroupResponse")]
 pub struct MsgCreateGroupResponse {
     /// group_id is the ID of the group that is created from this msg

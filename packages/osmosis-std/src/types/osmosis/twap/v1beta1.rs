@@ -8,8 +8,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// now.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.TwapRecord")]
 pub struct TwapRecord {
     #[prost(uint64, tag = "1")]
@@ -58,8 +59,9 @@ pub struct TwapRecord {
 /// instead of pruning all at once at the end of the epoch.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.PruningState")]
 pub struct PruningState {
     /// is_pruning is true if the pruning process is ongoing.
@@ -95,8 +97,9 @@ pub struct PruningState {
 /// Params holds parameters for the twap module
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.Params")]
 pub struct Params {
     #[prost(string, tag = "1")]
@@ -108,8 +111,9 @@ pub struct Params {
 /// GenesisState defines the twap module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// twaps is the collection of all twap records.
@@ -121,8 +125,9 @@ pub struct GenesisState {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.ArithmeticTwapRequest")]
 #[proto_query(
     path = "/osmosis.twap.v1beta1.Query/ArithmeticTwap",
@@ -147,8 +152,9 @@ pub struct ArithmeticTwapRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.ArithmeticTwapResponse")]
 pub struct ArithmeticTwapResponse {
     #[prost(string, tag = "1")]
@@ -156,8 +162,9 @@ pub struct ArithmeticTwapResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.ArithmeticTwapToNowRequest")]
 #[proto_query(
     path = "/osmosis.twap.v1beta1.Query/ArithmeticTwapToNow",
@@ -180,8 +187,9 @@ pub struct ArithmeticTwapToNowRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.ArithmeticTwapToNowResponse")]
 pub struct ArithmeticTwapToNowResponse {
     #[prost(string, tag = "1")]
@@ -189,8 +197,9 @@ pub struct ArithmeticTwapToNowResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.GeometricTwapRequest")]
 #[proto_query(
     path = "/osmosis.twap.v1beta1.Query/GeometricTwap",
@@ -215,8 +224,9 @@ pub struct GeometricTwapRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.GeometricTwapResponse")]
 pub struct GeometricTwapResponse {
     #[prost(string, tag = "1")]
@@ -224,8 +234,9 @@ pub struct GeometricTwapResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.GeometricTwapToNowRequest")]
 #[proto_query(
     path = "/osmosis.twap.v1beta1.Query/GeometricTwapToNow",
@@ -248,8 +259,9 @@ pub struct GeometricTwapToNowRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.GeometricTwapToNowResponse")]
 pub struct GeometricTwapToNowResponse {
     #[prost(string, tag = "1")]
@@ -257,8 +269,9 @@ pub struct GeometricTwapToNowResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.ParamsRequest")]
 #[proto_query(
     path = "/osmosis.twap.v1beta1.Query/Params",
@@ -267,8 +280,9 @@ pub struct GeometricTwapToNowResponse {
 pub struct ParamsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.twap.v1beta1.ParamsResponse")]
 pub struct ParamsResponse {
     #[prost(message, optional, tag = "1")]

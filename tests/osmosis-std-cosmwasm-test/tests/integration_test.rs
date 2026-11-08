@@ -190,7 +190,7 @@ fn test_twap_query() {
                             pool_id,
                             token_out_denom: "uion".to_string(),
                         }],
-                        token_in: Some(Coin::new(30, "uosmo").into()),
+                        token_in: Some(Coin::new(30u128, "uosmo").into()),
                         token_out_min_amount: "1".to_string(),
                     },
                     gamm::v1beta1::MsgSwapExactAmountIn::TYPE_URL,

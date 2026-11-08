@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// For every height/round/step transition
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.NewRoundStep")]
 pub struct NewRoundStep {
     #[prost(int64, tag = "1")]
@@ -43,8 +44,9 @@ pub struct NewRoundStep {
 /// In case the block is also committed, then IsCommit flag is set to true.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.NewValidBlock")]
 pub struct NewValidBlock {
     #[prost(int64, tag = "1")]
@@ -69,8 +71,9 @@ pub struct NewValidBlock {
 /// Proposal is sent when a new block is proposed.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.Proposal")]
 pub struct Proposal {
     #[prost(message, optional, tag = "1")]
@@ -79,8 +82,9 @@ pub struct Proposal {
 /// ProposalPOL is sent when a previous proposal is re-proposed.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.ProposalPOL")]
 pub struct ProposalPol {
     #[prost(int64, tag = "1")]
@@ -101,8 +105,9 @@ pub struct ProposalPol {
 /// BlockPart is sent when gossipping a piece of the proposed block.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.BlockPart")]
 pub struct BlockPart {
     #[prost(int64, tag = "1")]
@@ -123,8 +128,9 @@ pub struct BlockPart {
 /// Vote is sent when voting for a proposal (or lack thereof).
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.Vote")]
 pub struct Vote {
     #[prost(message, optional, tag = "1")]
@@ -133,8 +139,9 @@ pub struct Vote {
 /// HasVote is sent to indicate that a particular vote has been received.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.HasVote")]
 pub struct HasVote {
     #[prost(int64, tag = "1")]
@@ -165,8 +172,9 @@ pub struct HasVote {
 /// VoteSetMaj23 is sent to indicate that a given BlockID has seen +2/3 votes.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.VoteSetMaj23")]
 pub struct VoteSetMaj23 {
     #[prost(int64, tag = "1")]
@@ -194,8 +202,9 @@ pub struct VoteSetMaj23 {
 /// VoteSetBits is sent to communicate the bit-array of votes seen for the BlockID.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.VoteSetBits")]
 pub struct VoteSetBits {
     #[prost(int64, tag = "1")]
@@ -224,8 +233,9 @@ pub struct VoteSetBits {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.Message")]
 pub struct Message {
     #[prost(oneof = "message::Sum", tags = "1, 2, 3, 4, 5, 6, 7, 8, 9")]
@@ -242,8 +252,9 @@ pub mod message {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Sum {
         #[prost(message, tag = "1")]
         NewRoundStep(super::NewRoundStep),
@@ -268,8 +279,9 @@ pub mod message {
 /// MsgInfo are msgs from the reactor which may update the state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.MsgInfo")]
 pub struct MsgInfo {
     #[prost(message, optional, tag = "1")]
@@ -281,8 +293,9 @@ pub struct MsgInfo {
 /// TimeoutInfo internally generated messages which may update the state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.TimeoutInfo")]
 pub struct TimeoutInfo {
     #[prost(message, optional, tag = "1")]
@@ -310,8 +323,9 @@ pub struct TimeoutInfo {
 /// @internal used by scripts/wal2json util.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.EndHeight")]
 pub struct EndHeight {
     #[prost(int64, tag = "1")]
@@ -323,8 +337,9 @@ pub struct EndHeight {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.WALMessage")]
 pub struct WalMessage {
     #[prost(oneof = "wal_message::Sum", tags = "1, 2, 3, 4")]
@@ -342,7 +357,9 @@ pub mod wal_message {
         ::serde::Serialize,
         ::serde::Deserialize,
         ::schemars::JsonSchema,
+        ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Sum {
         #[prost(message, tag = "1")]
         EventDataRoundState(super::super::types::EventDataRoundState),
@@ -357,8 +374,9 @@ pub mod wal_message {
 /// TimedWALMessage wraps WALMessage and adds Time for debugging purposes.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.consensus.TimedWALMessage")]
 pub struct TimedWalMessage {
     #[prost(message, optional, tag = "1")]

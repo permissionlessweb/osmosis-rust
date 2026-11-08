@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// GenesisState defines the interchain accounts genesis state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.genesis.v1.GenesisState")]
 pub struct GenesisState {
     #[prost(message, optional, tag = "1")]
@@ -14,8 +15,9 @@ pub struct GenesisState {
 /// ControllerGenesisState defines the interchain accounts controller genesis state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/ibc.applications.interchain_accounts.genesis.v1.ControllerGenesisState"
 )]
@@ -32,8 +34,9 @@ pub struct ControllerGenesisState {
 /// HostGenesisState defines the interchain accounts host genesis state
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.genesis.v1.HostGenesisState")]
 pub struct HostGenesisState {
     #[prost(message, repeated, tag = "1")]
@@ -49,8 +52,9 @@ pub struct HostGenesisState {
 /// indicate if the channel is middleware enabled
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.applications.interchain_accounts.genesis.v1.ActiveChannel")]
 pub struct ActiveChannel {
     #[prost(string, tag = "1")]
@@ -68,8 +72,9 @@ pub struct ActiveChannel {
 /// RegisteredInterchainAccount contains a connection ID, port ID and associated interchain account address
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/ibc.applications.interchain_accounts.genesis.v1.RegisteredInterchainAccount"
 )]

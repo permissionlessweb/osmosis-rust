@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// SuperfluidAsset stores the pair of superfluid asset type and denom pair
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidAsset")]
 pub struct SuperfluidAsset {
     #[prost(string, tag = "1")]
@@ -23,8 +24,9 @@ pub struct SuperfluidAsset {
 /// actual account responsible for delegation, not the validator account itself.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidIntermediaryAccount")]
 pub struct SuperfluidIntermediaryAccount {
     /// Denom indicates the denom of the superfluid asset.
@@ -50,8 +52,9 @@ pub struct SuperfluidIntermediaryAccount {
 /// could change.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.OsmoEquivalentMultiplierRecord")]
 pub struct OsmoEquivalentMultiplierRecord {
     #[prost(int64, tag = "1")]
@@ -70,8 +73,9 @@ pub struct OsmoEquivalentMultiplierRecord {
 /// delegations of an account in the state machine in a user friendly form.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationRecord")]
 pub struct SuperfluidDelegationRecord {
     #[prost(string, tag = "1")]
@@ -88,8 +92,9 @@ pub struct SuperfluidDelegationRecord {
 /// via lp shares.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.LockIdIntermediaryAccountConnection")]
 pub struct LockIdIntermediaryAccountConnection {
     #[prost(uint64, tag = "1")]
@@ -104,8 +109,9 @@ pub struct LockIdIntermediaryAccountConnection {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.UnpoolWhitelistedPools")]
 pub struct UnpoolWhitelistedPools {
     #[prost(uint64, repeated, tag = "1")]
@@ -117,8 +123,9 @@ pub struct UnpoolWhitelistedPools {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.ConcentratedPoolUserPositionRecord")]
 pub struct ConcentratedPoolUserPositionRecord {
     #[prost(string, tag = "1")]
@@ -148,7 +155,8 @@ pub struct ConcentratedPoolUserPositionRecord {
 /// a native token, lp share of a pool, or concentrated share of a pool
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum SuperfluidAssetType {
     Native = 0,
     LpShare = 1,
@@ -180,8 +188,9 @@ impl SuperfluidAssetType {
 /// Params holds parameters for the superfluid module
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.Params")]
 pub struct Params {
     /// minimum_risk_factor is to be cut on OSMO equivalent value of lp tokens for
@@ -194,8 +203,9 @@ pub struct Params {
 /// GenesisState defines the module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.GenesisState")]
 pub struct GenesisState {
     #[prost(message, optional, tag = "1")]
@@ -218,8 +228,9 @@ pub struct GenesisState {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryParamsRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/Params",
@@ -228,8 +239,9 @@ pub struct GenesisState {
 pub struct QueryParamsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryParamsResponse")]
 pub struct QueryParamsResponse {
     /// params defines the parameters of the module.
@@ -238,8 +250,9 @@ pub struct QueryParamsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AssetTypeRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/AssetType",
@@ -251,8 +264,9 @@ pub struct AssetTypeRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AssetTypeResponse")]
 pub struct AssetTypeResponse {
     #[prost(enumeration = "SuperfluidAssetType", tag = "1")]
@@ -264,8 +278,9 @@ pub struct AssetTypeResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AllAssetsRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/AllAssets",
@@ -274,8 +289,9 @@ pub struct AssetTypeResponse {
 pub struct AllAssetsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AllAssetsResponse")]
 pub struct AllAssetsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -283,8 +299,9 @@ pub struct AllAssetsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AssetMultiplierRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/AssetMultiplier",
@@ -296,8 +313,9 @@ pub struct AssetMultiplierRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AssetMultiplierResponse")]
 pub struct AssetMultiplierResponse {
     #[prost(message, optional, tag = "1")]
@@ -305,8 +323,9 @@ pub struct AssetMultiplierResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidIntermediaryAccountInfo")]
 pub struct SuperfluidIntermediaryAccountInfo {
     #[prost(string, tag = "1")]
@@ -325,8 +344,9 @@ pub struct SuperfluidIntermediaryAccountInfo {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AllIntermediaryAccountsRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/AllIntermediaryAccounts",
@@ -338,8 +358,9 @@ pub struct AllIntermediaryAccountsRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.AllIntermediaryAccountsResponse")]
 pub struct AllIntermediaryAccountsResponse {
     #[prost(message, repeated, tag = "1")]
@@ -350,8 +371,9 @@ pub struct AllIntermediaryAccountsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.ConnectedIntermediaryAccountRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/ConnectedIntermediaryAccount",
@@ -368,8 +390,9 @@ pub struct ConnectedIntermediaryAccountRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.ConnectedIntermediaryAccountResponse")]
 pub struct ConnectedIntermediaryAccountResponse {
     #[prost(message, optional, tag = "1")]
@@ -377,8 +400,9 @@ pub struct ConnectedIntermediaryAccountResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryTotalDelegationByValidatorForDenomRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/TotalDelegationByValidatorForDenom",
@@ -390,8 +414,9 @@ pub struct QueryTotalDelegationByValidatorForDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryTotalDelegationByValidatorForDenomResponse")]
 pub struct QueryTotalDelegationByValidatorForDenomResponse {
     #[prost(message, repeated, tag = "1")]
@@ -399,8 +424,9 @@ pub struct QueryTotalDelegationByValidatorForDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.Delegations")]
 pub struct Delegations {
     #[prost(string, tag = "1")]
@@ -412,8 +438,9 @@ pub struct Delegations {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.TotalSuperfluidDelegationsRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/TotalSuperfluidDelegations",
@@ -422,8 +449,9 @@ pub struct Delegations {
 pub struct TotalSuperfluidDelegationsRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.TotalSuperfluidDelegationsResponse")]
 pub struct TotalSuperfluidDelegationsResponse {
     #[prost(string, tag = "1")]
@@ -431,8 +459,9 @@ pub struct TotalSuperfluidDelegationsResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationAmountRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/SuperfluidDelegationAmount",
@@ -448,8 +477,9 @@ pub struct SuperfluidDelegationAmountRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationAmountResponse")]
 pub struct SuperfluidDelegationAmountResponse {
     #[prost(message, repeated, tag = "1")]
@@ -457,8 +487,9 @@ pub struct SuperfluidDelegationAmountResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationsByDelegatorRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/SuperfluidDelegationsByDelegator",
@@ -470,8 +501,9 @@ pub struct SuperfluidDelegationsByDelegatorRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationsByDelegatorResponse")]
 pub struct SuperfluidDelegationsByDelegatorResponse {
     #[prost(message, repeated, tag = "1")]
@@ -484,8 +516,9 @@ pub struct SuperfluidDelegationsByDelegatorResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidUndelegationsByDelegatorRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/SuperfluidUndelegationsByDelegator",
@@ -499,8 +532,9 @@ pub struct SuperfluidUndelegationsByDelegatorRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidUndelegationsByDelegatorResponse")]
 pub struct SuperfluidUndelegationsByDelegatorResponse {
     #[prost(message, repeated, tag = "1")]
@@ -513,8 +547,9 @@ pub struct SuperfluidUndelegationsByDelegatorResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationsByValidatorDenomRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/SuperfluidDelegationsByValidatorDenom",
@@ -528,8 +563,9 @@ pub struct SuperfluidDelegationsByValidatorDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.SuperfluidDelegationsByValidatorDenomResponse")]
 pub struct SuperfluidDelegationsByValidatorDenomResponse {
     #[prost(message, repeated, tag = "1")]
@@ -537,8 +573,9 @@ pub struct SuperfluidDelegationsByValidatorDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.EstimateSuperfluidDelegatedAmountByValidatorDenomRequest"
 )]
@@ -554,8 +591,9 @@ pub struct EstimateSuperfluidDelegatedAmountByValidatorDenomRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.EstimateSuperfluidDelegatedAmountByValidatorDenomResponse"
 )]
@@ -565,8 +603,9 @@ pub struct EstimateSuperfluidDelegatedAmountByValidatorDenomResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryTotalDelegationByDelegatorRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/TotalDelegationByDelegator",
@@ -578,8 +617,9 @@ pub struct QueryTotalDelegationByDelegatorRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryTotalDelegationByDelegatorResponse")]
 pub struct QueryTotalDelegationByDelegatorResponse {
     #[prost(message, repeated, tag = "1")]
@@ -595,8 +635,9 @@ pub struct QueryTotalDelegationByDelegatorResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryUnpoolWhitelistRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/UnpoolWhitelist",
@@ -605,8 +646,9 @@ pub struct QueryTotalDelegationByDelegatorResponse {
 pub struct QueryUnpoolWhitelistRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryUnpoolWhitelistResponse")]
 pub struct QueryUnpoolWhitelistResponse {
     #[prost(uint64, repeated, tag = "1")]
@@ -619,8 +661,9 @@ pub struct QueryUnpoolWhitelistResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.UserConcentratedSuperfluidPositionsDelegatedRequest"
 )]
@@ -634,8 +677,9 @@ pub struct UserConcentratedSuperfluidPositionsDelegatedRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.UserConcentratedSuperfluidPositionsDelegatedResponse"
 )]
@@ -645,8 +689,9 @@ pub struct UserConcentratedSuperfluidPositionsDelegatedResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.UserConcentratedSuperfluidPositionsUndelegatingRequest"
 )]
@@ -660,8 +705,9 @@ pub struct UserConcentratedSuperfluidPositionsUndelegatingRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.UserConcentratedSuperfluidPositionsUndelegatingResponse"
 )]
@@ -672,8 +718,9 @@ pub struct UserConcentratedSuperfluidPositionsUndelegatingResponse {
 /// THIS QUERY IS TEMPORARY
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryRestSupplyRequest")]
 #[proto_query(
     path = "/osmosis.superfluid.Query/RestSupply",
@@ -685,8 +732,9 @@ pub struct QueryRestSupplyRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.QueryRestSupplyResponse")]
 pub struct QueryRestSupplyResponse {
     /// amount is the supply of the coin.
@@ -695,8 +743,9 @@ pub struct QueryRestSupplyResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidDelegate")]
 pub struct MsgSuperfluidDelegate {
     #[prost(string, tag = "1")]
@@ -713,14 +762,16 @@ pub struct MsgSuperfluidDelegate {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidDelegateResponse")]
 pub struct MsgSuperfluidDelegateResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidUndelegate")]
 pub struct MsgSuperfluidUndelegate {
     #[prost(string, tag = "1")]
@@ -735,14 +786,16 @@ pub struct MsgSuperfluidUndelegate {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidUndelegateResponse")]
 pub struct MsgSuperfluidUndelegateResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidUnbondLock")]
 pub struct MsgSuperfluidUnbondLock {
     #[prost(string, tag = "1")]
@@ -757,14 +810,16 @@ pub struct MsgSuperfluidUnbondLock {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidUnbondLockResponse")]
 pub struct MsgSuperfluidUnbondLockResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidUndelegateAndUnbondLock")]
 pub struct MsgSuperfluidUndelegateAndUnbondLock {
     #[prost(string, tag = "1")]
@@ -782,8 +837,9 @@ pub struct MsgSuperfluidUndelegateAndUnbondLock {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgSuperfluidUndelegateAndUnbondLockResponse")]
 pub struct MsgSuperfluidUndelegateAndUnbondLockResponse {
     /// lock id of the new lock created for the remaining amount.
@@ -802,8 +858,9 @@ pub struct MsgSuperfluidUndelegateAndUnbondLockResponse {
 /// specified validator addr.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgLockAndSuperfluidDelegate")]
 pub struct MsgLockAndSuperfluidDelegate {
     #[prost(string, tag = "1")]
@@ -815,8 +872,9 @@ pub struct MsgLockAndSuperfluidDelegate {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgLockAndSuperfluidDelegateResponse")]
 pub struct MsgLockAndSuperfluidDelegateResponse {
     #[prost(uint64, tag = "1")]
@@ -831,8 +889,9 @@ pub struct MsgLockAndSuperfluidDelegateResponse {
 /// in a concentrated liquidity pool, then superfluid delegates.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgCreateFullRangePositionAndSuperfluidDelegate")]
 pub struct MsgCreateFullRangePositionAndSuperfluidDelegate {
     #[prost(string, tag = "1")]
@@ -851,8 +910,9 @@ pub struct MsgCreateFullRangePositionAndSuperfluidDelegate {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.MsgCreateFullRangePositionAndSuperfluidDelegateResponse"
 )]
@@ -882,8 +942,9 @@ pub struct MsgCreateFullRangePositionAndSuperfluidDelegateResponse {
 /// until unbond completion.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgUnPoolWhitelistedPool")]
 pub struct MsgUnPoolWhitelistedPool {
     #[prost(string, tag = "1")]
@@ -898,8 +959,9 @@ pub struct MsgUnPoolWhitelistedPool {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgUnPoolWhitelistedPoolResponse")]
 pub struct MsgUnPoolWhitelistedPoolResponse {
     #[prost(uint64, repeated, tag = "1")]
@@ -914,8 +976,9 @@ pub struct MsgUnPoolWhitelistedPoolResponse {
 /// MsgUnlockAndMigrateSharesToFullRangeConcentratedPosition
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.MsgUnlockAndMigrateSharesToFullRangeConcentratedPosition"
 )]
@@ -937,8 +1000,9 @@ pub struct MsgUnlockAndMigrateSharesToFullRangeConcentratedPosition {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.MsgUnlockAndMigrateSharesToFullRangeConcentratedPositionResponse"
 )]
@@ -955,8 +1019,9 @@ pub struct MsgUnlockAndMigrateSharesToFullRangeConcentratedPositionResponse {
 /// ===================== MsgAddToConcentratedLiquiditySuperfluidPosition
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgAddToConcentratedLiquiditySuperfluidPosition")]
 pub struct MsgAddToConcentratedLiquiditySuperfluidPosition {
     #[prost(uint64, tag = "1")]
@@ -975,8 +1040,9 @@ pub struct MsgAddToConcentratedLiquiditySuperfluidPosition {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.superfluid.MsgAddToConcentratedLiquiditySuperfluidPositionResponse"
 )]
@@ -1008,8 +1074,9 @@ pub struct MsgAddToConcentratedLiquiditySuperfluidPositionResponse {
 /// ===================== MsgUnbondConvertAndStake
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgUnbondConvertAndStake")]
 pub struct MsgUnbondConvertAndStake {
     /// lock ID to convert and stake.
@@ -1039,8 +1106,9 @@ pub struct MsgUnbondConvertAndStake {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.superfluid.MsgUnbondConvertAndStakeResponse")]
 pub struct MsgUnbondConvertAndStakeResponse {
     #[prost(string, tag = "1")]

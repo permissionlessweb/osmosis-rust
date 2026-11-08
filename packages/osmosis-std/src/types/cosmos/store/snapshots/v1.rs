@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Snapshot contains Tendermint state sync snapshot info.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.Snapshot")]
 pub struct Snapshot {
     #[prost(uint64, tag = "1")]
@@ -36,8 +37,9 @@ pub struct Snapshot {
 /// Metadata contains SDK-specific snapshot metadata.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.Metadata")]
 pub struct Metadata {
     /// SHA-256 chunk hashes
@@ -49,8 +51,9 @@ pub struct Metadata {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.SnapshotItem")]
 pub struct SnapshotItem {
     /// item is the specific type of snapshot item.
@@ -69,8 +72,9 @@ pub mod snapshot_item {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Item {
         #[prost(message, tag = "1")]
         Store(super::SnapshotStoreItem),
@@ -87,8 +91,9 @@ pub mod snapshot_item {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.SnapshotStoreItem")]
 pub struct SnapshotStoreItem {
     #[prost(string, tag = "1")]
@@ -99,8 +104,9 @@ pub struct SnapshotStoreItem {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.SnapshotIAVLItem")]
 pub struct SnapshotIavlItem {
     #[prost(bytes = "vec", tag = "1")]
@@ -135,8 +141,9 @@ pub struct SnapshotIavlItem {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.SnapshotExtensionMeta")]
 pub struct SnapshotExtensionMeta {
     #[prost(string, tag = "1")]
@@ -153,8 +160,9 @@ pub struct SnapshotExtensionMeta {
 /// Since: cosmos-sdk 0.46
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.snapshots.v1.SnapshotExtensionPayload")]
 pub struct SnapshotExtensionPayload {
     #[prost(bytes = "vec", tag = "1")]

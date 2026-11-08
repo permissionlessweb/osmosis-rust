@@ -6,8 +6,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// then you must create a new proto message and follow ADR-28 for Address construction.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.crypto.ed25519.PubKey")]
 pub struct PubKey {
     #[prost(bytes = "vec", tag = "1")]
@@ -21,8 +22,9 @@ pub struct PubKey {
 /// NOTE: ed25519 keys must not be used in SDK apps except in a tendermint validator context.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.crypto.ed25519.PrivKey")]
 pub struct PrivKey {
     #[prost(bytes = "vec", tag = "1")]

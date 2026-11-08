@@ -6,8 +6,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// distribution.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.ValidatorPreference")]
 pub struct ValidatorPreference {
     /// val_oper_address holds the validator address the user wants to delegate
@@ -24,8 +25,9 @@ pub struct ValidatorPreference {
 /// add up to 1.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.ValidatorSetPreferences")]
 pub struct ValidatorSetPreferences {
     /// preference holds {valAddr, weight} for the user who created it.
@@ -35,8 +37,9 @@ pub struct ValidatorSetPreferences {
 /// Request type for UserValidatorPreferences.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.UserValidatorPreferencesRequest")]
 #[proto_query(
     path = "/osmosis.valsetpref.v1beta1.Query/UserValidatorPreferences",
@@ -50,8 +53,9 @@ pub struct UserValidatorPreferencesRequest {
 /// Response type the QueryUserValidatorPreferences query request
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.UserValidatorPreferencesResponse")]
 pub struct UserValidatorPreferencesResponse {
     #[prost(message, repeated, tag = "1")]
@@ -60,8 +64,9 @@ pub struct UserValidatorPreferencesResponse {
 /// MsgCreateValidatorSetPreference is a list that holds validator-set.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgSetValidatorSetPreference")]
 pub struct MsgSetValidatorSetPreference {
     /// delegator is the user who is trying to create a validator-set.
@@ -73,16 +78,18 @@ pub struct MsgSetValidatorSetPreference {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgSetValidatorSetPreferenceResponse")]
 pub struct MsgSetValidatorSetPreferenceResponse {}
 /// MsgDelegateToValidatorSet allows users to delegate to an existing
 /// validator-set
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgDelegateToValidatorSet")]
 pub struct MsgDelegateToValidatorSet {
     /// delegator is the user who is trying to delegate.
@@ -97,14 +104,16 @@ pub struct MsgDelegateToValidatorSet {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgDelegateToValidatorSetResponse")]
 pub struct MsgDelegateToValidatorSetResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgUndelegateFromValidatorSet")]
 pub struct MsgUndelegateFromValidatorSet {
     /// delegator is the user who is trying to undelegate.
@@ -120,14 +129,16 @@ pub struct MsgUndelegateFromValidatorSet {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgUndelegateFromValidatorSetResponse")]
 pub struct MsgUndelegateFromValidatorSetResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgUndelegateFromRebalancedValidatorSet")]
 pub struct MsgUndelegateFromRebalancedValidatorSet {
     /// delegator is the user who is trying to undelegate.
@@ -145,16 +156,18 @@ pub struct MsgUndelegateFromRebalancedValidatorSet {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.valsetpref.v1beta1.MsgUndelegateFromRebalancedValidatorSetResponse"
 )]
 pub struct MsgUndelegateFromRebalancedValidatorSetResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgRedelegateValidatorSet")]
 pub struct MsgRedelegateValidatorSet {
     /// delegator is the user who is trying to create a validator-set.
@@ -166,16 +179,18 @@ pub struct MsgRedelegateValidatorSet {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgRedelegateValidatorSetResponse")]
 pub struct MsgRedelegateValidatorSetResponse {}
 /// MsgWithdrawDelegationRewards allows user to claim staking rewards from the
 /// validator set.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgWithdrawDelegationRewards")]
 pub struct MsgWithdrawDelegationRewards {
     /// delegator is the user who is trying to claim staking rewards.
@@ -184,8 +199,9 @@ pub struct MsgWithdrawDelegationRewards {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgWithdrawDelegationRewardsResponse")]
 pub struct MsgWithdrawDelegationRewardsResponse {}
 /// MsgDelegateBondedTokens breaks bonded lockup (by ID) of osmo, of
@@ -193,8 +209,9 @@ pub struct MsgWithdrawDelegationRewardsResponse {}
 /// delegator's current validator set preference.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgDelegateBondedTokens")]
 pub struct MsgDelegateBondedTokens {
     /// delegator is the user who is trying to force unbond osmo and delegate.
@@ -211,8 +228,9 @@ pub struct MsgDelegateBondedTokens {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.valsetpref.v1beta1.MsgDelegateBondedTokensResponse")]
 pub struct MsgDelegateBondedTokensResponse {}
 pub struct ValsetprefQuerier<'a, Q: cosmwasm_std::CustomQuery> {

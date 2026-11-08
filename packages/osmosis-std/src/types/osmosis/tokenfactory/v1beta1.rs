@@ -4,8 +4,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// permission, but is planned to be extended to the future.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.DenomAuthorityMetadata")]
 pub struct DenomAuthorityMetadata {
     /// Can be empty for no admin, or a valid osmosis address
@@ -15,8 +16,9 @@ pub struct DenomAuthorityMetadata {
 /// Params defines the parameters for the tokenfactory module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.Params")]
 pub struct Params {
     /// DenomCreationFee defines the fee to be charged on the creation of a new
@@ -39,8 +41,9 @@ pub struct Params {
 /// GenesisState defines the tokenfactory module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.GenesisState")]
 pub struct GenesisState {
     /// params defines the parameters of the module.
@@ -54,8 +57,9 @@ pub struct GenesisState {
 /// denom's admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.GenesisDenom")]
 pub struct GenesisDenom {
     #[prost(string, tag = "1")]
@@ -66,8 +70,9 @@ pub struct GenesisDenom {
 /// QueryParamsRequest is the request type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryParamsRequest")]
 #[proto_query(
     path = "/osmosis.tokenfactory.v1beta1.Query/Params",
@@ -77,8 +82,9 @@ pub struct QueryParamsRequest {}
 /// QueryParamsResponse is the response type for the Query/Params RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryParamsResponse")]
 pub struct QueryParamsResponse {
     /// params defines the parameters of the module.
@@ -89,8 +95,9 @@ pub struct QueryParamsResponse {
 /// DenomAuthorityMetadata gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataRequest")]
 #[proto_query(
     path = "/osmosis.tokenfactory.v1beta1.Query/DenomAuthorityMetadata",
@@ -104,8 +111,9 @@ pub struct QueryDenomAuthorityMetadataRequest {
 /// DenomAuthorityMetadata gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomAuthorityMetadataResponse")]
 pub struct QueryDenomAuthorityMetadataResponse {
     #[prost(message, optional, tag = "1")]
@@ -115,8 +123,9 @@ pub struct QueryDenomAuthorityMetadataResponse {
 /// DenomsFromCreator gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorRequest")]
 #[proto_query(
     path = "/osmosis.tokenfactory.v1beta1.Query/DenomsFromCreator",
@@ -130,8 +139,9 @@ pub struct QueryDenomsFromCreatorRequest {
 /// DenomsFromCreator gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryDenomsFromCreatorResponse")]
 pub struct QueryDenomsFromCreatorResponse {
     #[prost(string, repeated, tag = "1")]
@@ -139,8 +149,9 @@ pub struct QueryDenomsFromCreatorResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryBeforeSendHookAddressRequest")]
 #[proto_query(
     path = "/osmosis.tokenfactory.v1beta1.Query/BeforeSendHookAddress",
@@ -154,8 +165,9 @@ pub struct QueryBeforeSendHookAddressRequest {
 /// DenomBeforeSendHook gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryBeforeSendHookAddressResponse")]
 pub struct QueryBeforeSendHookAddressResponse {
     #[prost(string, tag = "1")]
@@ -163,8 +175,9 @@ pub struct QueryBeforeSendHookAddressResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.QueryAllBeforeSendHooksAddressesRequest")]
 #[proto_query(
     path = "/osmosis.tokenfactory.v1beta1.Query/AllBeforeSendHooksAddresses",
@@ -175,8 +188,9 @@ pub struct QueryAllBeforeSendHooksAddressesRequest {}
 /// the AllBeforeSendHooksAddresses gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.tokenfactory.v1beta1.QueryAllBeforeSendHooksAddressesResponse"
 )]
@@ -197,8 +211,9 @@ pub struct QueryAllBeforeSendHooksAddressesResponse {
 /// denom does not indicate the current admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgCreateDenom")]
 pub struct MsgCreateDenom {
     #[prost(string, tag = "1")]
@@ -211,8 +226,9 @@ pub struct MsgCreateDenom {
 /// It returns the full string of the newly created denom
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgCreateDenomResponse")]
 pub struct MsgCreateDenomResponse {
     #[prost(string, tag = "1")]
@@ -224,8 +240,9 @@ pub struct MsgCreateDenomResponse {
 /// the denom does not have any admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgMint")]
 pub struct MsgMint {
     #[prost(string, tag = "1")]
@@ -237,8 +254,9 @@ pub struct MsgMint {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgMintResponse")]
 pub struct MsgMintResponse {}
 /// MsgBurn is the sdk.Msg type for allowing an admin account to burn
@@ -247,8 +265,9 @@ pub struct MsgMintResponse {}
 /// the denom does not have any admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgBurn")]
 pub struct MsgBurn {
     #[prost(string, tag = "1")]
@@ -260,16 +279,18 @@ pub struct MsgBurn {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgBurnResponse")]
 pub struct MsgBurnResponse {}
 /// MsgChangeAdmin is the sdk.Msg type for allowing an admin account to reassign
 /// adminship of a denom to a new account
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgChangeAdmin")]
 pub struct MsgChangeAdmin {
     #[prost(string, tag = "1")]
@@ -283,16 +304,18 @@ pub struct MsgChangeAdmin {
 /// MsgChangeAdmin message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgChangeAdminResponse")]
 pub struct MsgChangeAdminResponse {}
 /// MsgSetBeforeSendHook is the sdk.Msg type for allowing an admin account to
 /// assign a CosmWasm contract to call with a BeforeSend hook
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetBeforeSendHook")]
 pub struct MsgSetBeforeSendHook {
     #[prost(string, tag = "1")]
@@ -306,16 +329,18 @@ pub struct MsgSetBeforeSendHook {
 /// MsgSetBeforeSendHook message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetBeforeSendHookResponse")]
 pub struct MsgSetBeforeSendHookResponse {}
 /// MsgSetDenomMetadata is the sdk.Msg type for allowing an admin account to set
 /// the denom's bank metadata
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetDenomMetadata")]
 pub struct MsgSetDenomMetadata {
     #[prost(string, tag = "1")]
@@ -327,14 +352,16 @@ pub struct MsgSetDenomMetadata {
 /// MsgSetDenomMetadata message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgSetDenomMetadataResponse")]
 pub struct MsgSetDenomMetadataResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgForceTransfer")]
 pub struct MsgForceTransfer {
     #[prost(string, tag = "1")]
@@ -348,8 +375,9 @@ pub struct MsgForceTransfer {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.tokenfactory.v1beta1.MsgForceTransferResponse")]
 pub struct MsgForceTransferResponse {}
 pub struct TokenfactoryQuerier<'a, Q: cosmwasm_std::CustomQuery> {

@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// QueryParamsRequest defines the request type for querying x/consensus parameters.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.consensus.v1.QueryParamsRequest")]
 #[proto_query(
     path = "/cosmos.consensus.v1.Query/Params",
@@ -13,8 +14,9 @@ pub struct QueryParamsRequest {}
 /// QueryParamsResponse defines the response type for querying x/consensus parameters.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.consensus.v1.QueryParamsResponse")]
 pub struct QueryParamsResponse {
     /// params are the tendermint consensus params stored in the consensus module.
@@ -26,8 +28,9 @@ pub struct QueryParamsResponse {
 /// MsgUpdateParams is the Msg/UpdateParams request type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.consensus.v1.MsgUpdateParams")]
 pub struct MsgUpdateParams {
     /// authority is the address that controls the module (defaults to x/gov unless overwritten).
@@ -52,8 +55,9 @@ pub struct MsgUpdateParams {
 /// MsgUpdateParams message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.consensus.v1.MsgUpdateParamsResponse")]
 pub struct MsgUpdateParamsResponse {}
 pub struct ConsensusQuerier<'a, Q: cosmwasm_std::CustomQuery> {

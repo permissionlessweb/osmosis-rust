@@ -5,8 +5,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Kept for backwards compatibility for versions prior to v0.38
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.LegacyABCIResponses")]
 pub struct LegacyAbciResponses {
     #[prost(message, repeated, tag = "1")]
@@ -19,8 +20,9 @@ pub struct LegacyAbciResponses {
 /// ResponseBeginBlock is kept for backwards compatibility for versions prior to v0.38
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.ResponseBeginBlock")]
 pub struct ResponseBeginBlock {
     #[prost(message, repeated, tag = "1")]
@@ -29,8 +31,9 @@ pub struct ResponseBeginBlock {
 /// ResponseEndBlock is kept for backwards compatibility for versions prior to v0.38
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.ResponseEndBlock")]
 pub struct ResponseEndBlock {
     #[prost(message, repeated, tag = "1")]
@@ -43,8 +46,9 @@ pub struct ResponseEndBlock {
 /// ValidatorsInfo represents the latest validator set, or the last height it changed
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.ValidatorsInfo")]
 pub struct ValidatorsInfo {
     #[prost(message, optional, tag = "1")]
@@ -59,8 +63,9 @@ pub struct ValidatorsInfo {
 /// ConsensusParamsInfo represents the latest consensus params, or the last height it changed
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.ConsensusParamsInfo")]
 pub struct ConsensusParamsInfo {
     #[prost(message, optional, tag = "1")]
@@ -74,8 +79,9 @@ pub struct ConsensusParamsInfo {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.ABCIResponsesInfo")]
 pub struct AbciResponsesInfo {
     #[prost(message, optional, tag = "1")]
@@ -91,8 +97,9 @@ pub struct AbciResponsesInfo {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.Version")]
 pub struct Version {
     #[prost(message, optional, tag = "1")]
@@ -102,8 +109,9 @@ pub struct Version {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.state.State")]
 pub struct State {
     #[prost(message, optional, tag = "1")]

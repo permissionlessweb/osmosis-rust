@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v2.SpotPriceRequest")]
 #[proto_query(
     path = "/osmosis.poolmanager.v2.Query/SpotPriceV2",
@@ -27,8 +28,9 @@ pub struct SpotPriceRequest {
 /// query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.poolmanager.v2.SpotPriceResponse")]
 pub struct SpotPriceResponse {
     /// String of the BigDec. Ex) 10.203uatom

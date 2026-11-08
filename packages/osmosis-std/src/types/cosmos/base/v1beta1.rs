@@ -5,8 +5,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// signatures required by gogoproto.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.v1beta1.Coin")]
 pub struct Coin {
     #[prost(string, tag = "1")]
@@ -20,8 +21,9 @@ pub struct Coin {
 /// signatures required by gogoproto.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.v1beta1.DecCoin")]
 pub struct DecCoin {
     #[prost(string, tag = "1")]
@@ -33,8 +35,9 @@ pub struct DecCoin {
 /// Deprecated: Prefer to use math.Int directly. It supports binary Marshal and Unmarshal.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.v1beta1.IntProto")]
 pub struct IntProto {
     #[prost(string, tag = "1")]
@@ -44,8 +47,9 @@ pub struct IntProto {
 /// Deprecated: Prefer to use math.LegacyDec directly. It supports binary Marshal and Unmarshal.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.v1beta1.DecProto")]
 pub struct DecProto {
     #[prost(string, tag = "1")]

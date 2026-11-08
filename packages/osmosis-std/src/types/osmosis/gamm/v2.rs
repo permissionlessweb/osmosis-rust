@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Deprecated: please use alternate in x/poolmanager
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.gamm.v2.QuerySpotPriceRequest")]
 #[proto_query(
     path = "/osmosis.gamm.v2.Query/SpotPrice",
@@ -30,8 +31,9 @@ pub struct QuerySpotPriceRequest {
 /// Deprecated: please use alternate in x/poolmanager
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.gamm.v2.QuerySpotPriceResponse")]
 #[deprecated]
 pub struct QuerySpotPriceResponse {

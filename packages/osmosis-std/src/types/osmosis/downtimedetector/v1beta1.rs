@@ -1,7 +1,8 @@
 use osmosis_std_derive::CosmwasmExt;
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum Downtime {
     Duration30s = 0,
     Duration1m = 1,
@@ -97,8 +98,9 @@ impl Downtime {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.downtimedetector.v1beta1.GenesisDowntimeEntry")]
 pub struct GenesisDowntimeEntry {
     #[prost(enumeration = "Downtime", tag = "1")]
@@ -113,8 +115,9 @@ pub struct GenesisDowntimeEntry {
 /// GenesisState defines the twap module's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/osmosis.downtimedetector.v1beta1.GenesisState")]
 pub struct GenesisState {
     #[prost(message, repeated, tag = "1")]
@@ -126,8 +129,9 @@ pub struct GenesisState {
 /// since the chain has been down for $DOWNTIME_DURATION.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.downtimedetector.v1beta1.RecoveredSinceDowntimeOfLengthRequest"
 )]
@@ -147,8 +151,9 @@ pub struct RecoveredSinceDowntimeOfLengthRequest {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(
     type_url = "/osmosis.downtimedetector.v1beta1.RecoveredSinceDowntimeOfLengthResponse"
 )]

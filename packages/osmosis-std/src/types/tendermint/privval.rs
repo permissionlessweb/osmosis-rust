@@ -1,8 +1,9 @@
 use osmosis_std_derive::CosmwasmExt;
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.RemoteSignerError")]
 pub struct RemoteSignerError {
     #[prost(int32, tag = "1")]
@@ -16,9 +17,8 @@ pub struct RemoteSignerError {
 }
 /// PubKeyRequest requests the consensus public key from the remote signer.
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
-)]
+#[derive(Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.PubKeyRequest")]
 pub struct PubKeyRequest {
     #[prost(string, tag = "1")]
@@ -28,8 +28,9 @@ pub struct PubKeyRequest {
 /// PubKeyResponse is a response message containing the public key.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.PubKeyResponse")]
 pub struct PubKeyResponse {
     #[prost(message, optional, tag = "1")]
@@ -40,8 +41,9 @@ pub struct PubKeyResponse {
 /// SignVoteRequest is a request to sign a vote
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.SignVoteRequest")]
 pub struct SignVoteRequest {
     #[prost(message, optional, tag = "1")]
@@ -53,8 +55,9 @@ pub struct SignVoteRequest {
 /// SignedVoteResponse is a response containing a signed vote or an error
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.SignedVoteResponse")]
 pub struct SignedVoteResponse {
     #[prost(message, optional, tag = "1")]
@@ -65,8 +68,9 @@ pub struct SignedVoteResponse {
 /// SignProposalRequest is a request to sign a proposal
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.SignProposalRequest")]
 pub struct SignProposalRequest {
     #[prost(message, optional, tag = "1")]
@@ -78,8 +82,9 @@ pub struct SignProposalRequest {
 /// SignedProposalResponse is response containing a signed proposal or an error
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.SignedProposalResponse")]
 pub struct SignedProposalResponse {
     #[prost(message, optional, tag = "1")]
@@ -90,21 +95,24 @@ pub struct SignedProposalResponse {
 /// PingRequest is a request to confirm that the connection is alive.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.PingRequest")]
 pub struct PingRequest {}
 /// PingResponse is a response to confirm that the connection is alive.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.PingResponse")]
 pub struct PingResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/tendermint.privval.Message")]
 pub struct Message {
     #[prost(oneof = "message::Sum", tags = "1, 2, 3, 4, 5, 6, 7, 8")]
@@ -121,8 +129,9 @@ pub mod message {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Sum {
         #[prost(message, tag = "1")]
         PubKeyRequest(super::PubKeyRequest),
@@ -144,7 +153,8 @@ pub mod message {
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum Errors {
     Unknown = 0,
     UnexpectedResponse = 1,

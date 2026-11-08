@@ -12,10 +12,10 @@ pub fn with_env_setup(
     let wasm = Wasm::new(&app);
     let signer = app
         .init_account(&[
-            Coin::new(100_000_000_000, "uosmo"),
-            Coin::new(100_000_000_000, "uion"),
-            Coin::new(100_000_000_000, "uusdc"),
-            Coin::new(100_000_000_000, "uiou"),
+            Coin::new(100_000_000_000u128, "uosmo"),
+            Coin::new(100_000_000_000u128, "uion"),
+            Coin::new(100_000_000_000u128, "uusdc"),
+            Coin::new(100_000_000_000u128, "uiou"),
         ])
         .unwrap();
 
@@ -72,7 +72,7 @@ pub fn setup_pools(app: &OsmosisTestApp, signer: &SigningAccount) -> Vec<u64> {
     // resulted in `mock_balancner_pool`
     let balancer_pool_id = gamm
         .create_basic_pool(
-            &[Coin::new(1_000, "uosmo"), Coin::new(1_000, "uion")],
+            &[Coin::new(1_000u128, "uosmo"), Coin::new(1_000u128, "uion")],
             signer,
         )
         .unwrap()

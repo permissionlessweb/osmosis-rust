@@ -5,8 +5,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// a connection between two chains.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.ConnectionEnd")]
 pub struct ConnectionEnd {
     /// client associated with this connection.
@@ -41,8 +42,9 @@ pub struct ConnectionEnd {
 /// identifier field.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.IdentifiedConnection")]
 pub struct IdentifiedConnection {
     /// connection identifier.
@@ -78,8 +80,9 @@ pub struct IdentifiedConnection {
 /// Counterparty defines the counterparty chain associated with a connection end.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.Counterparty")]
 pub struct Counterparty {
     /// identifies the client on the counterparty chain associated with a given
@@ -99,8 +102,9 @@ pub struct Counterparty {
 /// ClientPaths define all the connection paths for a client state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.ClientPaths")]
 pub struct ClientPaths {
     /// list of connection paths
@@ -110,8 +114,9 @@ pub struct ClientPaths {
 /// ConnectionPaths define all the connection paths for a given client state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.ConnectionPaths")]
 pub struct ConnectionPaths {
     /// client state unique identifier
@@ -126,8 +131,9 @@ pub struct ConnectionPaths {
 /// the connection handshake.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.Version")]
 pub struct Version {
     /// unique version identifier
@@ -140,8 +146,9 @@ pub struct Version {
 /// Params defines the set of Connection parameters.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.Params")]
 pub struct Params {
     /// maximum expected time per block (in nanoseconds), used to enforce block delay. This parameter should reflect the
@@ -158,7 +165,8 @@ pub struct Params {
 /// INIT, TRYOPEN, OPEN or UNINITIALIZED.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema)]
+#[derive(::serde::Serialize, ::serde::Deserialize, ::schemars::JsonSchema, ::cw_schema::Schemaifier)]
+#[schemaifier(mute_warnings)]
 pub enum State {
     /// Default State
     UninitializedUnspecified = 0,
@@ -197,8 +205,9 @@ impl State {
 /// GenesisState defines the ibc connection submodule's genesis state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.GenesisState")]
 pub struct GenesisState {
     #[prost(message, repeated, tag = "1")]
@@ -219,8 +228,9 @@ pub struct GenesisState {
 /// method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionRequest")]
 #[proto_query(
     path = "/ibc.core.connection.v1.Query/Connection",
@@ -237,8 +247,9 @@ pub struct QueryConnectionRequest {
 /// which the proof was retrieved.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionResponse")]
 pub struct QueryConnectionResponse {
     /// connection associated with the request identifier
@@ -259,8 +270,9 @@ pub struct QueryConnectionResponse {
 /// method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionsRequest")]
 #[proto_query(
     path = "/ibc.core.connection.v1.Query/Connections",
@@ -276,8 +288,9 @@ pub struct QueryConnectionsRequest {
 /// method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionsResponse")]
 pub struct QueryConnectionsResponse {
     /// list of stored connections of the chain.
@@ -296,8 +309,9 @@ pub struct QueryConnectionsResponse {
 /// Query/ClientConnections RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryClientConnectionsRequest")]
 #[proto_query(
     path = "/ibc.core.connection.v1.Query/ClientConnections",
@@ -313,8 +327,9 @@ pub struct QueryClientConnectionsRequest {
 /// Query/ClientConnections RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryClientConnectionsResponse")]
 pub struct QueryClientConnectionsResponse {
     /// slice of all the connection paths associated with a client.
@@ -335,8 +350,9 @@ pub struct QueryClientConnectionsResponse {
 /// Query/ConnectionClientState RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionClientStateRequest")]
 #[proto_query(
     path = "/ibc.core.connection.v1.Query/ConnectionClientState",
@@ -352,8 +368,9 @@ pub struct QueryConnectionClientStateRequest {
 /// Query/ConnectionClientState RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionClientStateResponse")]
 pub struct QueryConnectionClientStateResponse {
     /// client state associated with the channel
@@ -375,8 +392,9 @@ pub struct QueryConnectionClientStateResponse {
 /// Query/ConnectionConsensusState RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionConsensusStateRequest")]
 #[proto_query(
     path = "/ibc.core.connection.v1.Query/ConnectionConsensusState",
@@ -404,8 +422,9 @@ pub struct QueryConnectionConsensusStateRequest {
 /// Query/ConnectionConsensusState RPC method
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionConsensusStateResponse")]
 pub struct QueryConnectionConsensusStateResponse {
     /// consensus state associated with the channel
@@ -429,8 +448,9 @@ pub struct QueryConnectionConsensusStateResponse {
 /// QueryConnectionParamsRequest is the request type for the Query/ConnectionParams RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionParamsRequest")]
 #[proto_query(
     path = "/ibc.core.connection.v1.Query/ConnectionParams",
@@ -440,8 +460,9 @@ pub struct QueryConnectionParamsRequest {}
 /// QueryConnectionParamsResponse is the response type for the Query/ConnectionParams RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.QueryConnectionParamsResponse")]
 pub struct QueryConnectionParamsResponse {
     /// params defines the parameters of the module.
@@ -452,8 +473,9 @@ pub struct QueryConnectionParamsResponse {
 /// initialize a connection with Chain B.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenInit")]
 pub struct MsgConnectionOpenInit {
     #[prost(string, tag = "1")]
@@ -476,16 +498,18 @@ pub struct MsgConnectionOpenInit {
 /// type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenInitResponse")]
 pub struct MsgConnectionOpenInitResponse {}
 /// MsgConnectionOpenTry defines a msg sent by a Relayer to try to open a
 /// connection on Chain B.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenTry")]
 pub struct MsgConnectionOpenTry {
     #[prost(string, tag = "1")]
@@ -547,16 +571,18 @@ pub struct MsgConnectionOpenTry {
 /// MsgConnectionOpenTryResponse defines the Msg/ConnectionOpenTry response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenTryResponse")]
 pub struct MsgConnectionOpenTryResponse {}
 /// MsgConnectionOpenAck defines a msg sent by a Relayer to Chain A to
 /// acknowledge the change of connection state to TRYOPEN on Chain B.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenAck")]
 pub struct MsgConnectionOpenAck {
     #[prost(string, tag = "1")]
@@ -608,16 +634,18 @@ pub struct MsgConnectionOpenAck {
 /// MsgConnectionOpenAckResponse defines the Msg/ConnectionOpenAck response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenAckResponse")]
 pub struct MsgConnectionOpenAckResponse {}
 /// MsgConnectionOpenConfirm defines a msg sent by a Relayer to Chain B to
 /// acknowledge the change of connection state to OPEN on Chain A.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenConfirm")]
 pub struct MsgConnectionOpenConfirm {
     #[prost(string, tag = "1")]
@@ -639,15 +667,17 @@ pub struct MsgConnectionOpenConfirm {
 /// response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgConnectionOpenConfirmResponse")]
 pub struct MsgConnectionOpenConfirmResponse {}
 /// MsgUpdateParams defines the sdk.Msg type to update the connection parameters.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgUpdateParams")]
 pub struct MsgUpdateParams {
     /// signer address
@@ -662,8 +692,9 @@ pub struct MsgUpdateParams {
 /// MsgUpdateParamsResponse defines the MsgUpdateParams response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.core.connection.v1.MsgUpdateParamsResponse")]
 pub struct MsgUpdateParamsResponse {}
 pub struct ConnectionQuerier<'a, Q: cosmwasm_std::CustomQuery> {

@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Record is used for representing a key in the keyring.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.crypto.keyring.v1.Record")]
 pub struct Record {
     /// name represents a name of Record
@@ -29,8 +30,9 @@ pub mod record {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.crypto.keyring.v1.Record.Local")]
     pub struct Local {
         #[prost(message, optional, tag = "1")]
@@ -45,8 +47,9 @@ pub mod record {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.crypto.keyring.v1.Record.Ledger")]
     pub struct Ledger {
         #[prost(message, optional, tag = "1")]
@@ -61,8 +64,9 @@ pub mod record {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.crypto.keyring.v1.Record.Multi")]
     pub struct Multi {}
     /// Offline item
@@ -74,8 +78,9 @@ pub mod record {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.crypto.keyring.v1.Record.Offline")]
     pub struct Offline {}
     /// Record contains one of the following items
@@ -87,8 +92,9 @@ pub mod record {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Item {
         /// local stores the private key locally.
         #[prost(message, tag = "3")]

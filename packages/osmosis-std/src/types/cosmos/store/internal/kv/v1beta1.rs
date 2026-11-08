@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// Pairs defines a repeated slice of Pair objects.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.internal.kv.v1beta1.Pairs")]
 pub struct Pairs {
     #[prost(message, repeated, tag = "1")]
@@ -12,8 +13,9 @@ pub struct Pairs {
 /// Pair defines a key/value bytes tuple.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.store.internal.kv.v1beta1.Pair")]
 pub struct Pair {
     #[prost(bytes = "vec", tag = "1")]

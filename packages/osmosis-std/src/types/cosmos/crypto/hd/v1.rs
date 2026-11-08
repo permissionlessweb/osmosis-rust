@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// BIP44Params is used as path field in ledger item in Record.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.crypto.hd.v1.BIP44Params")]
 pub struct Bip44Params {
     /// purpose is a constant set to 44' (or 0x8000002C) following the BIP43 recommendation

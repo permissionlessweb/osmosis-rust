@@ -2,8 +2,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// GetRequest is the Query/Get request type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.GetRequest")]
 #[proto_query(
     path = "/cosmos.orm.query.v1alpha1.Query/Get",
@@ -27,8 +28,9 @@ pub struct GetRequest {
 /// GetResponse is the Query/Get response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.GetResponse")]
 pub struct GetResponse {
     /// result is the result of the get query. If no value is found, the gRPC
@@ -39,8 +41,9 @@ pub struct GetResponse {
 /// ListRequest is the Query/List request type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.ListRequest")]
 #[proto_query(
     path = "/cosmos.orm.query.v1alpha1.Query/List",
@@ -75,8 +78,9 @@ pub mod list_request {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.ListRequest.Prefix")]
     pub struct Prefix {
         /// values specifies the index values for the prefix query.
@@ -94,8 +98,9 @@ pub mod list_request {
         ::prost::Message,
         ::serde::Serialize,
         ::serde::Deserialize,
-        CosmwasmExt,
+        CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.ListRequest.Range")]
     pub struct Range {
         /// start specifies the starting index values for the range query.
@@ -120,8 +125,9 @@ pub mod list_request {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Query {
         /// prefix defines a prefix query.
         #[prost(message, tag = "3")]
@@ -134,8 +140,9 @@ pub mod list_request {
 /// ListResponse is the Query/List response type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.ListResponse")]
 pub struct ListResponse {
     /// results are the results of the query.
@@ -148,8 +155,9 @@ pub struct ListResponse {
 /// IndexValue represents the value of a field in an ORM index expression.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.orm.query.v1alpha1.IndexValue")]
 pub struct IndexValue {
     /// value specifies the index value
@@ -168,8 +176,9 @@ pub mod index_value {
         ::prost::Oneof,
         ::serde::Serialize,
         ::serde::Deserialize,
-        ::schemars::JsonSchema,
+        ::schemars::JsonSchema, ::cw_schema::Schemaifier,
     )]
+#[schemaifier(mute_warnings)]
     pub enum Value {
         /// uint specifies a value for an uint32, fixed32, uint64, or fixed64
         /// index field.

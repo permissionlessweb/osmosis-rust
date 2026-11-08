@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// state and if the client is frozen.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.ClientState")]
 pub struct ClientState {
     /// latest sequence of the client state
@@ -25,8 +26,9 @@ pub struct ClientState {
 /// consensus state.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.ConsensusState")]
 pub struct ConsensusState {
     /// public key of the solo machine
@@ -47,8 +49,9 @@ pub struct ConsensusState {
 /// Header defines a solo machine consensus header
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.Header")]
 pub struct Header {
     #[prost(uint64, tag = "1")]
@@ -72,8 +75,9 @@ pub struct Header {
 /// of a sequence and two signatures over different messages at that sequence.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.Misbehaviour")]
 pub struct Misbehaviour {
     #[prost(uint64, tag = "1")]
@@ -91,8 +95,9 @@ pub struct Misbehaviour {
 /// signature.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.SignatureAndData")]
 pub struct SignatureAndData {
     #[prost(bytes = "vec", tag = "1")]
@@ -124,8 +129,9 @@ pub struct SignatureAndData {
 /// signature.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.TimestampedSignatureData")]
 pub struct TimestampedSignatureData {
     #[prost(bytes = "vec", tag = "1")]
@@ -144,8 +150,9 @@ pub struct TimestampedSignatureData {
 /// SignBytes defines the signed bytes used for signature verification.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.SignBytes")]
 pub struct SignBytes {
     /// the sequence number
@@ -183,8 +190,9 @@ pub struct SignBytes {
 /// HeaderData returns the SignBytes data for update verification.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/ibc.lightclients.solomachine.v3.HeaderData")]
 pub struct HeaderData {
     /// header public key

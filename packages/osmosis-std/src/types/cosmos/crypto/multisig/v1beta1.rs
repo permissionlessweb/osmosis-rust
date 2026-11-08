@@ -4,8 +4,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// signed and with which modes.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.crypto.multisig.v1beta1.MultiSignature")]
 pub struct MultiSignature {
     #[prost(bytes = "vec", repeated, tag = "1")]
@@ -17,8 +18,9 @@ pub struct MultiSignature {
 /// This is not thread safe, and is not intended for concurrent usage.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.crypto.multisig.v1beta1.CompactBitArray")]
 pub struct CompactBitArray {
     #[prost(uint32, tag = "1")]

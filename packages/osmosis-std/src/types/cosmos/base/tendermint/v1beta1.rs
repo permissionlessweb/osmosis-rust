@@ -3,8 +3,9 @@ use osmosis_std_derive::CosmwasmExt;
 /// field converted to bech32 string.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.Block")]
 pub struct Block {
     #[prost(message, optional, tag = "1")]
@@ -20,8 +21,9 @@ pub struct Block {
 /// Header defines the structure of a Tendermint block header.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.Header")]
 pub struct Header {
     /// basic block info
@@ -116,8 +118,9 @@ pub struct Header {
 /// GetValidatorSetByHeightRequest is the request type for the Query/GetValidatorSetByHeight RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetValidatorSetByHeightRequest")]
 pub struct GetValidatorSetByHeightRequest {
     #[prost(int64, tag = "1")]
@@ -133,8 +136,9 @@ pub struct GetValidatorSetByHeightRequest {
 /// GetValidatorSetByHeightResponse is the response type for the Query/GetValidatorSetByHeight RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetValidatorSetByHeightResponse")]
 pub struct GetValidatorSetByHeightResponse {
     #[prost(int64, tag = "1")]
@@ -152,8 +156,9 @@ pub struct GetValidatorSetByHeightResponse {
 /// GetLatestValidatorSetRequest is the request type for the Query/GetValidatorSetByHeight RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetLatestValidatorSetRequest")]
 pub struct GetLatestValidatorSetRequest {
     /// pagination defines an pagination for the request.
@@ -163,8 +168,9 @@ pub struct GetLatestValidatorSetRequest {
 /// GetLatestValidatorSetResponse is the response type for the Query/GetValidatorSetByHeight RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetLatestValidatorSetResponse")]
 pub struct GetLatestValidatorSetResponse {
     #[prost(int64, tag = "1")]
@@ -182,8 +188,9 @@ pub struct GetLatestValidatorSetResponse {
 /// Validator is the type for the validator-set.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.Validator")]
 pub struct Validator {
     #[prost(string, tag = "1")]
@@ -206,8 +213,9 @@ pub struct Validator {
 /// GetBlockByHeightRequest is the request type for the Query/GetBlockByHeight RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetBlockByHeightRequest")]
 pub struct GetBlockByHeightRequest {
     #[prost(int64, tag = "1")]
@@ -220,8 +228,9 @@ pub struct GetBlockByHeightRequest {
 /// GetBlockByHeightResponse is the response type for the Query/GetBlockByHeight RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetBlockByHeightResponse")]
 pub struct GetBlockByHeightResponse {
     #[prost(message, optional, tag = "1")]
@@ -237,15 +246,17 @@ pub struct GetBlockByHeightResponse {
 /// GetLatestBlockRequest is the request type for the Query/GetLatestBlock RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetLatestBlockRequest")]
 pub struct GetLatestBlockRequest {}
 /// GetLatestBlockResponse is the response type for the Query/GetLatestBlock RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetLatestBlockResponse")]
 pub struct GetLatestBlockResponse {
     #[prost(message, optional, tag = "1")]
@@ -261,15 +272,17 @@ pub struct GetLatestBlockResponse {
 /// GetSyncingRequest is the request type for the Query/GetSyncing RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetSyncingRequest")]
 pub struct GetSyncingRequest {}
 /// GetSyncingResponse is the response type for the Query/GetSyncing RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetSyncingResponse")]
 pub struct GetSyncingResponse {
     #[prost(bool, tag = "1")]
@@ -278,15 +291,17 @@ pub struct GetSyncingResponse {
 /// GetNodeInfoRequest is the request type for the Query/GetNodeInfo RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetNodeInfoRequest")]
 pub struct GetNodeInfoRequest {}
 /// GetNodeInfoResponse is the response type for the Query/GetNodeInfo RPC method.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.GetNodeInfoResponse")]
 pub struct GetNodeInfoResponse {
     #[prost(message, optional, tag = "1")]
@@ -298,8 +313,9 @@ pub struct GetNodeInfoResponse {
 /// VersionInfo is the type for the GetNodeInfoResponse message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.VersionInfo")]
 pub struct VersionInfo {
     #[prost(string, tag = "1")]
@@ -323,8 +339,9 @@ pub struct VersionInfo {
 /// Module is the type for VersionInfo
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.Module")]
 pub struct Module {
     /// module path
@@ -340,8 +357,9 @@ pub struct Module {
 /// ABCIQueryRequest defines the request structure for the ABCIQuery gRPC query.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.ABCIQueryRequest")]
 pub struct AbciQueryRequest {
     #[prost(bytes = "vec", tag = "1")]
@@ -367,8 +385,9 @@ pub struct AbciQueryRequest {
 /// Tendermint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.ABCIQueryResponse")]
 pub struct AbciQueryResponse {
     #[prost(uint32, tag = "1")]
@@ -419,8 +438,9 @@ pub struct AbciQueryResponse {
 /// Note: This type is a duplicate of the ProofOp proto type defined in Tendermint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.ProofOp")]
 pub struct ProofOp {
     #[prost(string, tag = "1")]
@@ -443,8 +463,9 @@ pub struct ProofOp {
 /// Note: This type is a duplicate of the ProofOps proto type defined in Tendermint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(
-    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt,
+    Clone, PartialEq, Eq, ::prost::Message, ::serde::Serialize, ::serde::Deserialize, CosmwasmExt, ::schemars::JsonSchema, ::cw_schema::Schemaifier,
 )]
+#[schemaifier(mute_warnings)]
 #[proto_message(type_url = "/cosmos.base.tendermint.v1beta1.ProofOps")]
 pub struct ProofOps {
     #[prost(message, repeated, tag = "1")]
